@@ -1,0 +1,15 @@
+torch::DeviceType resolve_torch_device() {
+    static const torch::DeviceType device = [] {
+        DeviceType d;
+        if (cuda::is_available()) { // NVIDIA GPU
+            d = kCUDA;
+        } else if (xpu::is_available()) { // intel GPU
+            d = kXPU;
+        } else {
+            d = kCPU; // CPU
+        }
+        g_logger.info(...);
+        return d;
+    }();
+    return device;
+}

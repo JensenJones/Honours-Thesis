@@ -1,0 +1,13 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{k}{[}\PYG{k}{spatial\PYGZus{}functions}\PYG{k}{]}
+\PYG{n}{functions}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{p}{[}
+\PYG{+w}{  }\PYG{p}{\PYGZob{}}\PYG{+w}{ }\PYG{n}{name}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{handwrittenGaussian}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{f}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{P0 := 2.0; w := 8.0; sqrt(P0) * exp(\PYGZhy{}x\PYGZca{}2 / (2 * w\PYGZca{}2))}\PYG{l+s+s2}{\PYGZdq{}}\PYG{+w}{ }\PYG{p}{\PYGZcb{}}\PYG{p}{,}
+\PYG{+w}{  }\PYG{p}{\PYGZob{}}\PYG{+w}{ }\PYG{n}{name}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{wobblyPulse}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{f}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{exp(\PYGZhy{}x\PYGZca{}2 / 50) * (1 + 0.5 * cos(x))}\PYG{l+s+s2}{\PYGZdq{}}\PYG{+w}{ }\PYG{p}{\PYGZcb{}}\PYG{p}{,}
+\PYG{p}{]}
+
+\PYG{k}{[}\PYG{k}{launch\PYGZus{}fields}\PYG{k}{]}
+\PYG{n}{channels}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{p}{[}
+\PYG{+w}{  }\PYG{p}{\PYGZob{}}\PYG{+w}{ }\PYG{n}{name}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{launch\PYGZus{}f0}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{shape}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{handwrittenGaussian}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{p}{.}\PYG{p}{.}\PYG{p}{.}\PYG{+w}{ }\PYG{p}{\PYGZcb{}}\PYG{p}{,}
+\PYG{+w}{  }\PYG{p}{\PYGZob{}}\PYG{+w}{ }\PYG{n}{name}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{launch\PYGZus{}f1}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{shape}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{gaussian}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{p}{.}\PYG{p}{.}\PYG{p}{.}\PYG{+w}{ }\PYG{p}{\PYGZcb{}}\PYG{p}{,}
+\PYG{p}{]}
+\end{MintedVerbatim}

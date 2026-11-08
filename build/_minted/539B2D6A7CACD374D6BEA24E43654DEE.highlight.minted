@@ -1,0 +1,15 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{k}{class}\PYG{+w}{ }\PYG{n+nc}{FieldData}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{k}{private}\PYG{o}{:}
+\PYG{+w}{    }\PYG{n}{std}\PYG{o}{:}\PYG{o}{:}\PYG{n}{variant}\PYG{o}{\PYGZlt{}}\PYG{n}{EigenFieldData}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{TorchFieldData}\PYG{o}{\PYGZgt{}}\PYG{+w}{ }\PYG{n}{impl\PYGZus{}}\PYG{p}{;}
+
+\PYG{k}{public}\PYG{o}{:}
+\PYG{+w}{    }\PYG{k+kt}{void}\PYG{+w}{ }\PYG{n}{fft\PYGZus{}forward\PYGZus{}inplace}\PYG{p}{(}
+\PYG{+w}{        }\PYG{k}{const}\PYG{+w}{ }\PYG{n}{std}\PYG{o}{:}\PYG{o}{:}\PYG{n}{vector}\PYG{o}{\PYGZlt{}}\PYG{k+kt}{int}\PYG{o}{\PYGZgt{}}\PYG{o}{\PYGZam{}}\PYG{+w}{ }\PYG{n}{active\PYGZus{}channels}\PYG{p}{,}\PYG{+w}{ }\PYG{k+kt}{long}\PYG{+w}{ }\PYG{n}{ncols}\PYG{p}{,}\PYG{+w}{ }\PYG{k}{const}\PYG{+w}{ }\PYG{n}{FFT\PYGZus{}Wrapper}\PYG{o}{\PYGZam{}}\PYG{+w}{ }\PYG{n}{fft\PYGZus{}wrapper}\PYG{p}{)}\PYG{p}{;}
+
+\PYG{+w}{    }\PYG{k+kt}{void}\PYG{+w}{ }\PYG{n+nf}{assign\PYGZus{}exp\PYGZus{}scaled\PYGZus{}col}\PYG{p}{(}\PYG{k+kt}{long}\PYG{+w}{ }\PYG{n}{col}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{dcomplex}\PYG{+w}{ }\PYG{n}{scale}\PYG{p}{,}\PYG{+w}{ }\PYG{k}{const}\PYG{+w}{ }\PYG{n}{FieldData}\PYG{o}{\PYGZam{}}\PYG{+w}{ }\PYG{n}{source}\PYG{p}{)}\PYG{p}{;}
+
+\PYG{+w}{    }\PYG{p}{.}\PYG{p}{.}\PYG{p}{.}
+
+\PYG{p}{\PYGZcb{}}
+\end{MintedVerbatim}

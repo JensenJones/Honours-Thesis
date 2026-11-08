@@ -1,0 +1,58 @@
+% Moves a section or subsection to the next page when it will not fit on
+% this one, using the heights recorded in the previous run's aux file.
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{keepsections}[2026/11/02]
+
+\RequirePackage{zref-savepos,zref-abspage,needspace}
+\zref@addprop{savepos}{abspage}
+
+\newcount\keep@section@count
+\newcount\keep@subsection@count
+\def\keep@section@open{0}
+\def\keep@subsection@open{0}
+\newif\ifkeep@afterchapter
+\newif\ifkeep@aftersection
+\newif\ifkeep@exempt
+
+\newcommand\keep@height[2]{%
+  \dimexpr \textheight*(\zref@extractdefault{#2}{abspage}{0}-\zref@extractdefault{#1}{abspage}{0})
+    + \zposy{#1}sp - \zposy{#2}sp\relax}
+
+\newcommand\keep@close[1]{%
+  \ifnum\csname keep@#1@open\endcsname=\@ne
+    \par
+    \edef\keep@end{keep-#1-end-\the\csname keep@#1@count\endcsname}%
+    \expandafter\zsavepos\expandafter{\keep@end}%
+    \expandafter\gdef\csname keep@#1@open\endcsname{0}%
+  \fi}
+
+\newcommand\keep@open[1]{%
+  \par
+  \global\advance\csname keep@#1@count\endcsname\@ne
+  \edef\keep@start{keep-#1-start-\the\csname keep@#1@count\endcsname}%
+  \edef\keep@end{keep-#1-end-\the\csname keep@#1@count\endcsname}%
+  \keep@exemptfalse
+  \ifkeep@afterchapter\keep@exempttrue\fi
+  \ifnum\pdfstrcmp{#1}{subsection}=\z@\ifkeep@aftersection\keep@exempttrue\fi\fi
+  \global\keep@afterchapterfalse
+  \global\keep@aftersectionfalse
+  \ifkeep@exempt\else
+    \zref@ifrefundefined{\keep@end}{}{\Needspace*{\keep@height{\keep@start}{\keep@end}}}%
+  \fi
+  \expandafter\zsavepos\expandafter{\keep@start}%
+  \expandafter\gdef\csname keep@#1@open\endcsname{1}}
+
+\AddToHook{cmd/chapter/before}{\keep@close{subsection}\keep@close{section}\global\keep@afterchaptertrue}
+\AddToHook{cmd/section/before}{\keep@close{subsection}\keep@close{section}\keep@open{section}\global\keep@aftersectiontrue}
+\AddToHook{cmd/subsection/before}{\keep@close{subsection}\keep@open{subsection}}
+\AddToHook{enddocument}{\keep@close{subsection}\keep@close{section}}
+
+% Never split a paragraph or strand a line across a page break.
+\interlinepenalty=10000
+\clubpenalty=10000
+\widowpenalty=10000
+\displaywidowpenalty=10000
+\predisplaypenalty=10000
+\postdisplaypenalty=10000
+
+\endinput

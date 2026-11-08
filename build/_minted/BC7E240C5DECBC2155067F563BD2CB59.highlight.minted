@@ -1,0 +1,16 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+
+\PYG{c+c1}{// Runs `op` on the backings, throwing error for mismatched backing types.}
+\PYG{k}{template}\PYG{+w}{ }\PYG{o}{\PYGZlt{}}\PYG{k}{typename}\PYG{+w}{ }\PYG{n+nc}{VariantA}\PYG{p}{,}\PYG{+w}{ }\PYG{k}{typename}\PYG{+w}{ }\PYG{n+nc}{Fn}\PYG{p}{,}\PYG{+w}{ }\PYG{k}{typename}\PYG{p}{.}\PYG{p}{.}\PYG{p}{.}\PYG{+w}{ }\PYG{n}{Variants}\PYG{o}{\PYGZgt{}}
+\PYG{k}{decltype}\PYG{p}{(}\PYG{k}{auto}\PYG{p}{)}\PYG{+w}{ }\PYG{n}{visit\PYGZus{}matched\PYGZus{}backings}\PYG{p}{(}
+\PYG{+w}{    }\PYG{k}{const}\PYG{+w}{ }\PYG{k+kt}{char}\PYG{o}{*}\PYG{+w}{ }\PYG{n}{opName}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{Fn}\PYG{o}{\PYGZam{}}\PYG{o}{\PYGZam{}}\PYG{+w}{ }\PYG{n}{op}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{VariantA}\PYG{o}{\PYGZam{}}\PYG{o}{\PYGZam{}}\PYG{+w}{ }\PYG{n}{a}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{Variants}\PYG{o}{\PYGZam{}}\PYG{o}{\PYGZam{}}\PYG{p}{.}\PYG{p}{.}\PYG{p}{.}\PYG{+w}{ }\PYG{n}{rest}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{    }\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{p}{(}\PYG{p}{(}\PYG{n}{a}\PYG{p}{.}\PYG{n}{index}\PYG{p}{(}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{!}\PYG{o}{=}\PYG{+w}{ }\PYG{n}{rest}\PYG{p}{.}\PYG{n}{index}\PYG{p}{(}\PYG{p}{)}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{|}\PYG{o}{|}\PYG{+w}{ }\PYG{p}{.}\PYG{p}{.}\PYG{p}{.}\PYG{p}{)}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{        }\PYG{k}{throw}\PYG{+w}{ }\PYG{n}{std}\PYG{o}{:}\PYG{o}{:}\PYG{n}{invalid\PYGZus{}argument}\PYG{p}{(}\PYG{n}{std}\PYG{o}{:}\PYG{o}{:}\PYG{n}{format}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}}\PYG{l+s}{FieldData::\PYGZob{}\PYGZcb{}: backing mismatch}\PYG{l+s}{\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{opName}\PYG{p}{)}\PYG{p}{)}\PYG{p}{;}
+\PYG{+w}{    }\PYG{p}{\PYGZcb{}}
+\PYG{+w}{    }\PYG{k}{return}\PYG{+w}{ }\PYG{n}{std}\PYG{o}{:}\PYG{o}{:}\PYG{n}{visit}\PYG{p}{(}
+\PYG{+w}{        }\PYG{p}{[}\PYG{o}{\PYGZam{}}\PYG{p}{]}\PYG{o}{\PYGZlt{}}\PYG{k}{typename}\PYG{+w}{ }\PYG{n+nc}{T}\PYG{o}{\PYGZgt{}}\PYG{p}{(}\PYG{n}{T}\PYG{o}{\PYGZam{}}\PYG{+w}{ }\PYG{n}{lhs}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZgt{}}\PYG{+w}{ }\PYG{k}{decltype}\PYG{p}{(}\PYG{k}{auto}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{            }\PYG{k}{return}\PYG{+w}{ }\PYG{n}{op}\PYG{p}{(}\PYG{n}{lhs}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{std}\PYG{o}{:}\PYG{o}{:}\PYG{n}{get}\PYG{o}{\PYGZlt{}}\PYG{n}{std}\PYG{o}{:}\PYG{o}{:}\PYG{n}{decay\PYGZus{}t}\PYG{o}{\PYGZlt{}}\PYG{n}{T}\PYG{o}{\PYGZgt{}}\PYG{o}{\PYGZgt{}}\PYG{p}{(}\PYG{n}{rest}\PYG{p}{)}\PYG{p}{.}\PYG{p}{.}\PYG{p}{.}\PYG{p}{)}\PYG{p}{;}
+\PYG{+w}{        }\PYG{p}{\PYGZcb{}}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{a}\PYG{p}{)}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+
+\end{MintedVerbatim}

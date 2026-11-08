@@ -1,0 +1,829 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{apa/apasortcite//global/global/global}
+    \entry{agrawalNonlinearFiberOptics2019}{book}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=910d801de7c7b036bee279a678fc8362}{%
+           family={Agrawal},
+           familyi={A\bibinitperiod},
+           given={Govind\bibnamedelima P.},
+           giveni={G\bibinitperiod\bibinitdelim P\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Academic Press}%
+      }
+      \strng{namehash}{910d801de7c7b036bee279a678fc8362}
+      \strng{fullhash}{910d801de7c7b036bee279a678fc8362}
+      \strng{fullhashraw}{910d801de7c7b036bee279a678fc8362}
+      \strng{bibnamehash}{910d801de7c7b036bee279a678fc8362}
+      \strng{authorbibnamehash}{910d801de7c7b036bee279a678fc8362}
+      \strng{authornamehash}{910d801de7c7b036bee279a678fc8362}
+      \strng{authorfullhash}{910d801de7c7b036bee279a678fc8362}
+      \strng{authorfullhashraw}{910d801de7c7b036bee279a678fc8362}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{6}
+      \field{title}{Nonlinear {{Fiber Optics}}}
+      \field{year}{2019}
+      \field{dateera}{ce}
+    \endentry
+    \entry{baiStimulatedBrillouinScattering2018}{article}{}{}
+      \name{author}{10}{}{%
+        {{un=0,uniquepart=base,hash=e741680deddee87be9eca9b283c6cff4}{%
+           family={Bai},
+           familyi={B\bibinitperiod},
+           given={Zhenxu},
+           giveni={Z\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b9ed7df3318f9cabbc8b70eb161ecc6a}{%
+           family={Yuan},
+           familyi={Y\bibinitperiod},
+           given={Hang},
+           giveni={H\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b3032ad7a69889f0056d95901af39f5e}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Zhaohong},
+           giveni={Z\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a70c762bb7e06bbd2b32cf82b8555505}{%
+           family={Xu},
+           familyi={X\bibinitperiod},
+           given={Pengbai},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=9c24b2374806b89b5f02348620bce1d1}{%
+           family={Gao},
+           familyi={G\bibinitperiod},
+           given={Qilin},
+           giveni={Q\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=2aa35dadb935f23ee41b8028076d0f3a}{%
+           family={Williams},
+           familyi={W\bibinitperiod},
+           given={Robert\bibnamedelima J.},
+           giveni={R\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=2bf303e0ea226e55854e6659a554b7b3}{%
+           family={Kitzler},
+           familyi={K\bibinitperiod},
+           given={Ondrej},
+           giveni={O\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=0204ef8fedbff441c16f807aa29174b2}{%
+           family={Mildren},
+           familyi={M\bibinitperiod},
+           given={Richard\bibnamedelima P.},
+           giveni={R\bibinitperiod\bibinitdelim P\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a029d468e799f30930cdcb2ddd1b0376}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Yulei},
+           giveni={Y\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=6736725b0ccf027c7d8b47b5903cb9c6}{%
+           family={Lu},
+           familyi={L\bibinitperiod},
+           given={Zhiwei},
+           giveni={Z\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{c9c5b0dc8bac533fbc19ead39e1670ee}
+      \strng{fullhash}{50b120c83004088ce1bf8e433a39dc92}
+      \strng{fullhashraw}{50b120c83004088ce1bf8e433a39dc92}
+      \strng{bibnamehash}{50b120c83004088ce1bf8e433a39dc92}
+      \strng{authorbibnamehash}{50b120c83004088ce1bf8e433a39dc92}
+      \strng{authornamehash}{c9c5b0dc8bac533fbc19ead39e1670ee}
+      \strng{authorfullhash}{50b120c83004088ce1bf8e433a39dc92}
+      \strng{authorfullhashraw}{50b120c83004088ce1bf8e433a39dc92}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{Stimulated Brillouin scattering (SBS), as one type of third-order nonlinear optics effect, is extensively exploited and rapidly developed in the field of lasers and optoelectronics. A large number of theoretical and experimental studies on SBS have been carried out in the past decades. Especially, the exploration of new SBS materials and new types of SBS modulation methods have been engaged simultaneously, as the properties of different materials have great influence on the SBS performance such as generation threshold, Brillouin amplification efficiency, frequency shift, breakdown threshold, etc. This article provides a comprehensive review of the characteristics of different types of SBS materials, SBS applications, experimental design methods, as well as the parameter optimization method, which is expected to provide reference and guidance to SBS related experiments.}
+      \field{day}{1}
+      \field{issn}{0925-3467}
+      \field{journaltitle}{Optical Materials}
+      \field{month}{1}
+      \field{shortjournal}{Optical Materials}
+      \field{shorttitle}{Stimulated {{Brillouin}} Scattering Materials, Experimental Design and Applications}
+      \field{title}{Stimulated {{Brillouin}} Scattering Materials, Experimental Design and Applications: {{A}} Review}
+      \field{urlday}{14}
+      \field{urlmonth}{5}
+      \field{urlyear}{2026}
+      \field{volume}{75}
+      \field{year}{2018}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{626\bibrangedash 645}
+      \range{pages}{20}
+      \verb{doi}
+      \verb 10.1016/j.optmat.2017.10.035
+      \endverb
+      \verb{file}
+      \verb /Users/jensen/Zotero/storage/UED9LPSB/S0925346717306687.html
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S0925346717306687
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S0925346717306687
+      \endverb
+      \keyw{Applications,Experimental design,Media,Stimulated Brillouin scattering (SBS)}
+    \endentry
+    \entry{balacMathematicalAnalysisAdaptive2014}{article}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=cdfb25d31b73afa9f1bac0fb47de59c7}{%
+           family={Balac},
+           familyi={B\bibinitperiod},
+           given={Stéphane},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=485abf18f7e77501da7f74d8557fdc9f}{%
+           family={Fernandez},
+           familyi={F\bibinitperiod},
+           given={Arnaud},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{270b6d6c4eb59a6143b9f8c87db5cd2e}
+      \strng{fullhash}{270b6d6c4eb59a6143b9f8c87db5cd2e}
+      \strng{fullhashraw}{270b6d6c4eb59a6143b9f8c87db5cd2e}
+      \strng{bibnamehash}{270b6d6c4eb59a6143b9f8c87db5cd2e}
+      \strng{authorbibnamehash}{270b6d6c4eb59a6143b9f8c87db5cd2e}
+      \strng{authornamehash}{270b6d6c4eb59a6143b9f8c87db5cd2e}
+      \strng{authorfullhash}{270b6d6c4eb59a6143b9f8c87db5cd2e}
+      \strng{authorfullhashraw}{270b6d6c4eb59a6143b9f8c87db5cd2e}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{In optics the nonlinear Schrödinger equation (NLSE) which modelizes light-wave propagation in an optical fibre is the most widely solved by the Symmetric Split-Step method. The practical efficiency of the Symmetric Split-Step method is highly dependent on the computational grid points distribution along the fiber and therefore an efficient adaptive step-size control strategy is mandatory. A lot of adaptive step-size methods designed to be used in conjunction with the Symmetric Split-Step method for solving the various forms taken by the NLSE can be found in the literature dedicated to optics. These methods can be gathered together into two groups. Broadly speaking, a first group of methods is based on the observation along the propagation length of the behavior of a given optical quantity (e.g. the photons number) and the step-size at each computational step is set so as to guarantee that the known properties of the quantity are preserved. Most of the time these approaches are derived under specific assumptions and the step-size selection criterion depends on the fiber parameters. The second group of methods makes use of some mathematical concepts to estimate the local error at each computational grid point and the step-size is set so as to maintain it lower than a prescribed tolerance. This approach should be preferred due to its generality of use but suffers from a lack of understanding in the mathematical concepts of numerical analysis it involves. The aim of this paper is to present an analysis of local error estimate and adaptive step-size control techniques for solving the NSLE by the Symmetric Split-Step method with all the unavoidable mathematical rigor required for a comprehensive understanding of the topic.}
+      \field{day}{15}
+      \field{issn}{0030-4018}
+      \field{journaltitle}{Optics Communications}
+      \field{month}{10}
+      \field{shortjournal}{Optics Communications}
+      \field{title}{Mathematical Analysis of Adaptive Step-Size Techniques When Solving the Nonlinear {{Schrödinger}} Equation for Simulating Light-Wave Propagation in Optical Fibers}
+      \field{urlday}{26}
+      \field{urlmonth}{10}
+      \field{urlyear}{2026}
+      \field{volume}{329}
+      \field{year}{2014}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{1\bibrangedash 9}
+      \range{pages}{9}
+      \verb{doi}
+      \verb 10.1016/j.optcom.2014.04.081
+      \endverb
+      \verb{file}
+      \verb /Users/jensen/Zotero/storage/G24KMHB2/S0030401814004246.html
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S0030401814004246
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S0030401814004246
+      \endverb
+      \keyw{Adaptive step-size control,Embedded Runge–Kutta methods,Interaction Picture method,Nonlinear Schrödinger equation,Symmetric Split-Step method}
+    \endentry
+    \entry{eggletonBrillouinScatteringPart2022}{book}{}{}
+      \name{editor}{3}{}{%
+        {{un=0,uniquepart=base,hash=ee08da10962fec2202fb1f13240fd264}{%
+           family={Eggleton},
+           familyi={E\bibinitperiod},
+           given={Benjamin\bibnamedelima J.},
+           giveni={B\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=eba722e3b3c89588fb843a43e6c3be60}{%
+           family={Steel},
+           familyi={S\bibinitperiod},
+           given={Michael\bibnamedelima J.},
+           giveni={M\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=ce83c6a4036ff719f37583767fa7d93b}{%
+           family={Poulton},
+           familyi={P\bibinitperiod},
+           given={Christopher\bibnamedelima G.},
+           giveni={C\bibinitperiod\bibinitdelim G\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{3f74dbc77acf71b383a5f774e14895f4}
+      \strng{fullhash}{4ffe6e2c3232831bea9fe7685fcdc2fb}
+      \strng{fullhashraw}{4ffe6e2c3232831bea9fe7685fcdc2fb}
+      \strng{bibnamehash}{4ffe6e2c3232831bea9fe7685fcdc2fb}
+      \strng{editorbibnamehash}{4ffe6e2c3232831bea9fe7685fcdc2fb}
+      \strng{editornamehash}{3f74dbc77acf71b383a5f774e14895f4}
+      \strng{editorfullhash}{4ffe6e2c3232831bea9fe7685fcdc2fb}
+      \strng{editorfullhashraw}{4ffe6e2c3232831bea9fe7685fcdc2fb}
+      \field{sortinit}{E}
+      \field{sortinithash}{8da8a182d344d5b9047633dfc0cc9131}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{editor}
+      \field{labeltitlesource}{title}
+      \field{series}{Semiconductors and {{Semimetals}}}
+      \field{title}{Brillouin {{Scattering Part}} 1}
+      \field{volume}{109}
+      \field{year}{2022}
+      \field{dateera}{ce}
+    \endentry
+    \entry{montesThreeWaveDissipativeBrillouin2008}{inbook}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=e721300c8bbf26f02d96924b0ace3d00}{%
+           family={Montes},
+           familyi={M\bibinitperiod},
+           given={C.},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{location}{1}{%
+        {Berlin, Heidelberg}%
+      }
+      \list{publisher}{1}{%
+        {Springer Berlin Heidelberg}%
+      }
+      \strng{namehash}{e721300c8bbf26f02d96924b0ace3d00}
+      \strng{fullhash}{e721300c8bbf26f02d96924b0ace3d00}
+      \strng{fullhashraw}{e721300c8bbf26f02d96924b0ace3d00}
+      \strng{bibnamehash}{e721300c8bbf26f02d96924b0ace3d00}
+      \strng{authorbibnamehash}{e721300c8bbf26f02d96924b0ace3d00}
+      \strng{authornamehash}{e721300c8bbf26f02d96924b0ace3d00}
+      \strng{authorfullhash}{e721300c8bbf26f02d96924b0ace3d00}
+      \strng{authorfullhashraw}{e721300c8bbf26f02d96924b0ace3d00}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Dissipative {{Solitons}}: {{From Optics}} to {{Biology}} and {{Medicine}}}
+      \field{isbn}{978-3-540-78216-2}
+      \field{langid}{english}
+      \field{title}{Three-{{Wave Dissipative Brillouin Solitons}}}
+      \field{urlday}{9}
+      \field{urlmonth}{5}
+      \field{urlyear}{2026}
+      \field{volume}{751}
+      \field{year}{2008}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{1\bibrangedash 40}
+      \range{pages}{40}
+      \verb{doi}
+      \verb 10.1007/978-3-540-78217-9_9
+      \endverb
+      \verb{file}
+      \verb /Users/jensen/Zotero/storage/QEBK9AMD/Montes - 2008 - Three-Wave Dissipative Brillouin Solitons.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://link.springer.com/10.1007/978-3-540-78217-9_9
+      \endverb
+      \verb{url}
+      \verb https://link.springer.com/10.1007/978-3-540-78217-9_9
+      \endverb
+    \endentry
+    \entry{nickollsGPUComputingEra2010}{article}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=4e9afb5dec66f82dce8dd9cd8b94345c}{%
+           family={Nickolls},
+           familyi={N\bibinitperiod},
+           given={John},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=c4a8df92e1f8e22aa2062da8bcfd402d}{%
+           family={Dally},
+           familyi={D\bibinitperiod},
+           given={William\bibnamedelima J.},
+           giveni={W\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{15c6a205a1cc434b758bb3ab6c6e02ef}
+      \strng{fullhash}{15c6a205a1cc434b758bb3ab6c6e02ef}
+      \strng{fullhashraw}{15c6a205a1cc434b758bb3ab6c6e02ef}
+      \strng{bibnamehash}{15c6a205a1cc434b758bb3ab6c6e02ef}
+      \strng{authorbibnamehash}{15c6a205a1cc434b758bb3ab6c6e02ef}
+      \strng{authornamehash}{15c6a205a1cc434b758bb3ab6c6e02ef}
+      \strng{authorfullhash}{15c6a205a1cc434b758bb3ab6c6e02ef}
+      \strng{authorfullhashraw}{15c6a205a1cc434b758bb3ab6c6e02ef}
+      \field{sortinit}{N}
+      \field{sortinithash}{22369a73d5f88983a108b63f07f37084}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{GPU computing is at a tipping point, becoming more widely used in demanding consumer applications and high-performance computing. This article describes the rapid evolution of GPU architectures-from graphics processors to massively parallel many-core multiprocessors, recent developments in GPU computing architectures, and how the enthusiastic adoption of CPU+GPU coprocessing is accelerating parallel applications.}
+      \field{issn}{1937-4143}
+      \field{journaltitle}{IEEE Micro}
+      \field{month}{3}
+      \field{number}{2}
+      \field{title}{The {{GPU Computing Era}}}
+      \field{urlday}{27}
+      \field{urlmonth}{10}
+      \field{urlyear}{2026}
+      \field{volume}{30}
+      \field{year}{2010}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{56\bibrangedash 69}
+      \range{pages}{14}
+      \verb{doi}
+      \verb 10.1109/MM.2010.41
+      \endverb
+      \verb{file}
+      \verb /Users/jensen/Zotero/storage/9BMTH6TN/Nickolls and Dally - 2010 - The GPU Computing Era.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://ieeexplore.ieee.org/document/5446251
+      \endverb
+      \verb{url}
+      \verb https://ieeexplore.ieee.org/document/5446251
+      \endverb
+      \keyw{Acceleration,Computer applications,Computer architecture,Concurrent computing,CUDA,Fermi GPU architecture,GPU computing,GPU coprocessing,Graphics processing unit,heterogeneous CPU+,Layout,NVIDIA.,Parallel processing,Pervasive computing,Pipelines,scalable parallel computing,Tesla GPU architecture}
+    \endentry
+    \entry{stokesMachine2006}{book}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=70fdfa2e9e2e8c73553c486482803026}{%
+           family={Stokes},
+           familyi={S\bibinitperiod},
+           given={Jon},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{location}{1}{%
+        {San Francisco}%
+      }
+      \list{publisher}{1}{%
+        {No Starch Press}%
+      }
+      \strng{namehash}{70fdfa2e9e2e8c73553c486482803026}
+      \strng{fullhash}{70fdfa2e9e2e8c73553c486482803026}
+      \strng{fullhashraw}{70fdfa2e9e2e8c73553c486482803026}
+      \strng{bibnamehash}{70fdfa2e9e2e8c73553c486482803026}
+      \strng{authorbibnamehash}{70fdfa2e9e2e8c73553c486482803026}
+      \strng{authornamehash}{70fdfa2e9e2e8c73553c486482803026}
+      \strng{authorfullhash}{70fdfa2e9e2e8c73553c486482803026}
+      \strng{authorfullhashraw}{70fdfa2e9e2e8c73553c486482803026}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Inside the Machine explains how microprocessors operate - what they do, and how they do it. Written by the co-founder of the highly respected Ars Technica site, the book begins with the...}
+      \field{isbn}{978-1-59327-104-6}
+      \field{langid}{english}
+      \field{title}{Inside the {{Machine}}}
+      \field{year}{2006}
+      \field{dateera}{ce}
+      \verb{file}
+      \verb /Users/jensen/Zotero/storage/R4QJGNE9/9781593271046.html
+      \endverb
+    \endentry
+  \enddatalist
+  \datalist[entry]{apa/global//global/global/global}
+    \entry{agrawalNonlinearFiberOptics2019}{book}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=910d801de7c7b036bee279a678fc8362}{%
+           family={Agrawal},
+           familyi={A\bibinitperiod},
+           given={Govind\bibnamedelima P.},
+           giveni={G\bibinitperiod\bibinitdelim P\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Academic Press}%
+      }
+      \strng{namehash}{910d801de7c7b036bee279a678fc8362}
+      \strng{fullhash}{910d801de7c7b036bee279a678fc8362}
+      \strng{fullhashraw}{910d801de7c7b036bee279a678fc8362}
+      \strng{bibnamehash}{910d801de7c7b036bee279a678fc8362}
+      \strng{authorbibnamehash}{910d801de7c7b036bee279a678fc8362}
+      \strng{authornamehash}{910d801de7c7b036bee279a678fc8362}
+      \strng{authorfullhash}{910d801de7c7b036bee279a678fc8362}
+      \strng{authorfullhashraw}{910d801de7c7b036bee279a678fc8362}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{6}
+      \field{title}{Nonlinear {{Fiber Optics}}}
+      \field{year}{2019}
+      \field{dateera}{ce}
+    \endentry
+    \entry{baiStimulatedBrillouinScattering2018}{article}{}{}
+      \name{author}{10}{}{%
+        {{un=0,uniquepart=base,hash=e741680deddee87be9eca9b283c6cff4}{%
+           family={Bai},
+           familyi={B\bibinitperiod},
+           given={Zhenxu},
+           giveni={Z\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b9ed7df3318f9cabbc8b70eb161ecc6a}{%
+           family={Yuan},
+           familyi={Y\bibinitperiod},
+           given={Hang},
+           giveni={H\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b3032ad7a69889f0056d95901af39f5e}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Zhaohong},
+           giveni={Z\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a70c762bb7e06bbd2b32cf82b8555505}{%
+           family={Xu},
+           familyi={X\bibinitperiod},
+           given={Pengbai},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=9c24b2374806b89b5f02348620bce1d1}{%
+           family={Gao},
+           familyi={G\bibinitperiod},
+           given={Qilin},
+           giveni={Q\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=2aa35dadb935f23ee41b8028076d0f3a}{%
+           family={Williams},
+           familyi={W\bibinitperiod},
+           given={Robert\bibnamedelima J.},
+           giveni={R\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=2bf303e0ea226e55854e6659a554b7b3}{%
+           family={Kitzler},
+           familyi={K\bibinitperiod},
+           given={Ondrej},
+           giveni={O\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=0204ef8fedbff441c16f807aa29174b2}{%
+           family={Mildren},
+           familyi={M\bibinitperiod},
+           given={Richard\bibnamedelima P.},
+           giveni={R\bibinitperiod\bibinitdelim P\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a029d468e799f30930cdcb2ddd1b0376}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Yulei},
+           giveni={Y\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=6736725b0ccf027c7d8b47b5903cb9c6}{%
+           family={Lu},
+           familyi={L\bibinitperiod},
+           given={Zhiwei},
+           giveni={Z\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{c9c5b0dc8bac533fbc19ead39e1670ee}
+      \strng{fullhash}{50b120c83004088ce1bf8e433a39dc92}
+      \strng{fullhashraw}{50b120c83004088ce1bf8e433a39dc92}
+      \strng{bibnamehash}{50b120c83004088ce1bf8e433a39dc92}
+      \strng{authorbibnamehash}{50b120c83004088ce1bf8e433a39dc92}
+      \strng{authornamehash}{c9c5b0dc8bac533fbc19ead39e1670ee}
+      \strng{authorfullhash}{50b120c83004088ce1bf8e433a39dc92}
+      \strng{authorfullhashraw}{50b120c83004088ce1bf8e433a39dc92}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{Stimulated Brillouin scattering (SBS), as one type of third-order nonlinear optics effect, is extensively exploited and rapidly developed in the field of lasers and optoelectronics. A large number of theoretical and experimental studies on SBS have been carried out in the past decades. Especially, the exploration of new SBS materials and new types of SBS modulation methods have been engaged simultaneously, as the properties of different materials have great influence on the SBS performance such as generation threshold, Brillouin amplification efficiency, frequency shift, breakdown threshold, etc. This article provides a comprehensive review of the characteristics of different types of SBS materials, SBS applications, experimental design methods, as well as the parameter optimization method, which is expected to provide reference and guidance to SBS related experiments.}
+      \field{day}{1}
+      \field{issn}{0925-3467}
+      \field{journaltitle}{Optical Materials}
+      \field{month}{1}
+      \field{shortjournal}{Optical Materials}
+      \field{shorttitle}{Stimulated {{Brillouin}} Scattering Materials, Experimental Design and Applications}
+      \field{title}{Stimulated {{Brillouin}} Scattering Materials, Experimental Design and Applications: {{A}} Review}
+      \field{urlday}{14}
+      \field{urlmonth}{5}
+      \field{urlyear}{2026}
+      \field{volume}{75}
+      \field{year}{2018}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{626\bibrangedash 645}
+      \range{pages}{20}
+      \verb{doi}
+      \verb 10.1016/j.optmat.2017.10.035
+      \endverb
+      \verb{file}
+      \verb /Users/jensen/Zotero/storage/UED9LPSB/S0925346717306687.html
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S0925346717306687
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S0925346717306687
+      \endverb
+      \keyw{Applications,Experimental design,Media,Stimulated Brillouin scattering (SBS)}
+    \endentry
+    \entry{balacMathematicalAnalysisAdaptive2014}{article}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=cdfb25d31b73afa9f1bac0fb47de59c7}{%
+           family={Balac},
+           familyi={B\bibinitperiod},
+           given={Stéphane},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=485abf18f7e77501da7f74d8557fdc9f}{%
+           family={Fernandez},
+           familyi={F\bibinitperiod},
+           given={Arnaud},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{270b6d6c4eb59a6143b9f8c87db5cd2e}
+      \strng{fullhash}{270b6d6c4eb59a6143b9f8c87db5cd2e}
+      \strng{fullhashraw}{270b6d6c4eb59a6143b9f8c87db5cd2e}
+      \strng{bibnamehash}{270b6d6c4eb59a6143b9f8c87db5cd2e}
+      \strng{authorbibnamehash}{270b6d6c4eb59a6143b9f8c87db5cd2e}
+      \strng{authornamehash}{270b6d6c4eb59a6143b9f8c87db5cd2e}
+      \strng{authorfullhash}{270b6d6c4eb59a6143b9f8c87db5cd2e}
+      \strng{authorfullhashraw}{270b6d6c4eb59a6143b9f8c87db5cd2e}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{In optics the nonlinear Schrödinger equation (NLSE) which modelizes light-wave propagation in an optical fibre is the most widely solved by the Symmetric Split-Step method. The practical efficiency of the Symmetric Split-Step method is highly dependent on the computational grid points distribution along the fiber and therefore an efficient adaptive step-size control strategy is mandatory. A lot of adaptive step-size methods designed to be used in conjunction with the Symmetric Split-Step method for solving the various forms taken by the NLSE can be found in the literature dedicated to optics. These methods can be gathered together into two groups. Broadly speaking, a first group of methods is based on the observation along the propagation length of the behavior of a given optical quantity (e.g. the photons number) and the step-size at each computational step is set so as to guarantee that the known properties of the quantity are preserved. Most of the time these approaches are derived under specific assumptions and the step-size selection criterion depends on the fiber parameters. The second group of methods makes use of some mathematical concepts to estimate the local error at each computational grid point and the step-size is set so as to maintain it lower than a prescribed tolerance. This approach should be preferred due to its generality of use but suffers from a lack of understanding in the mathematical concepts of numerical analysis it involves. The aim of this paper is to present an analysis of local error estimate and adaptive step-size control techniques for solving the NSLE by the Symmetric Split-Step method with all the unavoidable mathematical rigor required for a comprehensive understanding of the topic.}
+      \field{day}{15}
+      \field{issn}{0030-4018}
+      \field{journaltitle}{Optics Communications}
+      \field{month}{10}
+      \field{shortjournal}{Optics Communications}
+      \field{title}{Mathematical Analysis of Adaptive Step-Size Techniques When Solving the Nonlinear {{Schrödinger}} Equation for Simulating Light-Wave Propagation in Optical Fibers}
+      \field{urlday}{26}
+      \field{urlmonth}{10}
+      \field{urlyear}{2026}
+      \field{volume}{329}
+      \field{year}{2014}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{1\bibrangedash 9}
+      \range{pages}{9}
+      \verb{doi}
+      \verb 10.1016/j.optcom.2014.04.081
+      \endverb
+      \verb{file}
+      \verb /Users/jensen/Zotero/storage/G24KMHB2/S0030401814004246.html
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S0030401814004246
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S0030401814004246
+      \endverb
+      \keyw{Adaptive step-size control,Embedded Runge–Kutta methods,Interaction Picture method,Nonlinear Schrödinger equation,Symmetric Split-Step method}
+    \endentry
+    \entry{eggletonBrillouinScatteringPart2022}{book}{}{}
+      \name{editor}{3}{}{%
+        {{un=0,uniquepart=base,hash=ee08da10962fec2202fb1f13240fd264}{%
+           family={Eggleton},
+           familyi={E\bibinitperiod},
+           given={Benjamin\bibnamedelima J.},
+           giveni={B\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=eba722e3b3c89588fb843a43e6c3be60}{%
+           family={Steel},
+           familyi={S\bibinitperiod},
+           given={Michael\bibnamedelima J.},
+           giveni={M\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=ce83c6a4036ff719f37583767fa7d93b}{%
+           family={Poulton},
+           familyi={P\bibinitperiod},
+           given={Christopher\bibnamedelima G.},
+           giveni={C\bibinitperiod\bibinitdelim G\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{3f74dbc77acf71b383a5f774e14895f4}
+      \strng{fullhash}{4ffe6e2c3232831bea9fe7685fcdc2fb}
+      \strng{fullhashraw}{4ffe6e2c3232831bea9fe7685fcdc2fb}
+      \strng{bibnamehash}{4ffe6e2c3232831bea9fe7685fcdc2fb}
+      \strng{editorbibnamehash}{4ffe6e2c3232831bea9fe7685fcdc2fb}
+      \strng{editornamehash}{3f74dbc77acf71b383a5f774e14895f4}
+      \strng{editorfullhash}{4ffe6e2c3232831bea9fe7685fcdc2fb}
+      \strng{editorfullhashraw}{4ffe6e2c3232831bea9fe7685fcdc2fb}
+      \field{sortinit}{E}
+      \field{sortinithash}{8da8a182d344d5b9047633dfc0cc9131}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{editor}
+      \field{labeltitlesource}{title}
+      \field{series}{Semiconductors and {{Semimetals}}}
+      \field{title}{Brillouin {{Scattering Part}} 1}
+      \field{volume}{109}
+      \field{year}{2022}
+      \field{dateera}{ce}
+    \endentry
+    \entry{montesThreeWaveDissipativeBrillouin2008}{inbook}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=e721300c8bbf26f02d96924b0ace3d00}{%
+           family={Montes},
+           familyi={M\bibinitperiod},
+           given={C.},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{location}{1}{%
+        {Berlin, Heidelberg}%
+      }
+      \list{publisher}{1}{%
+        {Springer Berlin Heidelberg}%
+      }
+      \strng{namehash}{e721300c8bbf26f02d96924b0ace3d00}
+      \strng{fullhash}{e721300c8bbf26f02d96924b0ace3d00}
+      \strng{fullhashraw}{e721300c8bbf26f02d96924b0ace3d00}
+      \strng{bibnamehash}{e721300c8bbf26f02d96924b0ace3d00}
+      \strng{authorbibnamehash}{e721300c8bbf26f02d96924b0ace3d00}
+      \strng{authornamehash}{e721300c8bbf26f02d96924b0ace3d00}
+      \strng{authorfullhash}{e721300c8bbf26f02d96924b0ace3d00}
+      \strng{authorfullhashraw}{e721300c8bbf26f02d96924b0ace3d00}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Dissipative {{Solitons}}: {{From Optics}} to {{Biology}} and {{Medicine}}}
+      \field{isbn}{978-3-540-78216-2}
+      \field{langid}{english}
+      \field{title}{Three-{{Wave Dissipative Brillouin Solitons}}}
+      \field{urlday}{9}
+      \field{urlmonth}{5}
+      \field{urlyear}{2026}
+      \field{volume}{751}
+      \field{year}{2008}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{1\bibrangedash 40}
+      \range{pages}{40}
+      \verb{doi}
+      \verb 10.1007/978-3-540-78217-9_9
+      \endverb
+      \verb{file}
+      \verb /Users/jensen/Zotero/storage/QEBK9AMD/Montes - 2008 - Three-Wave Dissipative Brillouin Solitons.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://link.springer.com/10.1007/978-3-540-78217-9_9
+      \endverb
+      \verb{url}
+      \verb https://link.springer.com/10.1007/978-3-540-78217-9_9
+      \endverb
+    \endentry
+    \entry{nickollsGPUComputingEra2010}{article}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=4e9afb5dec66f82dce8dd9cd8b94345c}{%
+           family={Nickolls},
+           familyi={N\bibinitperiod},
+           given={John},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=c4a8df92e1f8e22aa2062da8bcfd402d}{%
+           family={Dally},
+           familyi={D\bibinitperiod},
+           given={William\bibnamedelima J.},
+           giveni={W\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{15c6a205a1cc434b758bb3ab6c6e02ef}
+      \strng{fullhash}{15c6a205a1cc434b758bb3ab6c6e02ef}
+      \strng{fullhashraw}{15c6a205a1cc434b758bb3ab6c6e02ef}
+      \strng{bibnamehash}{15c6a205a1cc434b758bb3ab6c6e02ef}
+      \strng{authorbibnamehash}{15c6a205a1cc434b758bb3ab6c6e02ef}
+      \strng{authornamehash}{15c6a205a1cc434b758bb3ab6c6e02ef}
+      \strng{authorfullhash}{15c6a205a1cc434b758bb3ab6c6e02ef}
+      \strng{authorfullhashraw}{15c6a205a1cc434b758bb3ab6c6e02ef}
+      \field{sortinit}{N}
+      \field{sortinithash}{22369a73d5f88983a108b63f07f37084}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{GPU computing is at a tipping point, becoming more widely used in demanding consumer applications and high-performance computing. This article describes the rapid evolution of GPU architectures-from graphics processors to massively parallel many-core multiprocessors, recent developments in GPU computing architectures, and how the enthusiastic adoption of CPU+GPU coprocessing is accelerating parallel applications.}
+      \field{issn}{1937-4143}
+      \field{journaltitle}{IEEE Micro}
+      \field{month}{3}
+      \field{number}{2}
+      \field{title}{The {{GPU Computing Era}}}
+      \field{urlday}{27}
+      \field{urlmonth}{10}
+      \field{urlyear}{2026}
+      \field{volume}{30}
+      \field{year}{2010}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{56\bibrangedash 69}
+      \range{pages}{14}
+      \verb{doi}
+      \verb 10.1109/MM.2010.41
+      \endverb
+      \verb{file}
+      \verb /Users/jensen/Zotero/storage/9BMTH6TN/Nickolls and Dally - 2010 - The GPU Computing Era.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://ieeexplore.ieee.org/document/5446251
+      \endverb
+      \verb{url}
+      \verb https://ieeexplore.ieee.org/document/5446251
+      \endverb
+      \keyw{Acceleration,Computer applications,Computer architecture,Concurrent computing,CUDA,Fermi GPU architecture,GPU computing,GPU coprocessing,Graphics processing unit,heterogeneous CPU+,Layout,NVIDIA.,Parallel processing,Pervasive computing,Pipelines,scalable parallel computing,Tesla GPU architecture}
+    \endentry
+    \entry{stokesMachine2006}{book}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=70fdfa2e9e2e8c73553c486482803026}{%
+           family={Stokes},
+           familyi={S\bibinitperiod},
+           given={Jon},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{location}{1}{%
+        {San Francisco}%
+      }
+      \list{publisher}{1}{%
+        {No Starch Press}%
+      }
+      \strng{namehash}{70fdfa2e9e2e8c73553c486482803026}
+      \strng{fullhash}{70fdfa2e9e2e8c73553c486482803026}
+      \strng{fullhashraw}{70fdfa2e9e2e8c73553c486482803026}
+      \strng{bibnamehash}{70fdfa2e9e2e8c73553c486482803026}
+      \strng{authorbibnamehash}{70fdfa2e9e2e8c73553c486482803026}
+      \strng{authornamehash}{70fdfa2e9e2e8c73553c486482803026}
+      \strng{authorfullhash}{70fdfa2e9e2e8c73553c486482803026}
+      \strng{authorfullhashraw}{70fdfa2e9e2e8c73553c486482803026}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Inside the Machine explains how microprocessors operate - what they do, and how they do it. Written by the co-founder of the highly respected Ars Technica site, the book begins with the...}
+      \field{isbn}{978-1-59327-104-6}
+      \field{langid}{english}
+      \field{title}{Inside the {{Machine}}}
+      \field{year}{2006}
+      \field{dateera}{ce}
+      \verb{file}
+      \verb /Users/jensen/Zotero/storage/R4QJGNE9/9781593271046.html
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

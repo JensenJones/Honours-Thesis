@@ -1,0 +1,265 @@
+% Plan (~10 pages): 2 custom functions, 4 LibTorch, 1 benchmarking.
+\chapter{Methodology}
+
+% Plan: ~2 pages.
+\section{Custom Function Support}
+
+The first stage of improving the codebase was adding support to interpret and apply custom functions to describe initial pulse shapes and spatially dependent couplings. The core goal of the implementation was for researchers to be able to define a function in the input TOML control file as a plain mathematical expression, which is then interpreted by the program and applied to the specified field with minimal overhead. ExprTk (Expression Toolkit) is a third-party C++ library for interpreting mathematical expressions written as strings into functions.
+
+\Cref{fig:old-pulse-shape} shows the previous declaration of a Gaussian-shaped forward-propagating pulse called \texttt{launch\_f0}. Previously, this pulse was constrained to be in the shape of a Gaussian, super-Gaussian or sech.
+
+\begin{figure}
+\begin{code}{toml}
+[launch_fields]
+channels = [
+  { name = "launch_f0", active = true, shape = "gaussian", ... },
+]
+\end{code}
+  \caption{Old pulse shape specification. Limited to "gaussian", "super-gaussian", or "sech"}
+  \label{fig:old-pulse-shape}
+\end{figure}
+
+These preset wave shapes are still supported and can be chosen without needing to redefine them as custom wave shapes, keeping the TOML file backwards compatible. Custom functions can be added by declaring a function with a name and a definition \texttt{f}. As seen in \cref{fig:custom-functions}, the preset names can still be referenced without being defined (the \texttt{gaussian} shape in pulse \texttt{launch\_f1}), but custom shape functions such as \texttt{handwrittenGaussian} and \texttt{wobblyPulse} can now also be defined and referenced.
+
+\begin{figure}
+\begin{code}{toml}
+[spatial_functions]
+functions = [
+  { name = "handwrittenGaussian", f = "P0 := 2.0; w := 8.0; sqrt(P0) * exp(-x^2 / (2 * w^2))" },
+  { name = "wobblyPulse", f = "exp(-x^2 / 50) * (1 + 0.5 * cos(x))" },
+]
+
+[launch_fields]
+channels = [
+  { name = "launch_f0", shape = "handwrittenGaussian", ... },
+  { name = "launch_f1", shape = "gaussian", ... },
+]
+\end{code}
+  \caption{Custom defined functions.}
+  \label{fig:custom-functions}
+\end{figure}
+
+Likewise, custom shapes for spatially dependent coupling fields are defined in the same way, then associated with the desired effect in the TOML file, as shown for \texttt{kappa} in \cref{fig:spatial-coupling}.
+
+\begin{figure}
+\begin{code}{toml}
+[spatial_functions]
+functions = [
+  { name = "kapgauss0", f = "w0 := 0.005; kap0 := 10.0; kap0 * sech(x / w0)" },
+]
+
+[gratings]
+kappa = 10 # constant
+# kappa = "kapgauss0" # or a spatial profile
+\end{code}
+  \caption{Spatially dependent coupling with a custom function.}
+  \label{fig:spatial-coupling}
+\end{figure}
+
+In the code, both preset and custom shapes are held in a \texttt{CustomFunctionStore}, which maps each shape name to a \texttt{SpatialFunction} object (\cref{fig:function-store}). \texttt{SpatialFunction} is an abstract interface with a single \texttt{generate} method that returns the shape evaluated across the spatial grid. The presets (Gaussian, super-Gaussian and sech) and the user-defined ExprTk expressions are all implementations of this interface. A launch field therefore requests its shape by name and does not need to know whether it is a preset or a custom function.
+
+\begin{figure}
+\begin{code}{cpp}
+class SpatialFunction {
+    virtual Eigen::VectorXcd generate(const Eigen::VectorXd& x) const = 0;
+};
+
+class CustomFunctionStore {
+    std::unordered_map<std::string, std::unique_ptr<SpatialFunction>> nameToSpatialFunction;
+public:
+    Eigen::VectorXcd generate_spatial_function(const Eigen::VectorXd& x,
+                                               const std::string& name) const;
+};
+\end{code}
+  \caption{Simplified structure of the function store.}
+  \label{fig:function-store}
+\end{figure}
+
+Couplings use the same store, but each value in the control file may be either a constant or the name of a function. It is read as a \texttt{std::variant<double, std::string>} and resolved with \texttt{std::visit}. A number becomes a constant, while a name is looked up in the store and evaluated across the grid. The result is held in a \texttt{SpatiallyDependentCoupling}, which wraps a variant of either a single complex scalar or a complex array and overloads the arithmetic operators. The propagation code can therefore apply a coupling without knowing whether it is uniform or spatially varying, and a uniform coupling remains a single scalar at no extra cost.
+
+Custom functions are parsed by ExprTk once at initialisation and evaluated once per grid point to produce the launch and profile arrays. From then on, the propagation uses ordinary arrays, so flexible user input costs only a one-off setup step and nothing per time step, which is negligible compared with the propagation itself.
+
+% Plan: ~4 pages.
+\section{GPU Acceleration with LibTorch}
+
+Adding LibTorch support to the simulation started with how to decide the program should be ran on a GPU.
+The chosen approach was for opt-in GPU compute via the configuration TOML.
+This can be set by a simple value as seen in \Cref{fig:gpu-opt-in}.
+
+\begin{figure}
+\begin{code}{toml}
+[general]
+compute_backing = "Eigen" # CPU
+\end{code}
+\begin{code}{toml}
+[general]
+compute_backing = "LibTorch" # GPU
+\end{code}
+	\caption{TOML GPU / CPU computation selection.}
+	\label{fig:gpu-opt-in}
+\end{figure}
+
+This chosen \texttt{compute\_backing} then determines the way that the data is stored internally in the program.
+For this, the abstraction of a \texttt{FieldData} object was chosen.
+As shown in \Cref{fig:FieldData-code}, \texttt{FieldData} uses a \texttt{std::variant} to hold either an \texttt{EigenFieldData} or a \texttt{TorchFieldData}, 
+exposing a common public interface for operations on the underlying data. 
+For example, \texttt{fft\_forward\_inplace} applies a forward FFT to each active channel within the first \texttt{ncols} columns.
+
+\begin{figure}
+\begin{code}{cpp}
+class FieldData {
+private:
+    std::variant<EigenFieldData, TorchFieldData> impl_;
+
+public:
+    void fft_forward_inplace(
+        const std::vector<int>& active_channels, long ncols, const FFT_Wrapper& fft_wrapper);
+
+    void assign_exp_scaled_col(long col, dcomplex scale, const FieldData& source);
+
+    ...
+
+}
+\end{code}
+  \caption{Simplified view of a FieldData}
+  \label{fig:FieldData-code}
+\end{figure}
+
+This interface decouples the calling code from the underlying storage implementation. 
+Consequently, callers can operate on \texttt{FieldData} without needing to know whether the data is backed by Eigen (CPU) or LibTorch (GPU), 
+allowing the same code to work with either hardware.
+
+Simplified representations of \texttt{EigenFieldData} and \texttt{TorchFieldData} classes can be seen below in \Cref{fig:BackingSpecificFieldData}
+
+\begin{figure}
+\begin{code}{cpp}
+class EigenFieldData {
+private:
+    Eigen::MatrixXcd data_;
+
+public:
+    void fft_forward_inplace(const std::vector<int>& active_channels, long ncols, const FFT_Wrapper& fft_wrapper);
+
+    void assign_exp_scaled_col(long col, dcomplex scale, const EigenFieldData& source);
+
+    ...
+}
+
+class TorchFieldData {
+private:
+    torch::Device device_;
+    torch::Tensor data_; // shape [rows, cols], complex double or complex float
+    
+public:
+    void fft_forward_inplace(const std::vector<int>& active_channels, long ncols, const FFT_Wrapper& fft_wrapper);
+
+    void assign_exp_scaled_col(long col, dcomplex scale, const TorchFieldData& source);
+}
+\end{code}
+\caption{Simplified view of EigenFieldData \& TorchFieldData}
+  \label{fig:BackingSpecificFieldData}
+\end{figure}
+
+Each backing-specific implementation of \texttt{FieldData} is required to provide an implementation of every function in the public interface. 
+Calls made through a \texttt{FieldData} object are then dispatched to the corresponding function of the underlying type held by \texttt{impl\_}, using \texttt{std::visit}.
+
+This dispatch incurs no runtime overhead compared to a direct function call. The alternatives in \texttt{std::variant} are known at compile time, allowing the compiler to generate efficient dispatch code.
+Also, because the visitor must be valid for every possible alternative of the variant,
+any missing function implementations result in easily diagnosable compile-time errors.
+
+The two backings require their own unique implementations for these functions because they don't share an interface. 
+If both LibTorch and Eigen shared an interface, then FieldData could simply be templated on the underlying type of Eigen 
+(\texttt{Eigen::MatrixXcd}) or LibTorch (\texttt{torch::Tensor}). However by doing so it would also restrict future backing types to those that also share an interface.
+
+The nature of this FieldData also makes it easy to define new operations on the data. 
+Simply declare the function in the interface class \texttt{FieldData}, define the backing-specific implementations, and then use the helper function
+\texttt{visit\_matched\_backings} as seen below in \Cref{fig:visit_matched_backings} to do the \texttt{std::visit} dispatch.
+
+\begin{figure}
+\begin{code}{cpp}
+
+// Runs `op` on the backings, throwing error for mismatched backing types.
+template <typename VariantA, typename Fn, typename... Variants>
+decltype(auto) visit_matched_backings(
+    const char* opName, Fn&& op, VariantA&& a, Variants&&... rest) {
+    if (((a.index() != rest.index()) || ...)) {
+        throw std::invalid_argument(std::format("FieldData::{}: backing mismatch", opName));
+    }
+    return std::visit(
+        [&]<typename T>(T& lhs) -> decltype(auto) {
+            return op(lhs, std::get<std::decay_t<T>>(rest)...);
+        }, a);
+}
+
+\end{code}
+\caption{Common \texttt{std::visit} helper method}
+\label{fig:visit_matched_backings}
+\end{figure}
+
+Factoring computation into smaller backing-specific methods requires understanding the trade-off between reusable code and efficient computation.
+The Eigen library for CPU computation uses expression templates to delay evaluation of computation until the final assignment rather than creating temporary objects.
+It does this by constructing a lightweight expression object whose type represents the computation at compile time, thus eliminating temporary copies and allocation.
+Because of this, although creating the \texttt{FieldData} interface as a set of simple, basic functions and operator overloads would reduce logic duplication in the code, it would prevent Eigen from using expression templates and regress CPU performance.
+This is because each function must return a \texttt{FieldData}, whose \texttt{std::variant} can only hold a fully evaluated \texttt{EigenFieldData}, so every call would evaluate its result into a temporary.
+Hence, the functions in the \texttt{FieldData} interface were kept coarse enough that each can be written as a single Eigen expression, such that Eigen operations don't lose their performance.
+GPU operations through LibTorch don't have the same requirements for their code, as LibTorch evaluates each operation eagerly, launching a GPU kernel per operation regardless of how the code is factored.
+
+
+When a simulation is run with LibTorch as the selected \texttt{compute\_backing}, the setup stage determines what hardware to store LibTorch tensors on.
+This requires determining the type of hardware, as well as specific vendor if GPU.
+Below \Cref{fig:hardware-detection} shows how this flow works. 
+First, the CUDA API checks whether a GPU is available, then the XPU API checks for an Intel GPU; otherwise, the program defaults to the CPU.
+\texttt{resolve\_torch\_device} uses a lazy initialised static variable constructed from an immediately invoked lambda.
+This means that the lambda is only called the first time the function runs; subsequent calls return the cached device type.
+
+\begin{figure}
+\begin{code}{cpp}
+torch::DeviceType resolve_torch_device() {
+    static const torch::DeviceType device = [] {
+        DeviceType d;
+        if (cuda::is_available()) { // NVIDIA GPU
+            d = kCUDA;
+        } else if (xpu::is_available()) { // intel GPU
+            d = kXPU;
+        } else {
+            d = kCPU; // CPU
+        }
+        g_logger.info(...);
+        return d;
+    }();
+    return device;
+}
+\end{code}
+\caption{\texttt{resolve\_torch\_device} simplified function for choosing the most powerful owned device for LibTorch}
+\label{fig:hardware-detection}
+\end{figure}
+
+AMD GPUs are not currently supported by this implementation. 
+LibTorch can use AMD GPUs through ROCm, but ROCm support depends on a compatible Linux
+environment, an AMD GPU and driver supported by the selected ROCm release, and a matching
+ROCm-enabled LibTorch build. In theory, PyTorch can expose ROCm devices through its
+CUDA-compatible API, which would be detected in the existing function. However, this hasn't
+been tested thoroughly.
+
+
+To add a new \texttt{compute\_backing} type, such as a \texttt{SyclFieldData} or a \texttt{CudaFieldData},
+each function of the public \texttt{FieldData} interface would remain unchanged as it already dispatches to the underlying type.
+Once the new \texttt{FieldData} is added to the \texttt{std::variant} type of \texttt{impl\_}, any undefined interface functions of the new type will throw compile time errors.
+Once all functions are defined, the code will dispatch to the new \texttt{compute\_backing}.
+This code makes the simulation codebase very easy to further experiment with different libraries and hardware.
+
+Building of the binary was also designed for cross platform ease of use.
+Users can enable/disable LibTorch builds via a flag so that users intending of running on CPU only don't require any GPU libraries.
+This way people without a GPU can still build the program and run simulations without needing to download the GPU libraries.
+
+
+% Plan: ~1 page.
+\section{Benchmarking Suite}
+
+To compare performance across compute backings and simulation configurations, I developed a
+Python benchmarking suite that runs the simulation over controlled parameter sweeps. The main
+runner can be specified to vary a specific attribute of the run such as grid size, compute backing,
+propagation method, or the number of optical channels. For each configuration, the suite repeats the
+simulation and records its runtime in a CSV file. It captures total simulation time, as well as the time
+spent in linear and nonlinear parts of each step. A plotting script then interprets the CSV and visualises the results.
+The results generated from this benchmarking suite will be shown in the following chapter on results.

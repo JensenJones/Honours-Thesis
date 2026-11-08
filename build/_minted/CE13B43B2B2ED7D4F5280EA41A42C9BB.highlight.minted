@@ -1,0 +1,10 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{k}{[}\PYG{k}{spatial\PYGZus{}functions}\PYG{k}{]}
+\PYG{n}{functions}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{p}{[}
+\PYG{+w}{  }\PYG{p}{\PYGZob{}}\PYG{+w}{ }\PYG{n}{name}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{kapgauss0}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{f}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{w0 := 0.005; kap0 := 10.0; kap0 * sech(x / w0)}\PYG{l+s+s2}{\PYGZdq{}}\PYG{+w}{ }\PYG{p}{\PYGZcb{}}\PYG{p}{,}
+\PYG{p}{]}
+
+\PYG{k}{[}\PYG{k}{gratings}\PYG{k}{]}
+\PYG{n}{kappa}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mi}{10}\PYG{+w}{ }\PYG{c+c1}{\PYGZsh{} constant}
+\PYG{c+c1}{\PYGZsh{} kappa = \PYGZdq{}kapgauss0\PYGZdq{} \PYGZsh{} or a spatial profile}
+\end{MintedVerbatim}

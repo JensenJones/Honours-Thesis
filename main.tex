@@ -1,0 +1,119 @@
+% Target ~30 pages max: ~10 intro, ~10 methods, ~10 results.
+\documentclass[12pt,a4paper,oneside]{report}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[british]{babel}
+\usepackage[a4paper,margin=2.5cm]{geometry}
+\usepackage{setspace}
+\onehalfspacing
+\usepackage[skip=0.6\baselineskip]{parskip}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\graphicspath{{figures/}}
+\usepackage{float}
+\floatplacement{figure}{H}
+\usepackage{booktabs}
+\usepackage[hyphens]{url}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{siunitx}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{caption}
+\usepackage[minted,skins]{tcolorbox}
+\usepackage{keepsections}
+\usepackage{csquotes}
+
+\definecolor{accent}{HTML}{1F4E79}
+\definecolor{codebg}{HTML}{F6F8FA}
+\definecolor{codeframe}{HTML}{D0D7DE}
+\definecolor{figframe}{HTML}{2B80BE}
+
+\newcommand{\thesisimage}[2][]{%
+  {\setlength{\fboxsep}{0pt}%
+   \setlength{\fboxrule}{1pt}%
+   \fcolorbox{figframe}{white}{\includegraphics[#1]{#2}}}%
+}
+
+\DeclareCaptionLabelSeparator{pipe}{\ \textcolor{accent}{\textbar}\ }
+\captionsetup{font=small,labelfont={bf,color=accent},labelsep=pipe,justification=centering}
+
+\titleformat{\chapter}[block]
+  {\normalfont\huge\bfseries}
+  {\textcolor{accent}{\thechapter}\hspace{0.5em}\textcolor{accent!40}{\vrule width 1.5pt}\hspace{0.5em}}{0pt}{}
+  [\vspace{4pt}{\color{accent!40}\titlerule[0.8pt]}]
+\titleformat{name=\chapter,numberless}[block]
+  {\normalfont\huge\bfseries}{}{0pt}{}
+  [\vspace{4pt}{\color{accent!40}\titlerule[0.8pt]}]
+\titlespacing*{\chapter}{0pt}{0pt}{1.5em}
+\titleformat{\section}{\normalfont\Large\bfseries}{\textcolor{accent}{\thesection}}{0.8em}{}
+\titleformat{\subsection}{\normalfont\large\bfseries}{\textcolor{accent}{\thesubsection}}{0.8em}{}
+\titlespacing*{\section}{0pt}{1.2em}{0.4em}
+\titlespacing*{\subsection}{0pt}{1em}{0.3em}
+
+\setminted{fontsize=\small,breaklines,autogobble,style=friendly}
+\newtcblisting{code}[1]{
+  listing engine=minted, minted language=#1, listing only,
+  enhanced, colback=codebg, colframe=codeframe, boxrule=0.5pt, arc=3pt,
+  left=6pt, right=6pt, top=2pt, bottom=2pt,
+  borderline west={2.5pt}{0pt}{accent},
+}
+
+\usepackage[style=apa,backend=biber]{biblatex}
+\addbibresource{references.bib}
+
+\usepackage{hyperref}
+\hypersetup{colorlinks, linkcolor=accent, citecolor=accent, urlcolor=accent}
+\usepackage[capitalise,noabbrev]{cleveref}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\color{gray}\nouppercase{\leftmark}}
+\fancyhead[R]{\small\color{gray}\nouppercase{\rightmark}}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\headrule}{{\color{accent!30}\hrule height\headrulewidth}}
+\setlength{\headheight}{15pt}
+\fancypagestyle{plain}{\fancyhf{}\fancyfoot[C]{\thepage}\renewcommand{\headrulewidth}{0pt}}
+
+\newcommand{\todo}[1]{\colorbox{red!10}{\textcolor{red!70!black}{\textbf{TODO:} #1}}}
+
+\newcommand{\thesistitle}{Accelerating and Generalising the Numerical Simulation of Stimulated Brillouin Scattering Dynamics}
+\newcommand{\thesisauthor}{Jensen Jones}
+\newcommand{\studentid}{24935900}
+\newcommand{\thesisdegree}{Bachelor of Computing Science (Honours)}
+\newcommand{\supervisors}{%
+  \supervisor{Christopher Poulton}{School of Mathematical and Physical Sciences, University of Technology Sydney}%
+  \supervisor{Michael Steel}{School of Mathematical and Physical Sciences, Macquarie University}%
+}
+
+\hypersetup{pdftitle={\thesistitle}, pdfauthor={\thesisauthor}}
+
+\begin{document}
+
+\input{chapters/titlepage}
+
+\pagenumbering{roman}
+\chapter*{Abstract}
+\addcontentsline{toc}{chapter}{Abstract}
+\todo{Abstract}
+
+\tableofcontents
+% \listoffigures
+
+\clearpage
+\pagenumbering{arabic}
+
+\input{chapters/introduction}
+\input{chapters/methodology}
+\input{chapters/results}
+\input{chapters/conclusion}
+
+\printbibliography[heading=bibintoc,title={Bibliography}]
+
+\appendix
+\input{chapters/appendix}
+
+\end{document}

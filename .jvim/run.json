@@ -1,0 +1,9 @@
+{
+  "version": 1,
+  "configurations": [
+    { "name": "Build thesis", "command": ["latexmk"] },
+    { "name": "Watch thesis (rebuild on save)", "command": ["latexmk", "-pvc", "-view=none"] },
+    { "name": "Open PDF", "command": ["open", "build/main.pdf"] },
+    { "name": "Clean build files", "command": ["latexmk", "-c"] }
+  ]
+}

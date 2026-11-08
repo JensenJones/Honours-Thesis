@@ -1,0 +1,12 @@
+% Plan: ~1 page.
+\chapter{Conclusion}
+
+This work extended the simulation to support GPU-backed field data and custom pulse
+profiles. By adding custom defined functions, users are now able to define their own wave and spatially dependant fields without changing any code.
+The research then implemented and proved that GPU acceleration can greatly accelerate simulation, and therefore research speed.
+GPU acceleration was seen to have greater benefit as the workload got larger, through increasing grid-size, or number of pulses. 
+For small grids, the time taken to launch GPU operations can make the GPU slower than the CPU.
+For larger grids and more channels, the GPU was substantially faster, reaching roughly 19x improvements.
+
+The outcome of this research is that the SBS simulation is now capable of utilising the previously
+unrealised computational power of the GPU.
