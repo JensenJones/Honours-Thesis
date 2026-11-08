@@ -12,12 +12,12 @@ DONE some figures first page
 
 
 
-Equations; need to say at some poitn that a,band c are
-some diagram of a grid with a specified thing at the start with an arrow, showing what we are trying to get this to look like
+~DONE Equations; need to say at some poitn that a,band c are
+~DONE some diagram of a grid with a specified thing at the start with an arrow, showing what we are trying to get this to look like
 
-include that we are small structures and light in and out so we use function of spacethrough time rather than other way around
+ include that we are small structures and light in and out so we use function of spacethrough time rather than other way around
 
-Equations ->Eq
+DONE Equations ->Eq
 use subeq in latex
 
 boundary conditions; we use FFT for boundary conditions; weakness is it doesnt allow for light to leav; describing a behaviour of a ringessentially rather than a length of fibre.Wanna make sim domain large enough s.t. effects ofexternal return nevereffect the centre of the simulation that we are interested in.

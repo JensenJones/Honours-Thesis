@@ -3070,16 +3070,18 @@
     <bcf:datasource type="file" datatype="bibtex" glob="false">references.bib</bcf:datasource>
   </bcf:bibdata>
   <bcf:section number="0">
-    <bcf:citekey order="1" intorder="1">agrawalNonlinearFiberOptics2019</bcf:citekey>
+    <bcf:citekey order="1" intorder="1">baiStimulatedBrillouinScattering2018</bcf:citekey>
     <bcf:citekey order="2" intorder="1">baiStimulatedBrillouinScattering2018</bcf:citekey>
     <bcf:citekey order="3" intorder="1">agrawalNonlinearFiberOptics2019</bcf:citekey>
-    <bcf:citekey order="4" intorder="1">montesThreeWaveDissipativeBrillouin2008</bcf:citekey>
-    <bcf:citekey order="5" intorder="1">montesThreeWaveDissipativeBrillouin2008</bcf:citekey>
-    <bcf:citekey order="6" intorder="1">balacMathematicalAnalysisAdaptive2014</bcf:citekey>
-    <bcf:citekey order="7" intorder="1">balacMathematicalAnalysisAdaptive2014</bcf:citekey>
+    <bcf:citekey order="4" intorder="1">baiStimulatedBrillouinScattering2018</bcf:citekey>
+    <bcf:citekey order="5" intorder="1">agrawalNonlinearFiberOptics2019</bcf:citekey>
+    <bcf:citekey order="6" intorder="1">montesThreeWaveDissipativeBrillouin2008</bcf:citekey>
+    <bcf:citekey order="7" intorder="1">agrawalNonlinearFiberOptics2019</bcf:citekey>
     <bcf:citekey order="8" intorder="1">balacMathematicalAnalysisAdaptive2014</bcf:citekey>
-    <bcf:citekey order="9" intorder="1">stokesMachine2006</bcf:citekey>
-    <bcf:citekey order="10" intorder="1">nickollsGPUComputingEra2010</bcf:citekey>
+    <bcf:citekey order="9" intorder="1">balacMathematicalAnalysisAdaptive2014</bcf:citekey>
+    <bcf:citekey order="10" intorder="1">balacMathematicalAnalysisAdaptive2014</bcf:citekey>
+    <bcf:citekey order="11" intorder="1">stokesMachine2006</bcf:citekey>
+    <bcf:citekey order="12" intorder="1">nickollsGPUComputingEra2010</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="apa">

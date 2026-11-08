@@ -30,7 +30,7 @@ Mark unfinished bits with `\todo{...}`; it renders in red.
 
 Citations use biblatex (APA style) and keys from the Better BibTeX plugin.
 
-One-off setup:
+One-off setup (DONE):
 
 1. Install Better BibTeX: download the latest `.xpi` from
    https://github.com/retorquere/zotero-better-bibtex/releases, then in Zotero

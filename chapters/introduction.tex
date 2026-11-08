@@ -23,7 +23,7 @@ alters the permittivity at its edges and interfaces.
 \begin{figure}
   \centering
   \thesisimage[width=0.85\textwidth]{SBS-picture-with-the-levels}
-  \caption{Pump and Stokes wave interaction through time}
+\caption{Pump and Stokes wave interaction through time \parencite{baiStimulatedBrillouinScattering2018}}
   \label{fig:SBSWithLevels}
 \end{figure}
 
@@ -54,35 +54,61 @@ Whether trying to suppress or use SBS, accurate simulation of its dynamics is im
 
 \subsection{The Main Equations of SBS}
 
-SBS dynamics are governed by the three-wave interaction equations, \cref{eq:pump,eq:stokes,eq:acoustic}:
+SBS dynamics are governed by the three-wave interaction Eqs, \cref{eq:pump,eq:stokes,eq:acoustic}:
 \begin{alignat}{2}
   \left(\frac{\partial}{\partial T} + V_1\frac{\partial}{\partial Z} + \mu_1\right) a_1 &= -\kappa\, a_2 b,  &\qquad& \text{(Pump)} \label{eq:pump}\\
   \left(\frac{\partial}{\partial T} + V_2\frac{\partial}{\partial Z} + \mu_2\right) a_2 &= \kappa\, a_1 b^*, && \text{(Stokes)} \label{eq:stokes}\\
   \left(\frac{\partial}{\partial T} + V_3\frac{\partial}{\partial Z} + \mu_3\right) b   &= \kappa\, a_1 a_2^*. && \text{(Acoustic)} \label{eq:acoustic}
 \end{alignat}
 
-These equations are a system of coupled, nonlinear partial differential equations, which describe the evolution of the three main wave envelopes, the pump ($a_1$), the Stokes ($a_2$) and the acoustic ($b$), as they propagate along the waveguide axis $Z$ over time $T$. The SBS process resonantly couples these three waves, a forward-propagating pump wave and a backscattered Stokes wave, mediated by an acoustic wave, through electrostriction \parencite{montesThreeWaveDissipativeBrillouin2008}.
-
-Each equation shares the same structure, where the left-hand side contains a time derivative, a spatial derivative scaled by the respective wave's velocity ($V_1$, $V_2$, $V_3$), and a linear damping term ($\mu_1$, $\mu_2$, $\mu_3$). The right-hand side captures the nonlinear coupling between the three waves through the coupling coefficient $\kappa$. Energy from the pump is drained by the Stokes and acoustic waves, hence the right-hand side of \cref{eq:pump} carries a negative sign. These equations represent a simplified three-wave model that neglects the optical Kerr effect and acoustic noise, to isolate the core dynamics of SBS \parencite{montesThreeWaveDissipativeBrillouin2008}.
 
 
+These equations are a system of coupled, nonlinear partial differential equations, which describe the evolution of the three main 
+wave envelopes. 
+Here $a_1$, $a_2$ and $b$ are the slowly varying envelopes of the pump, Stokes and acoustic fields respectively. 
+They are functions of position $Z$ along the waveguide and time $T$. $V_1$, $V_2$ and $V_3$ are the velocities at which each envelope 
+travels along the waveguide, $\mu_1$, $\mu_2$ and $\mu_3$ are the corresponding linear damping rates, and $\kappa$ is the 
+coupling coefficient that sets the strength of the interaction between the waves. The asterisk denotes the complex conjugate. 
 
+Each equation shares the same structure, where the left-hand side contains a time derivative, a spatial derivative scaled by the 
+respective wave's velocity, and a linear damping term. The right-hand side captures the nonlinear coupling between the three waves through the coupling coefficient $\kappa$. Energy from the pump is drained by the Stokes 
+and acoustic waves, hence the right-hand side of \cref{eq:pump} carries a negative sign. These equations represent a simplified three-wave 
+model that neglects the optical Kerr effect and acoustic noise, to isolate the core dynamics of SBS 
+\parencite{montesThreeWaveDissipativeBrillouin2008}.
 
+\Cref{fig:PulseSimulated} illustrates the kind of result sought: given the envelopes at the start, the simulation evolves them 
+to give their values at later times.
 
+\begin{figure}
+  \centering
+  \thesisimage[width=0.85\textwidth]{SimpleGaussianProp}
+  \caption{A Gaussian pulse before (left) and after (right) linear propagation. Solid lines show the envelope amplitude 
+and dashed lines show its phase. The simulation takes the initial state as input and computes the evolved state.}
+  \label{fig:PulseSimulated}
+\end{figure}
+
+The equations are written with position $Z$ and time $T$ as the variables, so the simulation tracks how the shape of each wave 
+along the waveguide changes through time. This choice suits the structures considered here, which are short, with light entering and 
+leaving through their ends. Many treatments of long optical fibres do the reverse, following a pulse as it travels along the fibre 
+as a function of time. For a short structure it is more natural to describe the state of the whole waveguide at one instant and 
+step it forward in time, which is how the simulation is set up (\cref{fig:PulseSimulated}).
 
 \section{Why Simulation is Required}
 
-Accurately modelling SBS requires solving a set of coupled nonlinear partial differential equations which define the characteristics of the waves. Outside of special limiting cases these cannot be solved analytically, and instead require numerical simulation.
+Accurately modelling SBS requires solving a set of coupled nonlinear partial differential equations which define the characteristics 
+of the waves. Analytical solutions exist only for simplified cases, such as steady-state operation, where the waves do not change over 
+time \parencite{agrawalNonlinearFiberOptics2019}. Once the pump is pulsed or additional effects such as the optical Kerr nonlinearity 
+are included, the nonlinear coupling terms in \cref{eq:pump,eq:stokes,eq:acoustic} prevent the equations from being decoupled, and no 
+general closed-form solution is known. These cases therefore require numerical simulation.
+
+Numerical simulation overcomes these limitations by providing access to the entire evolution of all three wave envelopes, 
+including quantities that are difficult or impossible to measure inside a physical waveguide. It also allows parameters to be varied 
+freely and cheaply, enabling researchers to explore system designs, test suppression strategies or sensing configurations, and compare 
+theory against experiment before committing to costly fabrication or measurement. The closed-form solutions that do exist for specific 
+setups also provide a practical means of testing and validating the simulation's numerical accuracy.
 
 
-
-
-\todo{add some more stuff to this section}
-
-
-
-
-\section{The Existing Codebase and C++}
+\section{The Existing C++ Codebase}
 
 An existing C++ codebase for numerical simulation of SBS in C++ was created in November 2026 by Professor Michael Steel that provides the basis for
 which this research builds upon. This existing codebase builds and runs on Linux, Windows, and macOS, and is written in C++ 23 for the core
@@ -90,13 +116,6 @@ of the simulation, along with some Python scripts for certain testing and setup 
 It simulates how light pulses travel through an optical waveguide and accounts for SBS and Kerr-nonlinear effects.
 Plots of these waves are output at user defined intervals of the simulation for analysis, and it can simulate many waves, both forward-propagating
 and backward-propagating at the same time.
-
-\begin{figure}
-  \centering
-  \thesisimage[width=0.85\textwidth]{SimpleGaussianProp}
-  \caption{A simple Gaussian Wave Propagation}
-  \label{fig:PulseSimulated}
-\end{figure}
 
 \begin{figure}
   \centering
