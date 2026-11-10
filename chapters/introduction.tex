@@ -54,14 +54,15 @@ Whether trying to suppress or use SBS, accurate simulation of its dynamics is im
 
 \subsection{The Main Equations of SBS}
 
-SBS dynamics are governed by the three-wave interaction Eqs, \cref{eq:pump,eq:stokes,eq:acoustic}:
+SBS dynamics are governed by the three-wave interaction equations, \cref{eq:sbs}:
+\begin{subequations}
+\label{eq:sbs}
 \begin{alignat}{2}
   \left(\frac{\partial}{\partial T} + V_1\frac{\partial}{\partial Z} + \mu_1\right) a_1 &= -\kappa\, a_2 b,  &\qquad& \text{(Pump)} \label{eq:pump}\\
   \left(\frac{\partial}{\partial T} + V_2\frac{\partial}{\partial Z} + \mu_2\right) a_2 &= \kappa\, a_1 b^*, && \text{(Stokes)} \label{eq:stokes}\\
   \left(\frac{\partial}{\partial T} + V_3\frac{\partial}{\partial Z} + \mu_3\right) b   &= \kappa\, a_1 a_2^*. && \text{(Acoustic)} \label{eq:acoustic}
 \end{alignat}
-
-
+\end{subequations}
 
 These equations are a system of coupled, nonlinear partial differential equations, which describe the evolution of the three main 
 wave envelopes. 
@@ -87,11 +88,11 @@ and dashed lines show its phase. The simulation takes the initial state as input
   \label{fig:PulseSimulated}
 \end{figure}
 
-The equations are written with position $Z$ and time $T$ as the variables, so the simulation tracks how the shape of each wave 
-along the waveguide changes through time. This choice suits the structures considered here, which are short, with light entering and 
-leaving through their ends. Many treatments of long optical fibres do the reverse, following a pulse as it travels along the fibre 
-as a function of time. For a short structure it is more natural to describe the state of the whole waveguide at one instant and 
-step it forward in time, which is how the simulation is set up (\cref{fig:PulseSimulated}).
+Numerical simulation of SBS dynamics can be set up in two ways: following how the waves change in space as time passes, or following 
+how they change in time as they travel along the waveguide. The equations here use the first. They describe how the shape of each wave 
+along the waveguide changes through time. This is the more natural choice for the short structures considered here, where light 
+enters and leaves through the ends, because the state of the whole waveguide can be described at one instant and stepped forward in 
+time (\cref{fig:PulseSimulated}).
 
 \section{Why Simulation is Required}
 

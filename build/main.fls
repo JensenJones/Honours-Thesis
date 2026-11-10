@@ -640,6 +640,11 @@ INPUT ./figures/split_kerr_symsplit.png
 INPUT ./figures/split_kerr_symsplit.png
 INPUT ./figures/split_kerr_symsplit.png
 INPUT ./figures/split_kerr_symsplit.png
+INPUT ./chapters/discussion.tex
+INPUT ./chapters/discussion.tex
+INPUT ./chapters/discussion.tex
+INPUT ./chapters/discussion.tex
+INPUT chapters/discussion.tex
 INPUT ./chapters/conclusion.tex
 INPUT ./chapters/conclusion.tex
 INPUT ./chapters/conclusion.tex

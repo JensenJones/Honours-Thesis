@@ -22,6 +22,8 @@
 \contentsline {subsection}{\numberline {3.2.1}Which Parts of the Simulation Take the Most Time?}{27}{subsection.3.2.1}%
 \contentsline {subsection}{\numberline {3.2.2}Precision and loss effects}{28}{subsection.3.2.2}%
 \contentsline {subsection}{\numberline {3.2.3}Summary}{29}{subsection.3.2.3}%
-\contentsline {chapter}{\numberline {4}Conclusion}{30}{chapter.4}%
-\contentsline {chapter}{Bibliography}{31}{chapter*.25}%
-\contentsline {chapter}{\numberline {A}Appendix}{32}{appendix.A}%
+\contentsline {chapter}{\numberline {4}Discussion}{30}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Future Work}{30}{section.4.1}%
+\contentsline {chapter}{\numberline {5}Conclusion}{31}{chapter.5}%
+\contentsline {chapter}{Bibliography}{32}{chapter*.25}%
+\contentsline {chapter}{\numberline {A}Appendix}{33}{appendix.A}%

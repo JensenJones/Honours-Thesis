@@ -2,32 +2,15 @@ DONE Add numerical before simulation to title
 
 DONE remove list of figures
 
-DONE electrostriction is a  bit jargony ->change in densitydue to strong electric fields
-
-DONE nonlinear ->nonlinear
-
-DONE use 'laser' first page
-
-DONE some figures first page
-
-
+DONE electrostriction is a  bit jargony ->change in densitydue to strong electric fields DONE nonlinear ->nonlinear DONE use 'laser' first page DONE some figures first page
 
 ~DONE Equations; need to say at some poitn that a,band c are
 ~DONE some diagram of a grid with a specified thing at the start with an arrow, showing what we are trying to get this to look like
-
- include that we are small structures and light in and out so we use function of spacethrough time rather than other way around
-
-DONE Equations ->Eq
-use subeq in latex
+DONE include that we are small structures and light in and out so we use function of spacethrough time rather than other way around DONE Equations ->Eq DONE use subeq in latex
 
 boundary conditions; we use FFT for boundary conditions; weakness is it doesnt allow for light to leav; describing a behaviour of a ringessentially rather than a length of fibre.Wanna make sim domain large enough s.t. effects ofexternal return nevereffect the centre of the simulation that we are interested in.
 
 FFT's bake theperidoicnature into the simulation, would ened to move it away to solve from this
-
-
-
-
-
 
 
 maybe move 1.7 earlier (before current 1.3) and include a bit more context about the

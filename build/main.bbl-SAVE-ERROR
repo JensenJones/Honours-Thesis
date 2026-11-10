@@ -220,51 +220,6 @@
       \endverb
       \keyw{Adaptive step-size control,Embedded Runge–Kutta methods,Interaction Picture method,Nonlinear Schrödinger equation,Symmetric Split-Step method}
     \endentry
-    \entry{eggletonBrillouinScatteringPart2022}{book}{}{}
-      \name{editor}{3}{}{%
-        {{un=0,uniquepart=base,hash=ee08da10962fec2202fb1f13240fd264}{%
-           family={Eggleton},
-           familyi={E\bibinitperiod},
-           given={Benjamin\bibnamedelima J.},
-           giveni={B\bibinitperiod\bibinitdelim J\bibinitperiod},
-           givenun=0}}%
-        {{un=0,uniquepart=base,hash=eba722e3b3c89588fb843a43e6c3be60}{%
-           family={Steel},
-           familyi={S\bibinitperiod},
-           given={Michael\bibnamedelima J.},
-           giveni={M\bibinitperiod\bibinitdelim J\bibinitperiod},
-           givenun=0}}%
-        {{un=0,uniquepart=base,hash=ce83c6a4036ff719f37583767fa7d93b}{%
-           family={Poulton},
-           familyi={P\bibinitperiod},
-           given={Christopher\bibnamedelima G.},
-           giveni={C\bibinitperiod\bibinitdelim G\bibinitperiod},
-           givenun=0}}%
-      }
-      \list{publisher}{1}{%
-        {Elsevier}%
-      }
-      \strng{namehash}{3f74dbc77acf71b383a5f774e14895f4}
-      \strng{fullhash}{4ffe6e2c3232831bea9fe7685fcdc2fb}
-      \strng{fullhashraw}{4ffe6e2c3232831bea9fe7685fcdc2fb}
-      \strng{bibnamehash}{4ffe6e2c3232831bea9fe7685fcdc2fb}
-      \strng{editorbibnamehash}{4ffe6e2c3232831bea9fe7685fcdc2fb}
-      \strng{editornamehash}{3f74dbc77acf71b383a5f774e14895f4}
-      \strng{editorfullhash}{4ffe6e2c3232831bea9fe7685fcdc2fb}
-      \strng{editorfullhashraw}{4ffe6e2c3232831bea9fe7685fcdc2fb}
-      \field{sortinit}{E}
-      \field{sortinithash}{8da8a182d344d5b9047633dfc0cc9131}
-      \field{extradatescope}{labelyear}
-      \field{labeldatesource}{}
-      \true{uniqueprimaryauthor}
-      \field{labelnamesource}{editor}
-      \field{labeltitlesource}{title}
-      \field{series}{Semiconductors and {{Semimetals}}}
-      \field{title}{Brillouin {{Scattering Part}} 1}
-      \field{volume}{109}
-      \field{year}{2022}
-      \field{dateera}{ce}
-    \endentry
     \entry{montesThreeWaveDissipativeBrillouin2008}{inbook}{}{}
       \name{author}{1}{}{%
         {{un=0,uniquepart=base,hash=e721300c8bbf26f02d96924b0ace3d00}{%
@@ -622,51 +577,6 @@
       \verb https://www.sciencedirect.com/science/article/pii/S0030401814004246
       \endverb
       \keyw{Adaptive step-size control,Embedded Runge–Kutta methods,Interaction Picture method,Nonlinear Schrödinger equation,Symmetric Split-Step method}
-    \endentry
-    \entry{eggletonBrillouinScatteringPart2022}{book}{}{}
-      \name{editor}{3}{}{%
-        {{un=0,uniquepart=base,hash=ee08da10962fec2202fb1f13240fd264}{%
-           family={Eggleton},
-           familyi={E\bibinitperiod},
-           given={Benjamin\bibnamedelima J.},
-           giveni={B\bibinitperiod\bibinitdelim J\bibinitperiod},
-           givenun=0}}%
-        {{un=0,uniquepart=base,hash=eba722e3b3c89588fb843a43e6c3be60}{%
-           family={Steel},
-           familyi={S\bibinitperiod},
-           given={Michael\bibnamedelima J.},
-           giveni={M\bibinitperiod\bibinitdelim J\bibinitperiod},
-           givenun=0}}%
-        {{un=0,uniquepart=base,hash=ce83c6a4036ff719f37583767fa7d93b}{%
-           family={Poulton},
-           familyi={P\bibinitperiod},
-           given={Christopher\bibnamedelima G.},
-           giveni={C\bibinitperiod\bibinitdelim G\bibinitperiod},
-           givenun=0}}%
-      }
-      \list{publisher}{1}{%
-        {Elsevier}%
-      }
-      \strng{namehash}{3f74dbc77acf71b383a5f774e14895f4}
-      \strng{fullhash}{4ffe6e2c3232831bea9fe7685fcdc2fb}
-      \strng{fullhashraw}{4ffe6e2c3232831bea9fe7685fcdc2fb}
-      \strng{bibnamehash}{4ffe6e2c3232831bea9fe7685fcdc2fb}
-      \strng{editorbibnamehash}{4ffe6e2c3232831bea9fe7685fcdc2fb}
-      \strng{editornamehash}{3f74dbc77acf71b383a5f774e14895f4}
-      \strng{editorfullhash}{4ffe6e2c3232831bea9fe7685fcdc2fb}
-      \strng{editorfullhashraw}{4ffe6e2c3232831bea9fe7685fcdc2fb}
-      \field{sortinit}{E}
-      \field{sortinithash}{8da8a182d344d5b9047633dfc0cc9131}
-      \field{extradatescope}{labelyear}
-      \field{labeldatesource}{}
-      \true{uniqueprimaryauthor}
-      \field{labelnamesource}{editor}
-      \field{labeltitlesource}{title}
-      \field{series}{Semiconductors and {{Semimetals}}}
-      \field{title}{Brillouin {{Scattering Part}} 1}
-      \field{volume}{109}
-      \field{year}{2022}
-      \field{dateera}{ce}
     \endentry
     \entry{montesThreeWaveDissipativeBrillouin2008}{inbook}{}{}
       \name{author}{1}{}{%

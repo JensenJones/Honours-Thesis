@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.10.27)  8 NOV 2026 20:58
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.10.27)  10 NOV 2026 16:48
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1544,7 +1544,7 @@ File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 
 ] (./chapters/introduction.tex
 Chapter 1.
-<figures/SBS-picture-with-the-levels.jpg, id=156, 512.88387pt x 275.86935pt>
+<figures/SBS-picture-with-the-levels.jpg, id=166, 512.88387pt x 275.86935pt>
 File: figures/SBS-picture-with-the-levels.jpg Graphic file (type jpg)
 <use figures/SBS-picture-with-the-levels.jpg>
 Package pdftex.def Info: figures/SBS-picture-with-the-levels.jpg  used on input
@@ -1552,22 +1552,16 @@ Package pdftex.def Info: figures/SBS-picture-with-the-levels.jpg  used on input
 (pdftex.def)             Requested size: 386.96027pt x 208.13907pt.
 
 
-
-pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
-been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.36 \subsection
-                {Applications of SBS} [1
+[1
 
 
  <./figures/SBS-picture-with-the-levels.jpg>]
 
 [2{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}]
-<figures/SimpleGaussianProp.png, id=181, 1446.40375pt x 562.1pt>
+<figures/SimpleGaussianProp.png, id=191, 1446.40375pt x 562.1pt>
 File: figures/SimpleGaussianProp.png Graphic file (type png)
 <use figures/SimpleGaussianProp.png>
-Package pdftex.def Info: figures/SimpleGaussianProp.png  used on input line 84.
+Package pdftex.def Info: figures/SimpleGaussianProp.png  used on input line 85.
 
 (pdftex.def)             Requested size: 386.96027pt x 150.37956pt.
 
@@ -1578,22 +1572,22 @@ e/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc} <./figures/SimpleGaussianPr
 op.png>]
 
 [4]
-<figures/codebase-architecture.png, id=207, 1499.6025pt x 1055.945pt>
+<figures/codebase-architecture.png, id=218, 1499.6025pt x 1055.945pt>
 File: figures/codebase-architecture.png Graphic file (type png)
 <use figures/codebase-architecture.png>
 Package pdftex.def Info: figures/codebase-architecture.png  used on input line 
-122.
+123.
 (pdftex.def)             Requested size: 386.96027pt x 272.47684pt.
 
 
 [5 <./figures/codebase-architecture.png (PNG copy)>]
 
 [6]
-<figures/symmetric-split-step.png, id=219, 420.57124pt x 188.705pt>
+<figures/symmetric-split-step.png, id=230, 420.57124pt x 188.705pt>
 File: figures/symmetric-split-step.png Graphic file (type png)
 <use figures/symmetric-split-step.png>
 Package pdftex.def Info: figures/symmetric-split-step.png  used on input line 1
-49.
+50.
 (pdftex.def)             Requested size: 364.19667pt x 176.02075pt.
 
 
@@ -1606,11 +1600,11 @@ Package pdftex.def Info: figures/symmetric-split-step.png  used on input line 1
 [10]
 
 [11]
-<figures/gpu-cpu-architecture.png, id=259, 843.15pt x 635.37375pt>
+<figures/gpu-cpu-architecture.png, id=270, 843.15pt x 635.37375pt>
 File: figures/gpu-cpu-architecture.png Graphic file (type png)
 <use figures/gpu-cpu-architecture.png>
 Package pdftex.def Info: figures/gpu-cpu-architecture.png  used on input line 2
-37.
+38.
 (pdftex.def)             Requested size: 341.43307pt x 257.29587pt.
 
 
@@ -1633,12 +1627,12 @@ Package microtype Info: Loading generic protrusion settings for font family
 \pydata@fh@_FAD58DE7366495DB4650CFEFAC2FCD61.data.minted=\write9
 \openout9 = `_FAD58DE7366495DB4650CFEFAC2FCD61.data.minted'.
 
-runsystem(latexminted config  --timestamp 20261108205840 FAD58DE7366495DB4650CF
+runsystem(latexminted config  --timestamp 20261110164809 FAD58DE7366495DB4650CF
 EFAC2FCD61)...executed safely (allowed).
 
 
 (build/_FAD58DE7366495DB4650CFEFAC2FCD61.config.minted)
-runsystem(latexminted cleanconfig  --timestamp 20261108205840 FAD58DE7366495DB4
+runsystem(latexminted cleanconfig  --timestamp 20261110164809 FAD58DE7366495DB4
 650CFEFAC2FCD61)...executed safely (allowed).
 
 
@@ -1717,7 +1711,7 @@ Package microtype Info: Character `texttrademark ' is missing
 
 [22]
 Chapter 3.
-<figures/simulation_gaussian_evolution.pdf, id=337, 498.5623pt x 198.93636pt>
+<figures/simulation_gaussian_evolution.pdf, id=348, 498.5623pt x 198.93636pt>
 File: figures/simulation_gaussian_evolution.pdf Graphic file (type pdf)
 <use figures/simulation_gaussian_evolution.pdf>
 Package pdftex.def Info: figures/simulation_gaussian_evolution.pdf  used on inp
@@ -1725,7 +1719,7 @@ ut line 15.
 (pdftex.def)             Requested size: 455.24411pt x 181.6607pt.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <10.95> on input line 18.
-<figures/simulation_builtin_vs_custom.pdf, id=340, 498.5623pt x 206.16335pt>
+<figures/simulation_builtin_vs_custom.pdf, id=351, 498.5623pt x 206.16335pt>
 File: figures/simulation_builtin_vs_custom.pdf Graphic file (type pdf)
 <use figures/simulation_builtin_vs_custom.pdf>
 Package pdftex.def Info: figures/simulation_builtin_vs_custom.pdf  used on inpu
@@ -1738,7 +1732,7 @@ t line 31.
  <./figures/simulation_gaussian_evolution.pdf>]
 
 [24 <./figures/simulation_builtin_vs_custom.pdf>]
-<figures/Figure linear only - Sweeping grid points.png, id=400, 1324.95pt x 529
+<figures/Figure linear only - Sweeping grid points.png, id=411, 1324.95pt x 529
 .98pt>
 File: figures/Figure linear only - Sweeping grid points.png Graphic file (type 
 png)
@@ -1746,7 +1740,7 @@ png)
 Package pdftex.def Info: figures/Figure linear only - Sweeping grid points.png 
  used on input line 59.
 (pdftex.def)             Requested size: 455.24411pt x 182.09122pt.
-<figures/Figure linear only - sweeping optial channels.png, id=402, 1324.95pt x
+<figures/Figure linear only - sweeping optial channels.png, id=413, 1324.95pt x
  529.98pt>
 File: figures/Figure linear only - sweeping optial channels.png Graphic file (t
 ype png)
@@ -1757,13 +1751,13 @@ png  used on input line 74.
 
 
 [25 <./figures/Figure linear only - Sweeping grid points.png>]
-<figures/speed_k_spmxpm4ch_symsplit.png, id=411, 794.97pt x 317.988pt>
+<figures/speed_k_spmxpm4ch_symsplit.png, id=422, 794.97pt x 317.988pt>
 File: figures/speed_k_spmxpm4ch_symsplit.png Graphic file (type png)
 <use figures/speed_k_spmxpm4ch_symsplit.png>
 Package pdftex.def Info: figures/speed_k_spmxpm4ch_symsplit.png  used on input 
 line 90.
 (pdftex.def)             Requested size: 455.24411pt x 182.10416pt.
-<figures/split_kerr_symsplit.png, id=412, 650.43pt x 317.988pt>
+<figures/split_kerr_symsplit.png, id=423, 650.43pt x 317.988pt>
 File: figures/split_kerr_symsplit.png Graphic file (type png)
 <use figures/split_kerr_symsplit.png>
 Package pdftex.def Info: figures/split_kerr_symsplit.png  used on input line 99
@@ -1776,23 +1770,29 @@ eed_k_spmxpm4ch_symsplit.png>]
 
 [27 <./figures/split_kerr_symsplit.png>]
 
-[28]) (./chapters/conclusion.tex
+[28]) (./chapters/discussion.tex
 
 [29]
 Chapter 4.
-)
+) (./chapters/conclusion.tex
 
 [30
 
-] (./chapters/appendix.tex
+]
+Chapter 5.
+)
 
 [31
+
+] (./chapters/appendix.tex
+
+[32
 
 ]
 Appendix A.
 )
 
-[32
+[33
 
 ] (build/main.aux)
  ***********
@@ -1800,16 +1800,16 @@ LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 7423C5AA6B3AE18B29959C53CFC6A04F;4148.
+(rerunfilecheck)             Checksum: 9D13EC18D58B279FA3FAB5F704DFF529;4355.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 48924 strings out of 473190
- 1051662 string characters out of 5715799
- 2099411 words of memory out of 5000000
- 71182 multiletter control sequences out of 15000+600000
+ 48946 strings out of 473190
+ 1052100 string characters out of 5715799
+ 2099589 words of memory out of 5000000
+ 71196 multiletter control sequences out of 15000+600000
  645529 words of font info for 179 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  98i,13n,104p,1886b,8649s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1831,10 +1831,10 @@ al/texlive/2025/texmf-dist/fonts/type1/public/lm/lmtk10.pfb></usr/local/texlive
 /2025/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/local/texlive/2025/texm
 f-dist/fonts/type1/public/lm/lmtt12.pfb></usr/local/texlive/2025/texmf-dist/fon
 ts/type1/public/lm/lmtti10.pfb>
-Output written on build/main.pdf (35 pages, 2380064 bytes).
+Output written on build/main.pdf (36 pages, 2380820 bytes).
 PDF statistics:
- 577 PDF objects out of 1000 (max. 8388607)
- 452 compressed objects within 5 object streams
- 96 named destinations out of 1000 (max. 500000)
- 48410 words of extra memory for PDF output out of 51595 (max. 10000000)
+ 593 PDF objects out of 1000 (max. 8388607)
+ 467 compressed objects within 5 object streams
+ 101 named destinations out of 1000 (max. 500000)
+ 48426 words of extra memory for PDF output out of 51595 (max. 10000000)
 
