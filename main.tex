@@ -54,11 +54,11 @@
 \titlespacing*{\subsection}{0pt}{1em}{0.3em}
 
 \setminted{fontsize=\small,breaklines,autogobble,style=friendly}
-\newtcblisting{code}[1]{
-  listing engine=minted, minted language=#1, listing only,
+\newtcblisting{code}[2][]{
+  listing engine=minted, minted language=#2, listing only,
   enhanced, colback=codebg, colframe=codeframe, boxrule=0.5pt, arc=3pt,
   left=6pt, right=6pt, top=2pt, bottom=2pt,
-  borderline west={2.5pt}{0pt}{accent},
+  borderline west={2.5pt}{0pt}{accent}, #1
 }
 
 \usepackage[style=apa,backend=biber]{biblatex}

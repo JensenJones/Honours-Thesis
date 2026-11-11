@@ -10,7 +10,7 @@
 Stimulated Brillouin Scattering (SBS) is a nonlinear optical effect that occurs due to the interaction between light and sound within a material 
 \\parencite{eggletonBrillouinScatteringPart2022}. When a strong optical (pump) wave, typically from a laser, travels through a medium, 
 it undergoes Brillouin scattering as it interacts with co-propagating acoustic (density) waves generated within the medium through 
-changes in density induced by strong electric fields (electrostriction). These acoustic waves form a moving refractive index grating 
+changes in density induced by strong electric fields. These acoustic waves form a moving refractive index grating 
 that scatters part of the light backwards, producing a backward-propagating, frequency-shifted Stokes wave. 
 The interaction between these three waves creates a strong self-reinforcing amplification of the Stokes and acoustic waves, 
 which leads to exponential growth of the Stokes wave as energy is progressively drained from the pump.
@@ -50,7 +50,8 @@ distortion or noise. These effects increase with propagation distance, leading t
 fibre lasers and amplifiers SBS acts as the dominant effect that caps the output power. This happens once the pump exceeds the SBS 
 threshold and energy is redirected into the backward-propagating Stokes wave rather than the intended output.
 
-Whether trying to suppress or use SBS, accurate simulation of its dynamics is important for understanding the effects within a system, motivating the need for a generalised simulation framework.
+Whether trying to suppress or use SBS, accurate simulation of its dynamics is important for understanding the effects 
+within a system. These effects rarely have analytic solutions, thus motivating the need for a generalised simulation framework.
 
 \subsection{The Main Equations of SBS}
 
@@ -72,7 +73,7 @@ travels along the waveguide, $\mu_1$, $\mu_2$ and $\mu_3$ are the corresponding 
 coupling coefficient that sets the strength of the interaction between the waves. The asterisk denotes the complex conjugate. 
 
 Each equation shares the same structure, where the left-hand side contains a time derivative, a spatial derivative scaled by the 
-respective wave's velocity, and a linear damping term. The right-hand side captures the nonlinear coupling between the three waves through the coupling coefficient $\kappa$. Energy from the pump is drained by the Stokes 
+respective waves velocity, and a linear damping term. The right-hand side captures the nonlinear coupling between the three waves through the coupling coefficient $\kappa$. Energy from the pump is drained by the Stokes 
 and acoustic waves, hence the right-hand side of \cref{eq:pump} carries a negative sign. These equations represent a simplified three-wave 
 model that neglects the optical Kerr effect and acoustic noise, to isolate the core dynamics of SBS 
 \parencite{montesThreeWaveDissipativeBrillouin2008}.
@@ -111,9 +112,10 @@ setups also provide a practical means of testing and validating the simulation's
 
 \section{The Existing C++ Codebase}
 
-An existing C++ codebase for numerical simulation of SBS in C++ was created in November 2026 by Professor Michael Steel that provides the basis for
+An existing C++ codebase for numerical simulation of SBS in C++ was created in November 2025 by Professor Michael Steel that provides the basis for
 which this research builds upon. This existing codebase builds and runs on Linux, Windows, and macOS, and is written in C++ 23 for the core
 of the simulation, along with some Python scripts for certain testing and setup reasons.
+The core currently consists of about 14,000 lines of C++ across 97 source files, excluding third-party code, and builds on Eigen for linear algebra, FFTW (MKL on Windows) for Fourier transforms, toml++ for reading the control file, and Catch2 for testing.
 It simulates how light pulses travel through an optical waveguide and accounts for SBS and Kerr-nonlinear effects.
 Plots of these waves are output at user defined intervals of the simulation for analysis, and it can simulate many waves, both forward-propagating
 and backward-propagating at the same time.
@@ -133,22 +135,45 @@ The simulation supports a user choice of propagation methods which define how th
 The chosen solver (propagation method) is then used in the Propagation stage and defaults to symmetric split-step if omitted from the configuration file. The chosen propagation is used for the entire simulation for each step.
 Throughout propagation, the pulse may periodically be printed on a separate thread for analysis, then once the propagation finishes, the final analysis will be done in the Analysis stage.
 
+Most components in the Parameters and Simulation Context stages are default-constructed and then configured by a separate
+\texttt{setup()} call once the parameters they depend on have been parsed.
+This two-phase initialisation departs from standard C++ practice, under which
+a constructor should leave an object fully initialised and usable
+\parencite{CoreGuidelines}. Here, an object is in an unusable state until
+\texttt{setup()} has been called. The pattern is nonetheless common in
+scientific computing libraries such as PETSc, where objects are created,
+configured, and then explicitly set up in separate steps \parencite{UserGuidePETSc3261}.
+It allows components to be declared as plain members of the classes that own
+them and configured later, in the order their dependencies require.
+
+Physical models of SBS involve quantities spanning many orders of magnitude, such as $10^{-27}\,\mathrm{s^2/m}$, alongside lengths in metres.
+Entered directly into a computer, these values risk overflow and underflow, and make it hard to tell whether the behaviour of the simulation is correct.
+These differences in scale are only a side effect of the chosen units: rescaling each quantity by a characteristic value, known as non-dimensionalisation, brings them back to similar sizes.
+Theorists commonly work this way, while experimentalists generally prefer to work with physical units.
+The codebase supports both through the \texttt{solver.normalise\_quantities} option in the TOML file.
+
 % Plan: ~1 page.
 \section{Propagation Methods}
 
 The existing SBS simulation has three different propagation methods: symmetric split-step, interaction-picture fourth-order Runge--Kutta (RK4), 
 and interaction-picture Cash--Karp Runge--Kutta (RK5). All three methods solve the same coupled slowly varying envelope equations but differ 
 in how they apply the linear and nonlinear effects.
+Writing the linear and nonlinear operators as $\mathcal{D}$ and $\mathcal{N}$, advancing the field over a step $h$ is equivalent to
+applying $e^{h(\mathcal{D}+\mathcal{N})}$. The operators stay the same throughout the simulation, and only the field is updated at each step. On the numerical grid these operators become matrices that do not commute, so
+$e^{h\mathcal{D}}e^{h\mathcal{N}} \neq e^{h(\mathcal{D}+\mathcal{N})}$, but the two become very close when $h$ is small, which is why the
+methods take many short steps.
 
-The symmetric split-step method advances the field by applying a half step of linear effects, followed by a full step of nonlinear effects, 
+The symmetric split-step method advances the field from $z_k$ to $z_{k+1}$ by applying a half step ($h_k/2$) 
+of linear effects, followed by a full step ($h_k$) of nonlinear effects starting from that result, 
 then a second half step of linear effects. \Cref{fig:symmetric-split-step} illustrates the symmetric splitting: 
-the red $\mathcal{D}$ arrows represent linear half-steps, while the blue $\mathcal{N}$ arrows represent full nonlinear steps.
+the red $\mathcal{D}$ arrows represent linear half-steps, while the blue $\mathcal{N}$ arrows represent full nonlinear steps, 
+and the dashed arrows carry each result to the start of the next operator.
 Although the nonlinear step is evaluated using RK4, the overall symmetric split-step method is second-order accurate in time.
 
 \begin{figure}
   \centering
   \thesisimage[width=0.8\textwidth,trim=0 0 30 0,clip]{symmetric-split-step}
-  \caption[Symmetric split-step propagation]{Symmetric split-step propagation \parencite{balacMathematicalAnalysisAdaptive2014}.}
+  \caption[Symmetric split-step propagation]{Symmetric split-step propagation, with computational step $k$ shown in the dashed box \parencite{balacMathematicalAnalysisAdaptive2014}.}
   \label{fig:symmetric-split-step}
 \end{figure}
 
@@ -169,32 +194,15 @@ computational efficiency.
   \end{aligned}
 \end{equation}
 
-The fourth-order Runge--Kutta method evaluates the nonlinear derivatives at four intermediate stages, which are then combined using a weighted average and applied to the field, as shown in \cref{eq:rk4}. Unlike the symmetric split-step method, the RK4 implementation incorporates the linear effects throughout, allowing the interaction between linear and nonlinear effects to be accounted for within each step. This requires four nonlinear derivative evaluations per step, increasing the computational cost per step compared to simpler integration schemes.
+The fourth-order Runge--Kutta method evaluates the nonlinear derivatives at four intermediate stages, which are then combined using a weighted average and applied to the field, as shown in \cref{eq:rk4}. The linear part of the problem is easy: because $\mathcal{D}$ is diagonal in Fourier space, dispersion alone can be solved arbitrarily far ahead in a single step. The nonlinear part cannot be diagonalised and has no such solution except in special cases, so the whole problem cannot be solved in one step. The interaction picture takes advantage of this by instead moving the easy linear part onto the operators, the $U^{\mathcal{D}}_{h} = e^{h\mathcal{D}}$ terms in \cref{eq:rk4}, and leaving only the hard nonlinear part on the field for RK4 to integrate, which reduces the work done per step. Unlike the symmetric split-step method, the RK4 implementation incorporates the linear effects throughout, allowing the interaction between linear and nonlinear effects to be accounted for within each step. This requires four nonlinear derivative evaluations per step, increasing the computational cost per step compared to simpler integration schemes.
 
-Similarly, the RK5 method of propagation is fifth-order accurate in time, so halving the time step reduces the temporal error by approximately a factor of 32. This comes at the cost of additional calculations at each step. \Cref{eq:rk5-stages} gives all six stages of the RK5 method, and \cref{eq:rk5-solution} the fifth-order solution built from them. The Cash--Karp scheme also embeds a fourth-order solution built from the same six stages, and the difference between the two provides a local error estimate that can be used to adapt the step size \parencite{balacMathematicalAnalysisAdaptive2014}.
+Similarly, the RK5 method of propagation is fifth-order accurate in time, so halving the time step reduces the temporal error by approximately a factor of 32. This comes at the cost of additional calculations at each step. \Cref{eq:rk5-stages} in \cref{app:rk5} gives all six stages of the RK5 method, and \cref{eq:rk5-solution} the fifth-order solution built from them. The Cash--Karp scheme also embeds a fourth-order solution built from the same six stages, and the difference between the two provides a local error estimate that can be used to adapt the step size \parencite{balacMathematicalAnalysisAdaptive2014}.
 
-\begin{equation}
-  \label{eq:rk5-stages}
-  \begin{aligned}
-    A^{(i)} &= U_{h/2}^{\mathcal{D}} A_n, \\
-    k_1 &= U_{h/2}^{\mathcal{D}} f(A_n, z_n), \\
-    k_2 &= U_{3h/10}^{\mathcal{D}} f\!\left(U_{-3h/10}^{\mathcal{D}}\left[A^{(i)} + \tfrac{h}{5}k_1\right],\, z_n + \tfrac{h}{5}\right), \\
-    k_3 &= U_{h/5}^{\mathcal{D}} f\!\left(U_{-h/5}^{\mathcal{D}}\left[A^{(i)} + h\left(\tfrac{3}{40}k_1 + \tfrac{9}{40}k_2\right)\right],\, z_n + \tfrac{3h}{10}\right), \\
-    k_4 &= U_{-h/10}^{\mathcal{D}} f\!\left(U_{h/10}^{\mathcal{D}}\left[A^{(i)} + h\left(\tfrac{3}{10}k_1 - \tfrac{9}{10}k_2 + \tfrac{6}{5}k_3\right)\right],\, z_n + \tfrac{3h}{5}\right), \\
-    k_5 &= U_{-h/2}^{\mathcal{D}} f\!\left(U_{h/2}^{\mathcal{D}}\left[A^{(i)} + h\left(-\tfrac{11}{54}k_1 + \tfrac{5}{2}k_2 - \tfrac{70}{27}k_3 + \tfrac{35}{27}k_4\right)\right],\, z_n + h\right), \\
-    k_6 &= U_{-3h/8}^{\mathcal{D}} f\!\left(U_{3h/8}^{\mathcal{D}}\left[A^{(i)} + h\left(\tfrac{1631}{55296}k_1 + \tfrac{175}{512}k_2 + \tfrac{575}{13824}k_3 + \tfrac{44275}{110592}k_4 + \tfrac{253}{4096}k_5\right)\right],\, z_n + \tfrac{7h}{8}\right).
-  \end{aligned}
-\end{equation}
-
-\begin{equation}
-  \label{eq:rk5-solution}
-  A_{n+1}^{(5)} = U_{h/2}^{\mathcal{D}}\left[A^{(i)} + h\left(\tfrac{37}{378}k_1 + \tfrac{250}{621}k_3 + \tfrac{125}{594}k_4 + \tfrac{512}{1771}k_6\right)\right].
-\end{equation}
 
 % Plan: ~1 page.
 \section{The Research Gap}
 
-The focus of this research project is to improve the simulation software in terms of three main measurables: performance, modularity and portability. Program performance is fundamental for timely running of large simulations and reducing the time spent waiting for results. Improving the modularity of the program means it can be easily extended for further research without compromise. Portability is important for the program to not just be able to run on any device but to be able to do so efficiently.
+The focus of this research project is to improve the simulation software in terms of three main measurables: performance, modularity and portability. Program performance is fundamental for timely running of large simulations and reducing the time spent waiting for results. Improving the modularity of the program means it can be easily extended for further research without compromise, for example by adding a new nonlinear effect in one localised part of the code. Portability is important for the program to not just be able to run on any device but to be able to do so efficiently.
 
 Current approaches to simulation software typically focus on creating instruments useful for either theoretical physicists or experimental physicists, rarely addressing the needs of both. Theoretical research focuses on working with idealised or unattainable conditions, whereas experimental research is constrained by real-world limitations. This research project will address the need to create software that meets the requirements of both sides without compromising on either.
 
@@ -209,29 +217,50 @@ From a performance standpoint, the aim of this research project is for all simul
 
 To increase the modularity of the system, on top of writing clean C++ that follows best coding practices, the research will add custom function definitions that can be used to define waves and other spatially dependent fields. This will prevent researchers from being limited to a preset set of options and increases the potential for simulation. Clean coding practices also make the library easy to extend for specific research needs.
 
-To address portability, all additions will consider both the ability of the executable to run on any system and the ability for future development to happen from any system. This will lead to fewer barriers to using and extending the library.
+"To address portability, all changes will consider the ability of the codebase to be developed and executed across different 
+operating systems (typically macOS or Linux for theorists and Windows for experimentalists)."
+This will lead to fewer barriers to using and extending the library for all types of physicists.
 
 % Plan: ~1 page.
 \section{Research Objectives}
 
-This research is guided by one central objective: to improve the existing SBS modelling codebase into a library that balances performance, modularity for further research, and portability. Success against all three metrics will be evaluated through benchmarking, portability testing, and architectural and structural code analysis against software engineering best practices.
+This research is guided by one central objective: to improve the existing SBS modelling codebase into a library that 
+balances performance, modularity for further research, and portability. Success against all three metrics will be 
+evaluated through benchmarking, portability testing, and architectural and structural code analysis against software 
+engineering best practices.
 
-Performance success is defined as a measurable reduction in wall-clock time for the simulation relative to the existing baseline implementation, verified through repeated benchmarking under controlled conditions. Modularity success is defined as the ability to specify arbitrary wave profiles and spatially varying fields without modification to the code, verified through architectural review and testing. Portability success is defined as the ability to build and run the codebase across macOS, Windows and Linux without any code changes, producing outputs that agree to within floating-point tolerance.
+Performance success is defined as a measurable reduction in wall-clock time for the simulation relative to the 
+existing baseline implementation, verified through repeated benchmarking under controlled conditions. 
+Modularity success is defined as the ability to add new physics logic in a localised code fashion, 
+without modification to the code, verified through architectural review and testing. Portability success is 
+defined as the ability to build and run the codebase across macOS, Windows and Linux without any code changes, 
+producing outputs that agree to within floating-point tolerance.
 
 % Plan: ~1 page.
 \section{CPU and GPU Computing}
 
-A CPU (central processing unit) is a hardware component responsible for executing computing instructions of a specific instruction set architecture (ISA), performing computations and modifying architectural state. Modern CPUs contain multiple cores, each of which has its own levels of local cache and is capable of independently executing instructions. CPUs are designed for high single-core performance and low execution latency. To achieve this, they use a wide range of techniques such as SIMD instructions, pipelined instruction processing, branch prediction, out-of-order execution, and multi-level cache hierarchies \parencite{stokesMachine2006}.
+A CPU (central processing unit) is a hardware component responsible for executing computing instructions of a 
+specific instruction set architecture (ISA), performing computations and modifying architectural state. 
+Modern CPUs contain multiple cores, each of which has its own levels of local cache and is capable of independently 
+executing instructions. CPUs are designed for high single-core performance and low execution latency. 
+To achieve this, they use a wide range of techniques such as SIMD instructions, pipelined instruction processing, 
+branch prediction, out-of-order execution, and multi-level cache hierarchies \parencite{stokesMachine2006}.
 
-A GPU (graphics processing unit), however, is a more specialised piece of hardware originally designed for rendering graphics, which now sees widespread use in machine learning, high-performance computing and other computationally intensive workloads. GPUs are designed for highly parallel computation, containing thousands of arithmetic execution units organised into multiple processing groups. Rather than maximising the computational speed of a single thread, GPUs are designed to maximise computational throughput by executing large numbers of threads simultaneously. This makes a GPU the optimal hardware for large, data-parallel operations where the same computation is applied across many elements \parencite{nickollsGPUComputingEra2010}.
+A GPU (graphics processing unit), however, is a more specialised piece of hardware originally designed for rendering graphics, 
+which now sees widespread use in machine learning, high-performance computing and other computationally intensive workloads. 
+GPUs are designed for highly parallel computation, containing thousands of arithmetic execution units organised into multiple 
+processing groups. Rather than maximising the computational speed of a single thread, GPUs are designed to maximise 
+computational throughput by executing large numbers of threads simultaneously. This makes a GPU the optimal hardware for large, 
+data-parallel operations where the same computation is applied across many elements \parencite{nickollsGPUComputingEra2010}.
 
-The current simulation uses the Eigen library in C++ for linear algebra operations, which runs the entire simulation purely on the CPU. The core calculations of the simulation are the propagation steps, which essentially perform FFTs and element-wise operations over large arrays which hold the pulses. This provides the main question for the performance side of this research: to what extent can the simulation be accelerated with GPU-based computation?
-
-Not all machines have a GPU, and thus moving all computations from Eigen to a GPU-only library would not meet the modularity and portability requirements of the simulation. To add GPU support to the simulation, CPU support must still exist. Additionally, the chosen library should work with as many different GPU vendors as possible, support CPU fallback, and abstract enough away from the hardware that familiarity with GPU computing is not required to contribute to the codebase.
-
-The two strongest libraries for parallelising the program are SYCL and LibTorch. SYCL is a C++-native, hardware-agnostic GPU acceleration library that provides low-level hardware control but is complicated to write. LibTorch is a more abstracted library that gives less control over the hardware, making it far easier to write than SYCL, but it cannot be fine-tuned to get the best possible performance. LibTorch aligned best with the mixed goals of the research, and as such was the chosen library for GPU acceleration.
-
-A GPU performs computations on data stored in its local memory, known as Video Random Access Memory (VRAM). However, the simulation requires periodic analysis of the optical pulses, which is performed on the CPU and therefore requires the data to be transferred into system RAM. Consequently, each analysis step incurs the overhead of transferring data from GPU VRAM to CPU RAM. As illustrated in \cref{fig:gpu-cpu-architecture}, this transfer can introduce latency on the order of microseconds, with the available bandwidth typically limited to approximately \qty{25}{\giga\byte\per\second} for a PCIe~4.0~x16 connection. The total transfer time therefore depends on both the transfer overhead and the amount of data being transferred.
+A GPU operates on data held in its own local memory, known as Video Random Access Memory (VRAM), which is 
+physically separate from the system RAM used by the CPU. Data produced on one device and needed by the other must 
+therefore be copied between the two memories over the interconnect that links them, typically a PCIe bus. 
+As illustrated in \cref{fig:gpu-cpu-architecture}, each transfer introduces latency on the order of microseconds, 
+and the available bandwidth is limited to approximately \qty{25}{\giga\byte\per\second} for a PCIe~4.0~x16 connection, 
+considerably lower than the bandwidth of the GPU's own memory. The total transfer time therefore depends on both 
+the fixed overhead per transfer and the amount of data being transferred, so workloads that frequently move data 
+between the CPU and GPU can lose much of the benefit of GPU acceleration.
 
 \begin{figure}
   \centering

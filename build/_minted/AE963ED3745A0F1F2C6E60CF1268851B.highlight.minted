@@ -1,0 +1,32 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYGZdl{} python testing/benchmarks/run\PYGZus{}benchmarks.py \PYGZhy{}\PYGZhy{}domain\PYGZhy{}steps 4096,16384,65536 \PYGZhy{}\PYGZhy{}repeats 2
+Building cmake\PYGZhy{}build\PYGZhy{}release (Release) ...
+...done.
+[   1/24] linear\PYGZus{}only  Eigen     symsplit     N=4096    rep=0     0.04s  lin=  0.04s nl=  0.00s
+[   2/24] linear\PYGZus{}only  Eigen     symsplit     N=4096    rep=1     0.04s  lin=  0.04s nl=  0.00s
+[   3/24] linear\PYGZus{}only  LibTorch  symsplit     N=4096    rep=0     0.07s  lin=  0.07s nl=  0.00s
+[   4/24] linear\PYGZus{}only  LibTorch  symsplit     N=4096    rep=1     0.07s  lin=  0.07s nl=  0.00s
+[   5/24] linear\PYGZus{}only  Eigen     symsplit     N=16384   rep=0     0.17s  lin=  0.17s nl=  0.00s
+[   6/24] linear\PYGZus{}only  Eigen     symsplit     N=16384   rep=1     0.17s  lin=  0.17s nl=  0.00s
+[   7/24] linear\PYGZus{}only  LibTorch  symsplit     N=16384   rep=0     0.31s  lin=  0.31s nl=  0.00s
+[   8/24] linear\PYGZus{}only  LibTorch  symsplit     N=16384   rep=1     0.31s  lin=  0.31s nl=  0.00s
+[   9/24] linear\PYGZus{}only  Eigen     symsplit     N=65536   rep=0     0.85s  lin=  0.84s nl=  0.00s
+[  10/24] linear\PYGZus{}only  Eigen     symsplit     N=65536   rep=1     0.85s  lin=  0.84s nl=  0.00s
+[  11/24] linear\PYGZus{}only  LibTorch  symsplit     N=65536   rep=0     1.43s  lin=  1.43s nl=  0.00s
+[  12/24] linear\PYGZus{}only  LibTorch  symsplit     N=65536   rep=1     1.43s  lin=  1.42s nl=  0.00s
+[  13/24] kerr         Eigen     symsplit     N=4096    rep=0     0.07s  lin=  0.04s nl=  0.04s
+[  14/24] kerr         Eigen     symsplit     N=4096    rep=1     0.07s  lin=  0.04s nl=  0.04s
+[  15/24] kerr         LibTorch  symsplit     N=4096    rep=0     0.26s  lin=  0.07s nl=  0.19s
+[  16/24] kerr         LibTorch  symsplit     N=4096    rep=1     0.25s  lin=  0.07s nl=  0.18s
+[  17/24] kerr         Eigen     symsplit     N=16384   rep=0     0.31s  lin=  0.17s nl=  0.14s
+[  18/24] kerr         Eigen     symsplit     N=16384   rep=1     0.31s  lin=  0.17s nl=  0.14s
+[  19/24] kerr         LibTorch  symsplit     N=16384   rep=0     0.89s  lin=  0.31s nl=  0.57s
+[  20/24] kerr         LibTorch  symsplit     N=16384   rep=1     0.89s  lin=  0.31s nl=  0.58s
+[  21/24] kerr         Eigen     symsplit     N=65536   rep=0     1.45s  lin=  0.84s nl=  0.61s
+[  22/24] kerr         Eigen     symsplit     N=65536   rep=1     1.47s  lin=  0.85s nl=  0.62s
+[  23/24] kerr         LibTorch  symsplit     N=65536   rep=0     4.52s  lin=  1.46s nl=  3.06s
+[  24/24] kerr         LibTorch  symsplit     N=65536   rep=1     4.61s  lin=  1.47s nl=  3.15s
+
+wrote 24 rows to testing/benchmarks/results/results.csv
+plot with: python testing/benchmarks/plot\PYGZus{}benchmarks.py \PYGZhy{}\PYGZhy{}csv testing/benchmarks/results/results.csv
+\end{MintedVerbatim}

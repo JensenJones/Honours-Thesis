@@ -40,7 +40,7 @@ illustrating that a custom shape can be used alongside a preset shape.
 \section{Performance Benchmarking}
 
 The first performance experiments isolated the linear propagation path by disabling all
-nonlinear effects. The linear computation was the first part ported to using \texttt{FieldData}
+nonlinear effects. The linear computation was the first part ported to \texttt{FieldData}
 objects, and hence benchmarking acted as a proof of concept. The experiments compared the
 Eigen CPU implementation with LibTorch on the GPU while varying the number of spatial grid
 points and optical channels.
@@ -149,7 +149,7 @@ Tesla T4 GPU with a FP64 ratio of 1:32.
   \end{tabular}
 \end{table}
 
-The precision comparison introduces a measurable accuracy cost, summarised in
+The precision comparison introduces a measurable loss in simulation accuracty, summarised in
 \Cref{tab:precision-error}. The maximum field difference is measured relative to the peak
 of the double-precision field. After 1,000 steps the difference remains small, but it grows
 substantially after 10,000 steps. The float run also loses energy, with greater loss over the
@@ -179,9 +179,20 @@ round trips to a field of size $2^{20}$ produced a similar change ($-4.25\times1
 whereas complex128 changed the energy by approximately $4\times10^{-13}$. This indicates
 that the observed loss is associated with single-precision FFT round-off in cuFFT rather
 than the propagation phase itself. Repeated small downward changes can accumulate over many
-steps. The separate error-growth test at 8,192 points shows that the maximum field error
+steps.
+
+
+\begin{figure}
+  \centering
+  \includegraphics[width=\textwidth]{}
+  \caption{}
+  \label{fig:floatLoss}
+\end{figure}
+
+
+The separate error-growth test at 8,192 points shows that the maximum field error
 grows approximately linearly with step count when Kerr is disabled, and approximately
-quadratically when Kerr is enabled over the measured range. The Kerr-enabled curve follows
+quadratically when Kerr is enabled over the measured range (\Cref{}). The Kerr-enabled curve follows
 the plotted slope-two guide, while the dispersion-only curve grows more slowly. This supports
 the interpretation that nonlinear effects compound the numerical differences; these growth
 rates describe the tested configuration and range.

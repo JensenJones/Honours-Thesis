@@ -220,6 +220,53 @@
       \endverb
       \keyw{Adaptive step-size control,Embedded Runge–Kutta methods,Interaction Picture method,Nonlinear Schrödinger equation,Symmetric Split-Step method}
     \endentry
+    \entry{UserGuidePETSc3261}{report}{}{}
+      \true{moreauthor}
+      \true{morelabelname}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=0661bc042688479e939e81e7f9185f66}{%
+           family={Balay},
+           familyi={B\bibinitperiod},
+           given={Satish},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{institution}{1}{%
+        {Argonne National Laboratory}%
+      }
+      \strng{namehash}{456de0534e91c8a938d1b1a557f67342}
+      \strng{fullhash}{456de0534e91c8a938d1b1a557f67342}
+      \strng{fullhashraw}{456de0534e91c8a938d1b1a557f67342}
+      \strng{bibnamehash}{456de0534e91c8a938d1b1a557f67342}
+      \strng{authorbibnamehash}{456de0534e91c8a938d1b1a557f67342}
+      \strng{authornamehash}{456de0534e91c8a938d1b1a557f67342}
+      \strng{authorfullhash}{456de0534e91c8a938d1b1a557f67342}
+      \strng{authorfullhashraw}{456de0534e91c8a938d1b1a557f67342}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{29}
+      \field{month}{9}
+      \field{number}{ANL-21/39, Revision 3.26}
+      \field{title}{{{PETSc}}/{{TAO}} Users Manual}
+      \field{type}{Technical Report}
+      \field{urlday}{10}
+      \field{urlmonth}{11}
+      \field{urlyear}{2026}
+      \field{year}{2025}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://petsc.org/release/manual/
+      \endverb
+      \verb{url}
+      \verb https://petsc.org/release/manual/
+      \endverb
+    \endentry
     \entry{montesThreeWaveDissipativeBrillouin2008}{inbook}{}{}
       \name{author}{1}{}{%
         {{un=0,uniquepart=base,hash=e721300c8bbf26f02d96924b0ace3d00}{%
@@ -373,6 +420,47 @@
       \field{dateera}{ce}
       \verb{file}
       \verb /Users/jensen/Zotero/storage/R4QJGNE9/9781593271046.html
+      \endverb
+    \endentry
+    \entry{CoreGuidelines}{online}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=4975813514faee20fb6fcdb39a08af6f}{%
+           family={Stroustrup},
+           familyi={S\bibinitperiod},
+           given={Bjarne},
+           giveni={B\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=d1fc2b577689be883fe16f8ef59ed0c4}{%
+           family={Sutter},
+           familyi={S\bibinitperiod},
+           given={Herb},
+           giveni={H\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{ba521f0528c3e90359de43fae1000b4b}
+      \strng{fullhash}{ba521f0528c3e90359de43fae1000b4b}
+      \strng{fullhashraw}{ba521f0528c3e90359de43fae1000b4b}
+      \strng{bibnamehash}{ba521f0528c3e90359de43fae1000b4b}
+      \strng{authorbibnamehash}{ba521f0528c3e90359de43fae1000b4b}
+      \strng{authornamehash}{ba521f0528c3e90359de43fae1000b4b}
+      \strng{authorfullhash}{ba521f0528c3e90359de43fae1000b4b}
+      \strng{authorfullhashraw}{ba521f0528c3e90359de43fae1000b4b}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labeldatesource}{nodate}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{C++ {{Core Guidelines}}}
+      \field{urlday}{10}
+      \field{urlmonth}{11}
+      \field{urlyear}{2026}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#Rc-complete
+      \endverb
+      \verb{url}
+      \verb https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#Rc-complete
       \endverb
     \endentry
   \enddatalist
@@ -578,6 +666,53 @@
       \endverb
       \keyw{Adaptive step-size control,Embedded Runge–Kutta methods,Interaction Picture method,Nonlinear Schrödinger equation,Symmetric Split-Step method}
     \endentry
+    \entry{UserGuidePETSc3261}{report}{}{}
+      \true{moreauthor}
+      \true{morelabelname}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=0661bc042688479e939e81e7f9185f66}{%
+           family={Balay},
+           familyi={B\bibinitperiod},
+           given={Satish},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{institution}{1}{%
+        {Argonne National Laboratory}%
+      }
+      \strng{namehash}{456de0534e91c8a938d1b1a557f67342}
+      \strng{fullhash}{456de0534e91c8a938d1b1a557f67342}
+      \strng{fullhashraw}{456de0534e91c8a938d1b1a557f67342}
+      \strng{bibnamehash}{456de0534e91c8a938d1b1a557f67342}
+      \strng{authorbibnamehash}{456de0534e91c8a938d1b1a557f67342}
+      \strng{authornamehash}{456de0534e91c8a938d1b1a557f67342}
+      \strng{authorfullhash}{456de0534e91c8a938d1b1a557f67342}
+      \strng{authorfullhashraw}{456de0534e91c8a938d1b1a557f67342}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{29}
+      \field{month}{9}
+      \field{number}{ANL-21/39, Revision 3.26}
+      \field{title}{{{PETSc}}/{{TAO}} Users Manual}
+      \field{type}{Technical Report}
+      \field{urlday}{10}
+      \field{urlmonth}{11}
+      \field{urlyear}{2026}
+      \field{year}{2025}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://petsc.org/release/manual/
+      \endverb
+      \verb{url}
+      \verb https://petsc.org/release/manual/
+      \endverb
+    \endentry
     \entry{montesThreeWaveDissipativeBrillouin2008}{inbook}{}{}
       \name{author}{1}{}{%
         {{un=0,uniquepart=base,hash=e721300c8bbf26f02d96924b0ace3d00}{%
@@ -731,6 +866,47 @@
       \field{dateera}{ce}
       \verb{file}
       \verb /Users/jensen/Zotero/storage/R4QJGNE9/9781593271046.html
+      \endverb
+    \endentry
+    \entry{CoreGuidelines}{online}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=4975813514faee20fb6fcdb39a08af6f}{%
+           family={Stroustrup},
+           familyi={S\bibinitperiod},
+           given={Bjarne},
+           giveni={B\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=d1fc2b577689be883fe16f8ef59ed0c4}{%
+           family={Sutter},
+           familyi={S\bibinitperiod},
+           given={Herb},
+           giveni={H\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{ba521f0528c3e90359de43fae1000b4b}
+      \strng{fullhash}{ba521f0528c3e90359de43fae1000b4b}
+      \strng{fullhashraw}{ba521f0528c3e90359de43fae1000b4b}
+      \strng{bibnamehash}{ba521f0528c3e90359de43fae1000b4b}
+      \strng{authorbibnamehash}{ba521f0528c3e90359de43fae1000b4b}
+      \strng{authornamehash}{ba521f0528c3e90359de43fae1000b4b}
+      \strng{authorfullhash}{ba521f0528c3e90359de43fae1000b4b}
+      \strng{authorfullhashraw}{ba521f0528c3e90359de43fae1000b4b}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labeldatesource}{nodate}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{C++ {{Core Guidelines}}}
+      \field{urlday}{10}
+      \field{urlmonth}{11}
+      \field{urlyear}{2026}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#Rc-complete
+      \endverb
+      \verb{url}
+      \verb https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#Rc-complete
       \endverb
     \endentry
   \enddatalist

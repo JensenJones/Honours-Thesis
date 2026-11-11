@@ -1,10 +1,18 @@
 % Plan (~10 pages): 2 custom functions, 4 LibTorch, 1 benchmarking.
 \chapter{Methodology}
 
+The work in this project fell into three parts, each covered by a section of this chapter. 
+The first, adding support for custom functions, was also how I became familiar with the codebase. 
+The second added GPU acceleration through LibTorch, and the third built a benchmarking suite to measure the result.
+
 % Plan: ~2 pages.
 \section{Custom Function Support}
 
-The first stage of improving the codebase was adding support to interpret and apply custom functions to describe initial pulse shapes and spatially dependent couplings. The core goal of the implementation was for researchers to be able to define a function in the input TOML control file as a plain mathematical expression, which is then interpreted by the program and applied to the specified field with minimal overhead. ExprTk (Expression Toolkit) is a third-party C++ library for interpreting mathematical expressions written as strings into functions.
+The first stage of improving the codebase was adding support to interpret and apply custom functions to describe 
+initial pulse shapes and spatially dependent couplings. The core goal of the implementation was for researchers to be 
+able to define a function in the input TOML control file as a plain mathematical expression, which is then interpreted 
+by the program and applied to the specified field with minimal overhead. For this we chose to use ExprTk 
+(Expression Toolkit), a third-party C++ library for interpreting mathematical expressions written as strings into functions.
 
 \Cref{fig:old-pulse-shape} shows the previous declaration of a Gaussian-shaped forward-propagating pulse called \texttt{launch\_f0}. Previously, this pulse was constrained to be in the shape of a Gaussian, super-Gaussian or sech.
 
@@ -19,7 +27,11 @@ channels = [
   \label{fig:old-pulse-shape}
 \end{figure}
 
-These preset wave shapes are still supported and can be chosen without needing to redefine them as custom wave shapes, keeping the TOML file backwards compatible. Custom functions can be added by declaring a function with a name and a definition \texttt{f}. As seen in \cref{fig:custom-functions}, the preset names can still be referenced without being defined (the \texttt{gaussian} shape in pulse \texttt{launch\_f1}), but custom shape functions such as \texttt{handwrittenGaussian} and \texttt{wobblyPulse} can now also be defined and referenced.
+These preset wave shapes are still supported and can be chosen without needing to redefine them as custom wave shapes, 
+keeping the TOML file backwards compatible. Custom functions can be added by declaring a function with a name and a 
+definition \texttt{f}. As seen in \cref{fig:custom-functions}, the preset names can still be referenced without being 
+defined (the \texttt{gaussian} shape in pulse \texttt{launch\_f1}), but custom shape functions such as 
+\texttt{handwrittenGaussian} and \texttt{wobblyPulse} can now also be defined and referenced.
 
 \begin{figure}
 \begin{code}{toml}
@@ -39,7 +51,8 @@ channels = [
   \label{fig:custom-functions}
 \end{figure}
 
-Likewise, custom shapes for spatially dependent coupling fields are defined in the same way, then associated with the desired effect in the TOML file, as shown for \texttt{kappa} in \cref{fig:spatial-coupling}.
+Likewise, custom shapes for spatially dependent coupling fields are defined in the same way, then associated with the 
+desired effect in the TOML file, as shown for \texttt{kappa} in \cref{fig:spatial-coupling}.
 
 \begin{figure}
 \begin{code}{toml}
@@ -56,7 +69,12 @@ kappa = 10 # constant
   \label{fig:spatial-coupling}
 \end{figure}
 
-In the code, both preset and custom shapes are held in a \texttt{CustomFunctionStore}, which maps each shape name to a \texttt{SpatialFunction} object (\cref{fig:function-store}). \texttt{SpatialFunction} is an abstract interface with a single \texttt{generate} method that returns the shape evaluated across the spatial grid. The presets (Gaussian, super-Gaussian and sech) and the user-defined ExprTk expressions are all implementations of this interface. A launch field therefore requests its shape by name and does not need to know whether it is a preset or a custom function.
+In the code, both preset and custom shapes are held in a \texttt{CustomFunctionStore}, which maps each shape name 
+to a \texttt{SpatialFunction} object (\cref{fig:function-store}). \texttt{SpatialFunction} is an abstract interface 
+with a single \texttt{generate} method that returns the shape evaluated across the spatial grid. 
+The presets (Gaussian, super-Gaussian and sech) and the user-defined ExprTk expressions are all 
+implementations of this interface. A launch field therefore requests its shape by name and does not need to know 
+whether it is a preset or a custom function.
 
 \begin{figure}
 \begin{code}{cpp}
@@ -75,15 +93,39 @@ public:
   \label{fig:function-store}
 \end{figure}
 
-Couplings use the same store, but each value in the control file may be either a constant or the name of a function. It is read as a \texttt{std::variant<double, std::string>} and resolved with \texttt{std::visit}. A number becomes a constant, while a name is looked up in the store and evaluated across the grid. The result is held in a \texttt{SpatiallyDependentCoupling}, which wraps a variant of either a single complex scalar or a complex array and overloads the arithmetic operators. The propagation code can therefore apply a coupling without knowing whether it is uniform or spatially varying, and a uniform coupling remains a single scalar at no extra cost.
+Couplings use the same store, but each value in the control file may be either a constant or the name of a function. 
+It is read as a \texttt{std::variant<double, std::string>} and resolved with \texttt{std::visit}. A number becomes a 
+constant, while a name is looked up in the store and evaluated across the grid. The result is held in a 
+\texttt{SpatiallyDependentCoupling}, which wraps a variant of either a single complex scalar or a complex array 
+and overloads the arithmetic operators. The propagation code can therefore apply a coupling without knowing whether 
+it is uniform or spatially varying, and a uniform coupling remains a single scalar at no extra cost.
 
-Custom functions are parsed by ExprTk once at initialisation and evaluated once per grid point to produce the launch and profile arrays. From then on, the propagation uses ordinary arrays, so flexible user input costs only a one-off setup step and nothing per time step, which is negligible compared with the propagation itself.
+Custom functions are parsed by ExprTk once at initialisation and evaluated once per grid point to produce the 
+launch and profile arrays. From then on, the propagation uses ordinary arrays, so flexible user input costs 
+only a one-off setup step and nothing per time step, which is negligible compared with the propagation itself.
 
 % Plan: ~4 pages.
 \section{GPU Acceleration with LibTorch}
 
-Adding LibTorch support to the simulation started with how to decide the program should be ran on a GPU.
-The chosen approach was for opt-in GPU compute via the configuration TOML.
+The current simulation uses the Eigen library in C++ for linear algebra operations, which runs the entire simulation purely 
+on the CPU. The core calculations of the simulation are the propagation steps, which essentially perform FFTs and element-wise 
+operations over large arrays which hold the pulses. The Eigen library only supports using the CPU, so moving the computation
+to the GPU is not as simple as just telling Eigen to use it. It requires the program to use a library where the data is stored
+on GPU specific types. 
+
+Not all machines have a GPU, and thus moving all computations from Eigen to a GPU-only library would not meet the modularity 
+and portability requirements of the simulation. To add GPU support to the simulation, CPU support must still exist. 
+Additionally, the chosen library should work with as many different GPU vendors as possible, support CPU fallback, and 
+abstract enough away from the hardware that familiarity with GPU computing is not required to contribute to the codebase.
+
+The two strongest libraries for parallelising the program are SYCL and LibTorch. SYCL is a C++-native, hardware-agnostic 
+GPU acceleration library that provides low-level hardware control but is complicated to write. LibTorch is a more abstracted 
+library that gives less control over the hardware, making it far easier to write than SYCL, but it cannot be fine-tuned to
+get the best possible performance. LibTorch aligned best with the mixed goals of the research, and as such was the chosen 
+library for GPU acceleration.
+
+Adding LibTorch support to the simulation first required determining how GPU execution would be configured. 
+The chosen approach was to make GPU computation opt-in through the configuration TOML.
 This can be set by a simple value as seen in \Cref{fig:gpu-opt-in}.
 
 \begin{figure}
@@ -163,9 +205,15 @@ public:
 Each backing-specific implementation of \texttt{FieldData} is required to provide an implementation of every function in the public interface. 
 Calls made through a \texttt{FieldData} object are then dispatched to the corresponding function of the underlying type held by \texttt{impl\_}, using \texttt{std::visit}.
 
-This dispatch incurs no runtime overhead compared to a direct function call. The alternatives in \texttt{std::variant} are known at compile time, allowing the compiler to generate efficient dispatch code.
+This dispatch has minimal runtime overhead compared to a direct function call. The alternatives in \texttt{std::variant} are known at compile time, allowing the compiler to generate efficient dispatch code.
 Also, because the visitor must be valid for every possible alternative of the variant,
 any missing function implementations result in easily diagnosable compile-time errors.
+
+The usual alternative in C++ is runtime polymorphism, where each backing inherits from a common base class and overrides its virtual functions.
+The two approaches differ in two main ways. The first is how a call is dispatched. A virtual call looks up the function through the object's vtable at runtime and generally cannot be inlined, whereas \texttt{std::visit}, introduced in C++17 alongside \texttt{std::variant}, branches on the type the variant currently holds, which the compiler can see and optimise, and checks every operation against every backing at compile time.
+The second is what is easy to extend. Polymorphism is open to new types but closed to new operations: a new backing is a single new class, but a new operation must be added to the base class and every backing.
+A \texttt{std::variant} is the reverse: a new operation is a single new visitor, but a new backing must be added to the variant and handled by every visitor.
+For operations over large arrays the cost of the call itself is negligible either way.
 
 The two backings require their own unique implementations for these functions because they don't share an interface. 
 If both LibTorch and Eigen shared an interface, then FieldData could simply be templated on the underlying type of Eigen 
@@ -242,6 +290,12 @@ CUDA-compatible API, which would be detected in the existing function. However, 
 been tested thoroughly.
 
 
+When tensors are stored on a GPU, they reside in VRAM rather than system RAM. 
+However, the periodic analysis of the optical pulses during propagation is performed on the CPU, 
+so the pulse data must first be transferred from VRAM to system RAM. Consequently, every analysis step incurs the 
+transfer overhead described in \cref{fig:gpu-cpu-architecture} in addition to the cost of the analysis itself, 
+and this overhead grows with both the frequency of analysis output and the size of the pulse arrays.
+
 To add a new \texttt{compute\_backing} type, such as a \texttt{SyclFieldData} or a \texttt{CudaFieldData},
 each function of the public \texttt{FieldData} interface would remain unchanged as it already dispatches to the underlying type.
 Once the new \texttt{FieldData} is added to the \texttt{std::variant} type of \texttt{impl\_}, any undefined interface functions of the new type will throw compile time errors.
@@ -262,4 +316,42 @@ runner can be specified to vary a specific attribute of the run such as grid siz
 propagation method, or the number of optical channels. For each configuration, the suite repeats the
 simulation and records its runtime in a CSV file. It captures total simulation time, as well as the time
 spent in linear and nonlinear parts of each step. A plotting script then interprets the CSV and visualises the results.
+\Cref{fig:benchmark-output} shows the terminal output of a short sweep over three grid sizes with two repeats each.
 The results generated from this benchmarking suite will be shown in the following chapter on results.
+
+\begin{figure}
+\begin{code}[minted options={fontsize=\scriptsize,breaklines,autogobble}]{text}
+$ python testing/benchmarks/run_benchmarks.py --domain-steps 4096,16384,65536 --repeats 2
+Building cmake-build-release (Release) ...
+...done.
+[   1/24] linear_only  Eigen     symsplit     N=4096    rep=0     0.04s  lin=  0.04s nl=  0.00s
+[   2/24] linear_only  Eigen     symsplit     N=4096    rep=1     0.04s  lin=  0.04s nl=  0.00s
+[   3/24] linear_only  LibTorch  symsplit     N=4096    rep=0     0.07s  lin=  0.07s nl=  0.00s
+[   4/24] linear_only  LibTorch  symsplit     N=4096    rep=1     0.07s  lin=  0.07s nl=  0.00s
+[   5/24] linear_only  Eigen     symsplit     N=16384   rep=0     0.17s  lin=  0.17s nl=  0.00s
+[   6/24] linear_only  Eigen     symsplit     N=16384   rep=1     0.17s  lin=  0.17s nl=  0.00s
+[   7/24] linear_only  LibTorch  symsplit     N=16384   rep=0     0.31s  lin=  0.31s nl=  0.00s
+[   8/24] linear_only  LibTorch  symsplit     N=16384   rep=1     0.31s  lin=  0.31s nl=  0.00s
+[   9/24] linear_only  Eigen     symsplit     N=65536   rep=0     0.85s  lin=  0.84s nl=  0.00s
+[  10/24] linear_only  Eigen     symsplit     N=65536   rep=1     0.85s  lin=  0.84s nl=  0.00s
+[  11/24] linear_only  LibTorch  symsplit     N=65536   rep=0     1.43s  lin=  1.43s nl=  0.00s
+[  12/24] linear_only  LibTorch  symsplit     N=65536   rep=1     1.43s  lin=  1.42s nl=  0.00s
+[  13/24] kerr         Eigen     symsplit     N=4096    rep=0     0.07s  lin=  0.04s nl=  0.04s
+[  14/24] kerr         Eigen     symsplit     N=4096    rep=1     0.07s  lin=  0.04s nl=  0.04s
+[  15/24] kerr         LibTorch  symsplit     N=4096    rep=0     0.26s  lin=  0.07s nl=  0.19s
+[  16/24] kerr         LibTorch  symsplit     N=4096    rep=1     0.25s  lin=  0.07s nl=  0.18s
+[  17/24] kerr         Eigen     symsplit     N=16384   rep=0     0.31s  lin=  0.17s nl=  0.14s
+[  18/24] kerr         Eigen     symsplit     N=16384   rep=1     0.31s  lin=  0.17s nl=  0.14s
+[  19/24] kerr         LibTorch  symsplit     N=16384   rep=0     0.89s  lin=  0.31s nl=  0.57s
+[  20/24] kerr         LibTorch  symsplit     N=16384   rep=1     0.89s  lin=  0.31s nl=  0.58s
+[  21/24] kerr         Eigen     symsplit     N=65536   rep=0     1.45s  lin=  0.84s nl=  0.61s
+[  22/24] kerr         Eigen     symsplit     N=65536   rep=1     1.47s  lin=  0.85s nl=  0.62s
+[  23/24] kerr         LibTorch  symsplit     N=65536   rep=0     4.52s  lin=  1.46s nl=  3.06s
+[  24/24] kerr         LibTorch  symsplit     N=65536   rep=1     4.61s  lin=  1.47s nl=  3.15s
+
+wrote 24 rows to testing/benchmarks/results/results.csv
+plot with: python testing/benchmarks/plot_benchmarks.py --csv testing/benchmarks/results/results.csv
+\end{code}
+\caption{Terminal output of the benchmarking suite sweeping grid size and compute backing for the linear-only and Kerr control files}
+\label{fig:benchmark-output}
+\end{figure}

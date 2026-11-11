@@ -1,3 +1,24 @@
 \chapter{Appendix}
 
 \todo{Appendix}
+
+\section{Cash--Karp RK5 Stages}
+\label{app:rk5}
+
+\begin{equation}
+  \label{eq:rk5-stages}
+  \begin{aligned}
+    A^{(i)} &= U_{h/2}^{\mathcal{D}} A_n, \\
+    k_1 &= U_{h/2}^{\mathcal{D}} f(A_n, z_n), \\
+    k_2 &= U_{3h/10}^{\mathcal{D}} f\!\left(U_{-3h/10}^{\mathcal{D}}\left[A^{(i)} + \tfrac{h}{5}k_1\right],\, z_n + \tfrac{h}{5}\right), \\
+    k_3 &= U_{h/5}^{\mathcal{D}} f\!\left(U_{-h/5}^{\mathcal{D}}\left[A^{(i)} + h\left(\tfrac{3}{40}k_1 + \tfrac{9}{40}k_2\right)\right],\, z_n + \tfrac{3h}{10}\right), \\
+    k_4 &= U_{-h/10}^{\mathcal{D}} f\!\left(U_{h/10}^{\mathcal{D}}\left[A^{(i)} + h\left(\tfrac{3}{10}k_1 - \tfrac{9}{10}k_2 + \tfrac{6}{5}k_3\right)\right],\, z_n + \tfrac{3h}{5}\right), \\
+    k_5 &= U_{-h/2}^{\mathcal{D}} f\!\left(U_{h/2}^{\mathcal{D}}\left[A^{(i)} + h\left(-\tfrac{11}{54}k_1 + \tfrac{5}{2}k_2 - \tfrac{70}{27}k_3 + \tfrac{35}{27}k_4\right)\right],\, z_n + h\right), \\
+    k_6 &= U_{-3h/8}^{\mathcal{D}} f\!\left(U_{3h/8}^{\mathcal{D}}\left[A^{(i)} + h\left(\tfrac{1631}{55296}k_1 + \tfrac{175}{512}k_2 + \tfrac{575}{13824}k_3 + \tfrac{44275}{110592}k_4 + \tfrac{253}{4096}k_5\right)\right],\, z_n + \tfrac{7h}{8}\right).
+  \end{aligned}
+\end{equation}
+
+\begin{equation}
+  \label{eq:rk5-solution}
+  A_{n+1}^{(5)} = U_{h/2}^{\mathcal{D}}\left[A^{(i)} + h\left(\tfrac{37}{378}k_1 + \tfrac{250}{621}k_3 + \tfrac{125}{594}k_4 + \tfrac{512}{1771}k_6\right)\right].
+\end{equation}
