@@ -37,7 +37,8 @@
   \global\keep@afterchapterfalse
   \global\keep@aftersectionfalse
   \ifkeep@exempt\else
-    \zref@ifrefundefined{\keep@end}{}{\Needspace*{\keep@height{\keep@start}{\keep@end}}}%
+    % Slack covers the heading's top skip, which is dropped when it was measured at a page top.
+    \zref@ifrefundefined{\keep@end}{}{\Needspace*{\dimexpr\keep@height{\keep@start}{\keep@end}+2\baselineskip\relax}}%
   \fi
   \expandafter\zsavepos\expandafter{\keep@start}%
   \expandafter\gdef\csname keep@#1@open\endcsname{1}}

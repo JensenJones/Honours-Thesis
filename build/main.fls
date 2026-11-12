@@ -436,10 +436,10 @@ INPUT /usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/lm/ec-lmr17.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/lm/ec-lmbx12.tfm
-INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/lm/ec-lmbx12.tfm
-INPUT build/main.toc
-INPUT build/main.toc
-INPUT build/main.toc
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/lm/t1lmtt.fd
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/lm/t1lmtt.fd
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/lm/t1lmtt.fd
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/lm/ec-lmtt12.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/lm/ot1lmr.fd
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/lm/ot1lmr.fd
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/lm/ot1lmr.fd
@@ -480,6 +480,12 @@ INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/microtype/mt-msb.cfg
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/microtype/mt-msb.cfg
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc
+INPUT build/main.toc
+INPUT build/main.toc
+INPUT build/main.toc
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/lm/ec-lmbx12.tfm
 OUTPUT build/main.toc
 INPUT ./chapters/introduction.tex
 INPUT ./chapters/introduction.tex
@@ -492,7 +498,6 @@ INPUT ./figures/SBS-picture-with-the-levels.jpg
 INPUT ./figures/SBS-picture-with-the-levels.jpg
 INPUT ./figures/SBS-picture-with-the-levels.jpg
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/lm/ec-lmbx10.tfm
-INPUT /usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/lm/ec-lmr8.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/lm/ec-lmr6.tfm
 INPUT ./figures/SimpleGaussianProp.png
@@ -501,15 +506,10 @@ INPUT ./figures/SimpleGaussianProp.png
 INPUT ./figures/SimpleGaussianProp.png
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc
-INPUT /usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc
 INPUT ./figures/codebase-architecture.png
 INPUT ./figures/codebase-architecture.png
 INPUT ./figures/codebase-architecture.png
 INPUT ./figures/codebase-architecture.png
-INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/lm/t1lmtt.fd
-INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/lm/t1lmtt.fd
-INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/lm/t1lmtt.fd
-INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/lm/ec-lmtt12.tfm
 INPUT ./figures/symmetric-split-step.png
 INPUT ./figures/symmetric-split-step.png
 INPUT ./figures/symmetric-split-step.png
@@ -608,9 +608,9 @@ INPUT /usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc
 OUTPUT build/main.listing
 INPUT build/main.listing
 INPUT build/main.listing
-INPUT ./build/_minted/BC3ACCB5491F2F42307A930E35614D0F.highlight.minted
-INPUT ./build/_minted/BC3ACCB5491F2F42307A930E35614D0F.highlight.minted
-INPUT build/_minted/BC3ACCB5491F2F42307A930E35614D0F.highlight.minted
+INPUT ./build/_minted/1550DBCFC8968D8FD25E975C90AD1BCC.highlight.minted
+INPUT ./build/_minted/1550DBCFC8968D8FD25E975C90AD1BCC.highlight.minted
+INPUT build/_minted/1550DBCFC8968D8FD25E975C90AD1BCC.highlight.minted
 OUTPUT build/main.listing
 INPUT build/main.listing
 INPUT build/main.listing
@@ -635,10 +635,10 @@ INPUT ./figures/Figure linear only - Sweeping grid points.png
 INPUT ./figures/Figure linear only - Sweeping grid points.png
 INPUT ./figures/Figure linear only - Sweeping grid points.png
 INPUT ./figures/Figure linear only - Sweeping grid points.png
-INPUT ./figures/Figure linear only - sweeping optial channels.png
-INPUT ./figures/Figure linear only - sweeping optial channels.png
-INPUT ./figures/Figure linear only - sweeping optial channels.png
-INPUT ./figures/Figure linear only - sweeping optial channels.png
+INPUT ./figures/Figure linear only - sweeping optical channels.png
+INPUT ./figures/Figure linear only - sweeping optical channels.png
+INPUT ./figures/Figure linear only - sweeping optical channels.png
+INPUT ./figures/Figure linear only - sweeping optical channels.png
 INPUT ./figures/speed_k_spmxpm4ch_symsplit.png
 INPUT ./figures/speed_k_spmxpm4ch_symsplit.png
 INPUT ./figures/speed_k_spmxpm4ch_symsplit.png
@@ -647,6 +647,10 @@ INPUT ./figures/split_kerr_symsplit.png
 INPUT ./figures/split_kerr_symsplit.png
 INPUT ./figures/split_kerr_symsplit.png
 INPUT ./figures/split_kerr_symsplit.png
+INPUT ./figures/floatLossFig.png
+INPUT ./figures/floatLossFig.png
+INPUT ./figures/floatLossFig.png
+INPUT ./figures/floatLossFig.png
 INPUT ./chapters/discussion.tex
 INPUT ./chapters/discussion.tex
 INPUT ./chapters/discussion.tex

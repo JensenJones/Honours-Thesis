@@ -1,6 +1,6 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.10.27)  11 NOV 2026 11:17
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.10.27)  12 NOV 2026 13:48
 entering extended mode
- \write18 enabled.
+ restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
 **main.tex
@@ -822,7 +822,7 @@ Package: pgfopts 2014/07/10 v2.1a LaTeX package options with pgfkeys
 )
 (/usr/local/texlive/2025/texmf-dist/tex/latex/tools/shellesc.sty
 Package: shellesc 2023/07/08 v1.0d unified shell escape interface for LaTeX
-Package shellesc Info: Unrestricted shell escape enabled on input line 75.
+Package shellesc Info: Restricted shell escape enabled on input line 77.
 )
 \c@minted@FancyVerbLineTemp=\count361
 \@float@every@listing=\toks50
@@ -1487,39 +1487,48 @@ Package hyperref Info: Link coloring ON on input line 94.
 
 {/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/loc
 al/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}])
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 1
+11.
 
-[1
+(/usr/local/texlive/2025/texmf-dist/tex/latex/lm/t1lmtt.fd
+File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `lmtt' (encoding: T1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 1
+15.
 
-] (build/main.toc
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 4
-.
- (/usr/local/texlive/2025/texmf-dist/tex/latex/lm/ot1lmr.fd
+(/usr/local/texlive/2025/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 4
-.
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 1
+15.
+
 (/usr/local/texlive/2025/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-4.
+115.
 
 (/usr/local/texlive/2025/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-4.
+115.
 
 (/usr/local/texlive/2025/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 4.
+(Font)              <12> on input line 115.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 4.
+(Font)              <8> on input line 115.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 4.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 4.
+(Font)              <6> on input line 115.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 115
+.
 
 (/usr/local/texlive/2025/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
@@ -1527,14 +1536,20 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 (/usr/local/texlive/2025/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 4.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 115
+.
 
 (/usr/local/texlive/2025/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 (/usr/local/texlive/2025/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
-))
+)
+
+[1
+
+{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/te
+xlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}] (build/main.toc)
 \tf@toc=\write7
 \openout7 = `main.toc'.
 
@@ -1546,11 +1561,11 @@ File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 
 [3] (./chapters/introduction.tex
 Chapter 1.
-<figures/SBS-picture-with-the-levels.jpg, id=177, 512.88387pt x 275.86935pt>
+<figures/SBS-picture-with-the-levels.jpg, id=181, 512.88387pt x 275.86935pt>
 File: figures/SBS-picture-with-the-levels.jpg Graphic file (type jpg)
 <use figures/SBS-picture-with-the-levels.jpg>
 Package pdftex.def Info: figures/SBS-picture-with-the-levels.jpg  used on input
- line 25.
+ line 22.
 (pdftex.def)             Requested size: 386.96027pt x 208.13907pt.
 
 
@@ -1559,51 +1574,39 @@ Package pdftex.def Info: figures/SBS-picture-with-the-levels.jpg  used on input
 
  <./figures/SBS-picture-with-the-levels.jpg>]
 
-[2{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}]
-<figures/SimpleGaussianProp.png, id=200, 1446.40375pt x 562.1pt>
+[2]
+<figures/SimpleGaussianProp.png, id=204, 1446.40375pt x 562.1pt>
 File: figures/SimpleGaussianProp.png Graphic file (type png)
 <use figures/SimpleGaussianProp.png>
-Package pdftex.def Info: figures/SimpleGaussianProp.png  used on input line 86.
+Package pdftex.def Info: figures/SimpleGaussianProp.png  used on input line 83.
 
 (pdftex.def)             Requested size: 386.96027pt x 150.37956pt.
 
 
 [3{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}{/usr/lo
-cal/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texliv
-e/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc} <./figures/SimpleGaussianPr
-op.png>]
+cal/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc} <./figures/Simple
+GaussianProp.png>]
 
 [4]
-<figures/codebase-architecture.png, id=227, 1499.6025pt x 1055.945pt>
+<figures/codebase-architecture.png, id=230, 1499.6025pt x 1055.945pt>
 File: figures/codebase-architecture.png Graphic file (type png)
 <use figures/codebase-architecture.png>
 Package pdftex.def Info: figures/codebase-architecture.png  used on input line 
-125.
+122.
 (pdftex.def)             Requested size: 386.96027pt x 272.47684pt.
 
 
 [5 <./figures/codebase-architecture.png (PNG copy)>]
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 1
-39.
-
-(/usr/local/texlive/2025/texmf-dist/tex/latex/lm/t1lmtt.fd
-File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-Package microtype Info: Loading generic protrusion settings for font family
-(microtype)             `lmtt' (encoding: T1).
-(microtype)             For optimal results, create family-specific settings.
-(microtype)             See the microtype manual for details.
-
 
 [6]
-<figures/symmetric-split-step.png, id=244, 420.57124pt x 188.705pt>
+<figures/symmetric-split-step.png, id=246, 420.57124pt x 188.705pt>
 File: figures/symmetric-split-step.png Graphic file (type png)
 <use figures/symmetric-split-step.png>
 Package pdftex.def Info: figures/symmetric-split-step.png  used on input line 1
-75.
+71.
 (pdftex.def)             Requested size: 364.19667pt x 176.02075pt.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 176.
+(Font)              <10.95> on input line 172.
 
 
 [7 <./figures/symmetric-split-step.png>]
@@ -1615,11 +1618,11 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 [10]
 
 [11]
-<figures/gpu-cpu-architecture.png, id=287, 843.15pt x 635.37375pt>
+<figures/gpu-cpu-architecture.png, id=289, 843.15pt x 635.37375pt>
 File: figures/gpu-cpu-architecture.png Graphic file (type png)
 <use figures/gpu-cpu-architecture.png>
 Package pdftex.def Info: figures/gpu-cpu-architecture.png  used on input line 2
-67.
+59.
 (pdftex.def)             Requested size: 341.43307pt x 257.29587pt.
 ) (./chapters/methodology.tex
 
@@ -1633,12 +1636,12 @@ Chapter 2.
 \pydata@fh@_FAD58DE7366495DB4650CFEFAC2FCD61.data.minted=\write9
 \openout9 = `_FAD58DE7366495DB4650CFEFAC2FCD61.data.minted'.
 
-runsystem(latexminted config  --timestamp 20261111111737 FAD58DE7366495DB4650CF
-EFAC2FCD61)...executed.
+runsystem(latexminted config  --timestamp 20261112134853 FAD58DE7366495DB4650CF
+EFAC2FCD61)...executed safely (allowed).
 
 (build/_FAD58DE7366495DB4650CFEFAC2FCD61.config.minted)
-runsystem(latexminted cleanconfig  --timestamp 20261111111737 FAD58DE7366495DB4
-650CFEFAC2FCD61)...executed.
+runsystem(latexminted cleanconfig  --timestamp 20261112134853 FAD58DE7366495DB4
+650CFEFAC2FCD61)...executed safely (allowed).
 
 
 (./build/_minted/friendly.style.minted)
@@ -1710,7 +1713,7 @@ Package microtype Info: Character `texttrademark ' is missing
 \openout8 = `main.listing'.
 
 
-(./build/_minted/BC3ACCB5491F2F42307A930E35614D0F.highlight.minted)
+(./build/_minted/1550DBCFC8968D8FD25E975C90AD1BCC.highlight.minted)
 
 [21]
 
@@ -1724,18 +1727,18 @@ Package microtype Info: Character `texttrademark ' is missing
 
 [24]
 Chapter 3.
-<figures/simulation_gaussian_evolution.pdf, id=376, 498.5623pt x 198.93636pt>
+<figures/simulation_gaussian_evolution.pdf, id=378, 498.5623pt x 198.93636pt>
 File: figures/simulation_gaussian_evolution.pdf Graphic file (type pdf)
 <use figures/simulation_gaussian_evolution.pdf>
 Package pdftex.def Info: figures/simulation_gaussian_evolution.pdf  used on inp
-ut line 15.
-(pdftex.def)             Requested size: 455.24411pt x 181.6607pt.
-<figures/simulation_builtin_vs_custom.pdf, id=379, 498.5623pt x 206.16335pt>
+ut line 13.
+(pdftex.def)             Requested size: 386.96027pt x 154.41386pt.
+<figures/simulation_builtin_vs_custom.pdf, id=381, 498.5623pt x 206.16335pt>
 File: figures/simulation_builtin_vs_custom.pdf Graphic file (type pdf)
 <use figures/simulation_builtin_vs_custom.pdf>
 Package pdftex.def Info: figures/simulation_builtin_vs_custom.pdf  used on inpu
-t line 31.
-(pdftex.def)             Requested size: 409.71692pt x 169.43251pt.
+t line 29.
+(pdftex.def)             Requested size: 386.96027pt x 160.02344pt.
 
 
 [25
@@ -1743,89 +1746,97 @@ t line 31.
  <./figures/simulation_gaussian_evolution.pdf>]
 
 [26 <./figures/simulation_builtin_vs_custom.pdf>]
-<figures/Figure linear only - Sweeping grid points.png, id=438, 1324.95pt x 529
+<figures/Figure linear only - Sweeping grid points.png, id=441, 1324.95pt x 529
 .98pt>
 File: figures/Figure linear only - Sweeping grid points.png Graphic file (type 
 png)
 <use figures/Figure linear only - Sweeping grid points.png>
 Package pdftex.def Info: figures/Figure linear only - Sweeping grid points.png 
- used on input line 59.
-(pdftex.def)             Requested size: 455.24411pt x 182.09122pt.
-<figures/Figure linear only - sweeping optial channels.png, id=440, 1324.95pt x
- 529.98pt>
-File: figures/Figure linear only - sweeping optial channels.png Graphic file (t
-ype png)
-<use figures/Figure linear only - sweeping optial channels.png>
-Package pdftex.def Info: figures/Figure linear only - sweeping optial channels.
-png  used on input line 74.
-(pdftex.def)             Requested size: 455.24411pt x 182.09122pt.
+ used on input line 57.
+(pdftex.def)             Requested size: 386.96027pt x 154.78198pt.
+<figures/Figure linear only - sweeping optical channels.png, id=443, 1324.95pt 
+x 529.98pt>
+File: figures/Figure linear only - sweeping optical channels.png Graphic file (
+type png)
+<use figures/Figure linear only - sweeping optical channels.png>
+Package pdftex.def Info: figures/Figure linear only - sweeping optical channels
+.png  used on input line 72.
+(pdftex.def)             Requested size: 386.96027pt x 154.78198pt.
 
 
 [27 <./figures/Figure linear only - Sweeping grid points.png>]
-<figures/speed_k_spmxpm4ch_symsplit.png, id=450, 794.97pt x 317.988pt>
+<figures/speed_k_spmxpm4ch_symsplit.png, id=454, 794.97pt x 317.988pt>
 File: figures/speed_k_spmxpm4ch_symsplit.png Graphic file (type png)
 <use figures/speed_k_spmxpm4ch_symsplit.png>
 Package pdftex.def Info: figures/speed_k_spmxpm4ch_symsplit.png  used on input 
-line 90.
-(pdftex.def)             Requested size: 455.24411pt x 182.10416pt.
-<figures/split_kerr_symsplit.png, id=451, 650.43pt x 317.988pt>
+line 92.
+(pdftex.def)             Requested size: 386.96027pt x 154.78683pt.
+<figures/split_kerr_symsplit.png, id=455, 650.43pt x 317.988pt>
 File: figures/split_kerr_symsplit.png Graphic file (type png)
 <use figures/split_kerr_symsplit.png>
-Package pdftex.def Info: figures/split_kerr_symsplit.png  used on input line 99
-.
-(pdftex.def)             Requested size: 455.24411pt x 222.57066pt.
+Package pdftex.def Info: figures/split_kerr_symsplit.png  used on input line 10
+1.
+(pdftex.def)             Requested size: 386.96027pt x 189.18336pt.
 
 
-[28 <./figures/Figure linear only - sweeping optial channels.png> <./figures/sp
-eed_k_spmxpm4ch_symsplit.png>]
+[28 <./figures/Figure linear only - sweeping optical channels.png> <./figures/s
+peed_k_spmxpm4ch_symsplit.png>]
 
 [29 <./figures/split_kerr_symsplit.png>]
 
-[30]) (./chapters/discussion.tex
+[30]
+<figures/floatLossFig.png, id=480, 1324.95pt x 505.89pt>
+File: figures/floatLossFig.png Graphic file (type png)
+<use figures/floatLossFig.png>
+Package pdftex.def Info: figures/floatLossFig.png  used on input line 195.
+(pdftex.def)             Requested size: 386.96027pt x 147.74643pt.
 
-[31]
+
+[31 <./figures/floatLossFig.png>]) (./chapters/discussion.tex
+
+[32]
 Chapter 4.
 ) (./chapters/conclusion.tex
 
-[32
+[33
 
 ]
 Chapter 5.
 )
 
-[33
+[34
 
 ] (./chapters/appendix.tex
 
-[34
+[35
 
 ]
 Appendix A.
-)
 
-[35
 
-] (build/main.aux)
+[36
+
+]
+
+[37])
+
+[38] (build/main.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: EAA46AA73433730BEB6427604A87AA91;4520.
+(rerunfilecheck)             Checksum: 5DA659B2D0C09926D6082EA0654CBEC7;4627.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 48994 strings out of 473190
- 1053405 string characters out of 5715799
- 2097116 words of memory out of 5000000
- 71226 multiletter control sequences out of 15000+600000
- 646243 words of font info for 184 fonts, out of 8000000 for 9000
+ 49036 strings out of 473190
+ 1054437 string characters out of 5715799
+ 2097456 words of memory out of 5000000
+ 71250 multiletter control sequences out of 15000+600000
+ 646629 words of font info for 188 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  98i,13n,104p,1886b,8649s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/lo
@@ -1847,10 +1858,10 @@ al/texlive/2025/texmf-dist/fonts/type1/public/lm/lmtk10.pfb></usr/local/texlive
 f-dist/fonts/type1/public/lm/lmtt12.pfb></usr/local/texlive/2025/texmf-dist/fon
 ts/type1/public/lm/lmtt8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/pu
 blic/lm/lmtti10.pfb>
-Output written on build/main.pdf (39 pages, 2422650 bytes).
+Output written on build/main.pdf (42 pages, 2548121 bytes).
 PDF statistics:
- 631 PDF objects out of 1000 (max. 8388607)
- 500 compressed objects within 5 object streams
- 108 named destinations out of 1000 (max. 500000)
- 48946 words of extra memory for PDF output out of 51595 (max. 10000000)
+ 660 PDF objects out of 1000 (max. 8388607)
+ 523 compressed objects within 6 object streams
+ 118 named destinations out of 1000 (max. 500000)
+ 48951 words of extra memory for PDF output out of 51595 (max. 10000000)
 

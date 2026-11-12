@@ -4,7 +4,7 @@
 \PYG{+w}{        }\PYG{n}{DeviceType}\PYG{+w}{ }\PYG{n}{d}\PYG{p}{;}
 \PYG{+w}{        }\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{cuda}\PYG{o}{:}\PYG{o}{:}\PYG{n}{is\PYGZus{}available}\PYG{p}{(}\PYG{p}{)}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}\PYG{+w}{ }\PYG{c+c1}{// NVIDIA GPU}
 \PYG{+w}{            }\PYG{n}{d}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{kCUDA}\PYG{p}{;}
-\PYG{+w}{        }\PYG{p}{\PYGZcb{}}\PYG{+w}{ }\PYG{k}{else}\PYG{+w}{ }\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{xpu}\PYG{o}{:}\PYG{o}{:}\PYG{n}{is\PYGZus{}available}\PYG{p}{(}\PYG{p}{)}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}\PYG{+w}{ }\PYG{c+c1}{// intel GPU}
+\PYG{+w}{        }\PYG{p}{\PYGZcb{}}\PYG{+w}{ }\PYG{k}{else}\PYG{+w}{ }\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{xpu}\PYG{o}{:}\PYG{o}{:}\PYG{n}{is\PYGZus{}available}\PYG{p}{(}\PYG{p}{)}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}\PYG{+w}{ }\PYG{c+c1}{// Intel GPU}
 \PYG{+w}{            }\PYG{n}{d}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{kXPU}\PYG{p}{;}
 \PYG{+w}{        }\PYG{p}{\PYGZcb{}}\PYG{+w}{ }\PYG{k}{else}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
 \PYG{+w}{            }\PYG{n}{d}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{kCPU}\PYG{p}{;}\PYG{+w}{ }\PYG{c+c1}{// CPU}

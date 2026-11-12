@@ -2,10 +2,10 @@
 \contentsline {chapter}{Abstract}{i}{chapter*.1}%
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Background}{1}{section.1.1}%
-\contentsline {subsection}{\numberline {1.1.1}What is Stimulated Brillouin Scattering}{1}{subsection.1.1.1}%
+\contentsline {subsection}{\numberline {1.1.1}What Is Stimulated Brillouin Scattering?}{1}{subsection.1.1.1}%
 \contentsline {subsection}{\numberline {1.1.2}Applications of SBS}{2}{subsection.1.1.2}%
 \contentsline {subsection}{\numberline {1.1.3}The Main Equations of SBS}{3}{subsection.1.1.3}%
-\contentsline {section}{\numberline {1.2}Why Simulation is Required}{4}{section.1.2}%
+\contentsline {section}{\numberline {1.2}Why Simulation Is Required}{4}{section.1.2}%
 \contentsline {section}{\numberline {1.3}The Existing C++ Codebase}{5}{section.1.3}%
 \contentsline {section}{\numberline {1.4}Propagation Methods}{7}{section.1.4}%
 \contentsline {section}{\numberline {1.5}The Research Gap}{9}{section.1.5}%
@@ -20,11 +20,11 @@
 \contentsline {section}{\numberline {3.1}Simulation Outputs}{25}{section.3.1}%
 \contentsline {section}{\numberline {3.2}Performance Benchmarking}{27}{section.3.2}%
 \contentsline {subsection}{\numberline {3.2.1}Which Parts of the Simulation Take the Most Time?}{29}{subsection.3.2.1}%
-\contentsline {subsection}{\numberline {3.2.2}Precision and loss effects}{30}{subsection.3.2.2}%
-\contentsline {subsection}{\numberline {3.2.3}Summary}{31}{subsection.3.2.3}%
-\contentsline {chapter}{\numberline {4}Discussion}{32}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Future Work}{32}{section.4.1}%
-\contentsline {chapter}{\numberline {5}Conclusion}{33}{chapter.5}%
-\contentsline {chapter}{Bibliography}{34}{chapter*.26}%
-\contentsline {chapter}{\numberline {A}Appendix}{35}{appendix.A}%
-\contentsline {section}{\numberline {A.1}Cash--Karp RK5 Stages}{35}{section.A.1}%
+\contentsline {subsection}{\numberline {3.2.2}Precision and Loss Effects}{30}{subsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.2.3}Summary}{32}{subsection.3.2.3}%
+\contentsline {chapter}{\numberline {4}Discussion}{33}{chapter.4}%
+\contentsline {chapter}{\numberline {5}Conclusion}{34}{chapter.5}%
+\contentsline {chapter}{Bibliography}{35}{chapter*.27}%
+\contentsline {chapter}{\numberline {A}Appendix}{36}{appendix.A}%
+\contentsline {section}{\numberline {A.1}Cash--Karp RK5 Stages}{36}{section.A.1}%
+\contentsline {section}{\numberline {A.2}Benchmark Hardware and Results}{37}{section.A.2}%

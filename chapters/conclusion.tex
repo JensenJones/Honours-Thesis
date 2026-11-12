@@ -1,12 +1,27 @@
-% Plan: ~1 page.
 \chapter{Conclusion}
 
 This work extended the simulation to support GPU-backed field data and custom pulse
-profiles. By adding custom defined functions, users are now able to define their own wave and spatially dependant fields without changing any code.
-The research then implemented and proved that GPU acceleration can greatly accelerate simulation, and therefore research speed.
-GPU acceleration was seen to have greater benefit as the workload got larger, through increasing grid-size, or number of pulses. 
-For small grids, the time taken to launch GPU operations can make the GPU slower than the CPU.
-For larger grids and more channels, the GPU was substantially faster, reaching roughly 19x improvements.
+profiles. By adding custom-defined functions, users are now able to define their own pulse shapes and spatially 
+dependent fields without changing any code. The research then showed that GPU acceleration 
+can greatly speed up simulation, and therefore research. GPU acceleration was seen to have greater 
+benefit as the workload got larger, through increasing grid size or number of channels. For small grids, 
+the time taken to launch GPU operations can make the GPU slower than the CPU.
+For larger grids and more channels, the GPU was substantially faster, reaching roughly 19$\times$ improvements.
+
+Some interesting findings came from looking further into the speed of GPU computation. Breaking the
+runtime into its linear and nonlinear parts revealed that the GPU does not help every part of the
+simulation equally. The FFT-heavy linear step gained far more than the nonlinear step, which spends
+much of its time reading and writing the field data rather than computing. Investigating single
+precision raised a similar tension. Dropping to 32-bit values on the GPU made the simulation roughly 2.4 times
+faster than 64-bit, which was promising given how heavily many GPUs penalise double precision, but it came with
+a steady loss of energy that was eventually traced to round-off in the single-precision FFTs. With
+Kerr effects enabled, the error grew roughly quadratically with step count. Single precision is
+therefore useful for quick exploratory runs, but not yet trustworthy for long simulations, and
+finding a way to keep its speed without its error is one of the more promising directions this work
+leaves open. On the software side, building \texttt{FieldData} around a \texttt{std::variant} proved
+to be a good fit. It let the CPU and GPU share the same propagation code, caught missing backing
+implementations at compile time, and leaves room for future backings to be added without touching
+the rest of the simulation.
 
 The outcome of this research is that the SBS simulation is now capable of utilising the previously
 unrealised computational power of the GPU.

@@ -1,7 +1,5 @@
 \chapter{Appendix}
 
-\todo{Appendix}
-
 \section{Cash--Karp RK5 Stages}
 \label{app:rk5}
 
@@ -22,3 +20,95 @@
   \label{eq:rk5-solution}
   A_{n+1}^{(5)} = U_{h/2}^{\mathcal{D}}\left[A^{(i)} + h\left(\tfrac{37}{378}k_1 + \tfrac{250}{621}k_3 + \tfrac{125}{594}k_4 + \tfrac{512}{1771}k_6\right)\right].
 \end{equation}
+
+\section{Benchmark Hardware and Results}
+\label{app:benchmarks}
+
+\begin{table}[H]
+  \centering
+  \caption{Hardware used for the benchmarks.}
+  \begin{tabular}{lll}
+    \toprule
+    Benchmarks & CPU & GPU \\
+    \midrule
+    Linear-only & Xeon Platinum 8259CL (1 core) & Tesla T4 \\
+    Kerr & Xeon Platinum 8259CL (1 core) & Tesla T4 \\
+    Precision & & Tesla T4 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\begin{table}[H]
+  \centering
+  \caption{Linear-only simulation time while sweeping grid size, with one channel and 200 steps.
+  Fastest of two repeats.}
+  \begin{tabular}{rrrr}
+    \toprule
+    $N$ & CPU (s) & GPU (s) & Speedup \\
+    \midrule
+    8,192 & 0.03 & 0.06 & 0.5$\times$ \\
+    32,768 & 0.11 & 0.05 & 2.2$\times$ \\
+    131,072 & 0.53 & 0.08 & 6.6$\times$ \\
+    524,288 & 3.05 & 0.20 & 15.2$\times$ \\
+    1,048,576 & 6.69 & 0.36 & 18.6$\times$ \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\begin{table}[H]
+  \centering
+  \caption{Linear-only simulation time while sweeping the number of channels, with 131,072 grid
+  points and 200 steps. Fastest of two repeats.}
+  \begin{tabular}{rrrr}
+    \toprule
+    Channels & CPU (s) & GPU (s) & Speedup \\
+    \midrule
+    1 & 0.54 & 0.07 & 7.7$\times$ \\
+    2 & 1.09 & 0.10 & 10.9$\times$ \\
+    4 & 2.13 & 0.14 & 15.2$\times$ \\
+    8 & 4.16 & 0.23 & 18.1$\times$ \\
+    16 & 8.34 & 0.44 & 19.0$\times$ \\
+    32 & 16.53 & 0.86 & 19.2$\times$ \\
+    64 & 34.06 & 1.81 & 18.8$\times$ \\
+    128 & 72.95 & 3.66 & 19.9$\times$ \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\begin{table}[H]
+  \centering
+  \caption{Simulation time with SPM and XPM across four channels, 1,000 steps. Median of three repeats.}
+  \begin{tabular}{rrrr}
+    \toprule
+    $N$ & CPU (s) & GPU (s) & Speedup \\
+    \midrule
+    8,192 & 2.81 & 1.14 & 2.5$\times$ \\
+    32,768 & 14.05 & 1.22 & 11.5$\times$ \\
+    131,072 & 69.92 & 5.27 & 13.3$\times$ \\
+    524,288 & 335.46 & 20.74 & 16.2$\times$ \\
+    1,048,576 & 788.75 & 41.28 & 19.1$\times$ \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\begin{table}[H]
+  \centering
+  \caption{Simulation time with Kerr (SPM) on one channel, 1,000 steps. Median of three repeats.}
+  \begin{tabular}{rrrr}
+    \toprule
+    $N$ & CPU (s) & GPU (s) & Speedup \\
+    \midrule
+    1,024 & 0.04 & 0.77 & 0.1$\times$ \\
+    2,048 & 0.08 & 0.83 & 0.1$\times$ \\
+    4,096 & 0.16 & 0.95 & 0.2$\times$ \\
+    8,192 & 0.39 & 1.14 & 0.3$\times$ \\
+    16,384 & 0.77 & 0.91 & 0.8$\times$ \\
+    32,768 & 1.49 & 0.83 & 1.8$\times$ \\
+    65,536 & 2.99 & 0.97 & 3.1$\times$ \\
+    131,072 & 6.10 & 1.35 & 4.5$\times$ \\
+    262,144 & 13.68 & 2.54 & 5.4$\times$ \\
+    524,288 & 30.65 & 4.95 & 6.2$\times$ \\
+    1,048,576 & 68.56 & 9.55 & 7.2$\times$ \\
+    \bottomrule
+  \end{tabular}
+\end{table}

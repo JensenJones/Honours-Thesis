@@ -1,14 +1,11 @@
-% Plan (~10 pages): 3 SBS background, 1 propagation methods, 1 research gap,
-% 1 significance, 1 objectives, 1 existing codebase and C++, 1 GPU/CPU and LibTorch.
 \chapter{Introduction}
 
 \section{Background}
 
-% Plan: ~3 pages. SBS background, physics behind it, linear/nonlinear, why simulation is required.
-\subsection{What is Stimulated Brillouin Scattering}
+\subsection{What Is Stimulated Brillouin Scattering?}
 
 Stimulated Brillouin Scattering (SBS) is a nonlinear optical effect that occurs due to the interaction between light and sound within a material 
-\\parencite{eggletonBrillouinScatteringPart2022}. When a strong optical (pump) wave, typically from a laser, travels through a medium, 
+\parencite{eggletonBrillouinScatteringPart2022}. When a strong optical (pump) wave, typically from a laser, travels through a medium, 
 it undergoes Brillouin scattering as it interacts with co-propagating acoustic (density) waves generated within the medium through 
 changes in density induced by strong electric fields. These acoustic waves form a moving refractive index grating 
 that scatters part of the light backwards, producing a backward-propagating, frequency-shifted Stokes wave. 
@@ -23,7 +20,7 @@ alters the permittivity at its edges and interfaces.
 \begin{figure}
   \centering
   \thesisimage[width=0.85\textwidth]{SBS-picture-with-the-levels}
-\caption{Pump and Stokes wave interaction through time \parencite{baiStimulatedBrillouinScattering2018}}
+  \caption{Pump and Stokes wave interaction through time \parencite{baiStimulatedBrillouinScattering2018}.}
   \label{fig:SBSWithLevels}
 \end{figure}
 
@@ -38,7 +35,7 @@ the Stokes wave therefore form a feedback loop, and it is this self-reinforcing 
 SBS has many important applications in modern photonics and can act as both a useful tool and a limiting constraint in systems 
 \parencite{baiStimulatedBrillouinScattering2018}.
 
-In optical signal processing, SBS can help create narrow-line width fibre lasers and amplifiers, which are essential for 
+In optical signal processing, SBS can help create narrow-linewidth fibre lasers and amplifiers, which are essential for 
 high-precision sensing and signal processing in systems where narrow linewidths are important for signal coherence and 
 minimising noise \parencite{agrawalNonlinearFiberOptics2019}. Another important application is detecting changes in the 
 environment such as temperature and pressure. This capability makes SBS useful for distributed sensing, such as monitoring the 
@@ -73,7 +70,7 @@ travels along the waveguide, $\mu_1$, $\mu_2$ and $\mu_3$ are the corresponding 
 coupling coefficient that sets the strength of the interaction between the waves. The asterisk denotes the complex conjugate. 
 
 Each equation shares the same structure, where the left-hand side contains a time derivative, a spatial derivative scaled by the 
-respective waves velocity, and a linear damping term. The right-hand side captures the nonlinear coupling between the three waves through the coupling coefficient $\kappa$. Energy from the pump is drained by the Stokes 
+respective wave's velocity, and a linear damping term. The right-hand side captures the nonlinear coupling between the three waves through the coupling coefficient $\kappa$. Energy from the pump is drained by the Stokes 
 and acoustic waves, hence the right-hand side of \cref{eq:pump} carries a negative sign. These equations represent a simplified three-wave 
 model that neglects the optical Kerr effect and acoustic noise, to isolate the core dynamics of SBS 
 \parencite{montesThreeWaveDissipativeBrillouin2008}.
@@ -95,7 +92,7 @@ along the waveguide changes through time. This is the more natural choice for th
 enters and leaves through the ends, because the state of the whole waveguide can be described at one instant and stepped forward in 
 time (\cref{fig:PulseSimulated}).
 
-\section{Why Simulation is Required}
+\section{Why Simulation Is Required}
 
 Accurately modelling SBS requires solving a set of coupled nonlinear partial differential equations which define the characteristics 
 of the waves. Analytical solutions exist only for simplified cases, such as steady-state operation, where the waves do not change over 
@@ -112,12 +109,12 @@ setups also provide a practical means of testing and validating the simulation's
 
 \section{The Existing C++ Codebase}
 
-An existing C++ codebase for numerical simulation of SBS in C++ was created in November 2025 by Professor Michael Steel that provides the basis for
-which this research builds upon. This existing codebase builds and runs on Linux, Windows, and macOS, and is written in C++ 23 for the core
-of the simulation, along with some Python scripts for certain testing and setup reasons.
+An existing C++ codebase for the numerical simulation of SBS, created in November 2025 by Professor Michael Steel, provides the basis
+on which this research builds. This existing codebase builds and runs on Linux, Windows, and macOS, and is written in C++23 for the core
+of the simulation, along with some Python scripts for testing and setup.
 The core currently consists of about 14,000 lines of C++ across 97 source files, excluding third-party code, and builds on Eigen for linear algebra, FFTW (MKL on Windows) for Fourier transforms, toml++ for reading the control file, and Catch2 for testing.
 It simulates how light pulses travel through an optical waveguide and accounts for SBS and Kerr-nonlinear effects.
-Plots of these waves are output at user defined intervals of the simulation for analysis, and it can simulate many waves, both forward-propagating
+Plots of these pulses are output at user-defined intervals of the simulation for analysis, and it can simulate many waves, both forward-propagating
 and backward-propagating at the same time.
 
 \begin{figure}
@@ -129,11 +126,11 @@ and backward-propagating at the same time.
 
 
 \Cref{fig:codebase-architecture} shows a very high-level overview of the codebase architecture.
-A TOML file configures the specifics of the situation. This file can be used to change a variety of aspects of the simulation, including the active linear and nonlinear effects, forward and backward propagating pulses can be defined to one of the three existing shapes, and adjusting analysis settings.
+A TOML file configures the specifics of the situation. This file can be used to change a variety of aspects of the simulation, including which linear and nonlinear effects are active, the shape of each forward- and backward-propagating pulse (one of three preset shapes), and the analysis settings.
 This file is then parsed internally to set up the starting conditions for the simulation in the Parameters and Simulation Context stages.
-The simulation supports a user choice of propagation methods which define how the effects are applied to the pulses at each time-step;
-The chosen solver (propagation method) is then used in the Propagation stage and defaults to symmetric split-step if omitted from the configuration file. The chosen propagation is used for the entire simulation for each step.
-Throughout propagation, the pulse may periodically be printed on a separate thread for analysis, then once the propagation finishes, the final analysis will be done in the Analysis stage.
+The simulation supports a user choice of propagation methods which define how the effects are applied to the pulses at each time step.
+The chosen solver (propagation method) is used in the Propagation stage for every step of the simulation, and defaults to symmetric split-step if omitted from the configuration file.
+Throughout propagation, the pulse may periodically be printed on a separate thread for analysis, then once the propagation finishes, the final analysis is done in the Analysis stage.
 
 Most components in the Parameters and Simulation Context stages are default-constructed and then configured by a separate
 \texttt{setup()} call once the parameters they depend on have been parsed.
@@ -152,7 +149,6 @@ These differences in scale are only a side effect of the chosen units: rescaling
 Theorists commonly work this way, while experimentalists generally prefer to work with physical units.
 The codebase supports both through the \texttt{solver.normalise\_quantities} option in the TOML file.
 
-% Plan: ~1 page.
 \section{Propagation Methods}
 
 The existing SBS simulation has three different propagation methods: symmetric split-step, interaction-picture fourth-order Runge--Kutta (RK4), 
@@ -166,7 +162,7 @@ methods take many short steps.
 The symmetric split-step method advances the field from $z_k$ to $z_{k+1}$ by applying a half step ($h_k/2$) 
 of linear effects, followed by a full step ($h_k$) of nonlinear effects starting from that result, 
 then a second half step of linear effects. \Cref{fig:symmetric-split-step} illustrates the symmetric splitting: 
-the red $\mathcal{D}$ arrows represent linear half-steps, while the blue $\mathcal{N}$ arrows represent full nonlinear steps, 
+the red $\mathcal{D}$ arrows represent linear half steps, while the blue $\mathcal{N}$ arrows represent full nonlinear steps, 
 and the dashed arrows carry each result to the start of the next operator.
 Although the nonlinear step is evaluated using RK4, the overall symmetric split-step method is second-order accurate in time.
 
@@ -178,7 +174,7 @@ Although the nonlinear step is evaluated using RK4, the overall symmetric split-
 \end{figure}
 
 The RK4 method is fourth-order accurate in time, so halving the time step is expected to reduce the global temporal error by approximately 
-a factor of sixteen. In comparison, the second-order symmetric split-step method reduces its error by approximately a factor of four. 
+a factor of 16. In comparison, the second-order symmetric split-step method reduces its error by approximately a factor of four. 
 However, RK4 requires more function evaluations per step, meaning its higher convergence order does not necessarily translate to greater 
 computational efficiency.
 
@@ -199,29 +195,26 @@ The fourth-order Runge--Kutta method evaluates the nonlinear derivatives at four
 Similarly, the RK5 method of propagation is fifth-order accurate in time, so halving the time step reduces the temporal error by approximately a factor of 32. This comes at the cost of additional calculations at each step. \Cref{eq:rk5-stages} in \cref{app:rk5} gives all six stages of the RK5 method, and \cref{eq:rk5-solution} the fifth-order solution built from them. The Cash--Karp scheme also embeds a fourth-order solution built from the same six stages, and the difference between the two provides a local error estimate that can be used to adapt the step size \parencite{balacMathematicalAnalysisAdaptive2014}.
 
 
-% Plan: ~1 page.
 \section{The Research Gap}
 
-The focus of this research project is to improve the simulation software in terms of three main measurables: performance, modularity and portability. Program performance is fundamental for timely running of large simulations and reducing the time spent waiting for results. Improving the modularity of the program means it can be easily extended for further research without compromise, for example by adding a new nonlinear effect in one localised part of the code. Portability is important for the program to not just be able to run on any device but to be able to do so efficiently.
+The focus of this research project is to improve the simulation software in terms of three main criteria: performance, modularity and portability. Program performance is fundamental for timely running of large simulations and reducing the time spent waiting for results. Improving the modularity of the program means it can be easily extended for further research without compromise, for example by adding a new nonlinear effect in one localised part of the code. Portability is important for the program to not just be able to run on any device but to be able to do so efficiently.
 
 Current approaches to simulation software typically focus on creating instruments useful for either theoretical physicists or experimental physicists, rarely addressing the needs of both. Theoretical research focuses on working with idealised or unattainable conditions, whereas experimental research is constrained by real-world limitations. This research project will address the need to create software that meets the requirements of both sides without compromising on either.
 
 When well-developed libraries for simulation do not exist, the common practice in research is to write ad-hoc Python scripts tailored to a specific experimental configuration, use them once, and discard or abandon them for the next task. While Python allows for rapid prototyping, these scripts accumulate technical debt quickly and consequently are rarely used beyond their original purpose. Python's interpreted nature also restricts the performance of any simulations run. This means that each new research task effectively starts from scratch, with researchers reinventing core SBS simulation logic repeatedly rather than building on a stable foundation.
 
-% Plan: ~1 page.
 \section{Research Significance and Physics Outcomes}
 
-The significance of this research lies in producing an enhanced simulation codebase for SBS that can serve as a reusable and extensible foundation for future research. Different research requires different environmental configurations, such as wave functions and other nonlinear and linear effects. A flexible and tunable library allows researchers to easily adapt the software to the specific needs of their research, cutting out the time that would be spent rewriting core SBS logic for each specific research task. Well-written and flexible code also means that as new discoveries occur, they can be added to the library without large architectural changes.
+The significance of this research lies in producing an enhanced simulation codebase for SBS that can serve as a reusable and extensible foundation for future research. Different research requires different environmental configurations, such as pulse shapes and other nonlinear and linear effects. A flexible and tunable library allows researchers to easily adapt the software to the specific needs of their research, cutting out the time that would be spent rewriting core SBS logic for each specific research task. Well-written and flexible code also means that as new discoveries occur, they can be added to the library without large architectural changes.
 
-From a performance standpoint, the aim of this research project is for all simulations to run faster, leading to less dead time for researchers whilst waiting for results. This outcome is most important for simulations done at a large scale. By writing well-optimised C++ and GPU-accelerated code, not only does the code become more efficient for all simulations, but it can also make it practical to simulate conditions that were previously too large to simulate, potentially revealing unseen effects.
+From a performance standpoint, the aim of this research project is for all simulations to run faster, leading to less dead time for researchers whilst waiting for results. This outcome is most important for simulations done at a large scale. By writing well-optimised C++ and GPU (graphics processing unit) accelerated code, not only does the code become more efficient for all simulations, but it can also make it practical to simulate conditions that were previously too large to simulate, potentially revealing unseen effects.
 
-To increase the modularity of the system, on top of writing clean C++ that follows best coding practices, the research will add custom function definitions that can be used to define waves and other spatially dependent fields. This will prevent researchers from being limited to a preset set of options and increases the potential for simulation. Clean coding practices also make the library easy to extend for specific research needs.
+To increase the modularity of the system, on top of writing clean C++ that follows best coding practices, the research will add custom function definitions that can be used to define waves and other spatially dependent fields. This will free researchers from a preset set of options and broaden what can be simulated. Clean coding practices also make the library easy to extend for specific research needs.
 
-"To address portability, all changes will consider the ability of the codebase to be developed and executed across different 
-operating systems (typically macOS or Linux for theorists and Windows for experimentalists)."
+To address portability, all changes will consider the ability of the codebase to be developed and executed across different 
+operating systems (typically macOS or Linux for theorists and Windows for experimentalists).
 This will lead to fewer barriers to using and extending the library for all types of physicists.
 
-% Plan: ~1 page.
 \section{Research Objectives}
 
 This research is guided by one central objective: to improve the existing SBS modelling codebase into a library that 
@@ -232,25 +225,24 @@ engineering best practices.
 Performance success is defined as a measurable reduction in wall-clock time for the simulation relative to the 
 existing baseline implementation, verified through repeated benchmarking under controlled conditions. 
 Modularity success is defined as the ability to add new physics logic in a localised code fashion, 
-without modification to the code, verified through architectural review and testing. Portability success is 
+without modifying unrelated parts of the code, verified through architectural review and testing. Portability success is 
 defined as the ability to build and run the codebase across macOS, Windows and Linux without any code changes, 
 producing outputs that agree to within floating-point tolerance.
 
-% Plan: ~1 page.
 \section{CPU and GPU Computing}
 
 A CPU (central processing unit) is a hardware component responsible for executing computing instructions of a 
 specific instruction set architecture (ISA), performing computations and modifying architectural state. 
 Modern CPUs contain multiple cores, each of which has its own levels of local cache and is capable of independently 
 executing instructions. CPUs are designed for high single-core performance and low execution latency. 
-To achieve this, they use a wide range of techniques such as SIMD instructions, pipelined instruction processing, 
+To achieve this, they use a wide range of techniques such as SIMD (single instruction, multiple data) instructions, pipelined instruction processing, 
 branch prediction, out-of-order execution, and multi-level cache hierarchies \parencite{stokesMachine2006}.
 
-A GPU (graphics processing unit), however, is a more specialised piece of hardware originally designed for rendering graphics, 
+A GPU, however, is a more specialised piece of hardware originally designed for rendering graphics, 
 which now sees widespread use in machine learning, high-performance computing and other computationally intensive workloads. 
 GPUs are designed for highly parallel computation, containing thousands of arithmetic execution units organised into multiple 
 processing groups. Rather than maximising the computational speed of a single thread, GPUs are designed to maximise 
-computational throughput by executing large numbers of threads simultaneously. This makes a GPU the optimal hardware for large, 
+computational throughput by executing large numbers of threads simultaneously. This makes a GPU well suited to large, 
 data-parallel operations where the same computation is applied across many elements \parencite{nickollsGPUComputingEra2010}.
 
 A GPU operates on data held in its own local memory, known as Video Random Access Memory (VRAM), which is 

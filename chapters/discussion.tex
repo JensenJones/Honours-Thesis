@@ -1,4 +1,22 @@
 \chapter{Discussion}
 
-\section{Future Work}
+Overall, the research met its three goals of performance, modularity and portability. The GPU
+backing made large simulations substantially faster, custom functions let researchers describe new
+pulses and couplings without changing code, and the simulation still builds and runs on machines
+without a GPU. Modern C++ features proved useful in getting there. Holding each backing in a
+\texttt{std::variant} and dispatching with \texttt{std::visit} kept a single propagation path for both
+the CPU and GPU, and meant that a missing implementation was caught by the compiler rather than at
+runtime. At the same time, the new code kept to the conventions already in the codebase, such as
+configuring components through separate \texttt{setup()} calls. While this departs from standard C++
+practice, it is common in scientific computing and kept the new work consistent with how the rest of
+the simulation is built.
 
+There are several directions for further work. The single-precision results were promising on speed
+but introduced too much error, so more experimentation with 32-bit values, such as keeping only the
+FFTs in double precision, could recover much of the speedup without the loss in accuracy. AMD GPUs
+are not yet supported, and adding and testing ROCm support would make GPU acceleration available to
+more researchers. Adding another \texttt{compute\_backing} type for a library such as SYCL
+would give lower-level control over GPU computation, and show that \texttt{FieldData} can support new
+data storage.
+Finally, the performance improvements were measured on benchmark configurations, and demonstrating them 
+on an actual research question would show how much they shorten the time taken to get real results.

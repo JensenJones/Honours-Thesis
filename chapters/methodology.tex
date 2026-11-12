@@ -1,18 +1,16 @@
-% Plan (~10 pages): 2 custom functions, 4 LibTorch, 1 benchmarking.
 \chapter{Methodology}
 
 The work in this project fell into three parts, each covered by a section of this chapter. 
 The first, adding support for custom functions, was also how I became familiar with the codebase. 
 The second added GPU acceleration through LibTorch, and the third built a benchmarking suite to measure the result.
 
-% Plan: ~2 pages.
 \section{Custom Function Support}
 
 The first stage of improving the codebase was adding support to interpret and apply custom functions to describe 
 initial pulse shapes and spatially dependent couplings. The core goal of the implementation was for researchers to be 
 able to define a function in the input TOML control file as a plain mathematical expression, which is then interpreted 
-by the program and applied to the specified field with minimal overhead. For this we chose to use ExprTk 
-(Expression Toolkit), a third-party C++ library for interpreting mathematical expressions written as strings into functions.
+by the program and applied to the specified field with minimal overhead. For this I chose ExprTk 
+(Expression Toolkit), a third-party C++ library for turning mathematical expressions written as strings into functions.
 
 \Cref{fig:old-pulse-shape} shows the previous declaration of a Gaussian-shaped forward-propagating pulse called \texttt{launch\_f0}. Previously, this pulse was constrained to be in the shape of a Gaussian, super-Gaussian or sech.
 
@@ -23,7 +21,7 @@ channels = [
   { name = "launch_f0", active = true, shape = "gaussian", ... },
 ]
 \end{code}
-  \caption{Old pulse shape specification. Limited to "gaussian", "super-gaussian", or "sech"}
+  \caption{Old pulse shape specification, limited to \texttt{gaussian}, \texttt{super-gaussian} or \texttt{sech}.}
   \label{fig:old-pulse-shape}
 \end{figure}
 
@@ -47,7 +45,7 @@ channels = [
   { name = "launch_f1", shape = "gaussian", ... },
 ]
 \end{code}
-  \caption{Custom defined functions.}
+  \caption{Custom-defined functions.}
   \label{fig:custom-functions}
 \end{figure}
 
@@ -104,14 +102,13 @@ Custom functions are parsed by ExprTk once at initialisation and evaluated once 
 launch and profile arrays. From then on, the propagation uses ordinary arrays, so flexible user input costs 
 only a one-off setup step and nothing per time step, which is negligible compared with the propagation itself.
 
-% Plan: ~4 pages.
 \section{GPU Acceleration with LibTorch}
 
 The current simulation uses the Eigen library in C++ for linear algebra operations, which runs the entire simulation purely 
-on the CPU. The core calculations of the simulation are the propagation steps, which essentially perform FFTs and element-wise 
+on the CPU. The core calculations of the simulation are the propagation steps, which essentially perform FFTs (fast Fourier transforms) and element-wise 
 operations over large arrays which hold the pulses. The Eigen library only supports using the CPU, so moving the computation
 to the GPU is not as simple as just telling Eigen to use it. It requires the program to use a library where the data is stored
-on GPU specific types. 
+on GPU-specific types. 
 
 Not all machines have a GPU, and thus moving all computations from Eigen to a GPU-only library would not meet the modularity 
 and portability requirements of the simulation. To add GPU support to the simulation, CPU support must still exist. 
@@ -137,8 +134,8 @@ compute_backing = "Eigen" # CPU
 [general]
 compute_backing = "LibTorch" # GPU
 \end{code}
-	\caption{TOML GPU / CPU computation selection.}
-	\label{fig:gpu-opt-in}
+  \caption{TOML GPU or CPU computation selection.}
+  \label{fig:gpu-opt-in}
 \end{figure}
 
 This chosen \texttt{compute\_backing} then determines the way that the data is stored internally in the program.
@@ -163,7 +160,7 @@ public:
 
 }
 \end{code}
-  \caption{Simplified view of a FieldData}
+  \caption{Simplified view of \texttt{FieldData}.}
   \label{fig:FieldData-code}
 \end{figure}
 
@@ -171,7 +168,7 @@ This interface decouples the calling code from the underlying storage implementa
 Consequently, callers can operate on \texttt{FieldData} without needing to know whether the data is backed by Eigen (CPU) or LibTorch (GPU), 
 allowing the same code to work with either hardware.
 
-Simplified representations of \texttt{EigenFieldData} and \texttt{TorchFieldData} classes can be seen below in \Cref{fig:BackingSpecificFieldData}
+Simplified representations of \texttt{EigenFieldData} and \texttt{TorchFieldData} classes can be seen below in \cref{fig:BackingSpecificFieldData}.
 
 \begin{figure}
 \begin{code}{cpp}
@@ -198,7 +195,7 @@ public:
     void assign_exp_scaled_col(long col, dcomplex scale, const TorchFieldData& source);
 }
 \end{code}
-\caption{Simplified view of EigenFieldData \& TorchFieldData}
+  \caption{Simplified views of \texttt{EigenFieldData} and \texttt{TorchFieldData}.}
   \label{fig:BackingSpecificFieldData}
 \end{figure}
 
@@ -215,11 +212,11 @@ The second is what is easy to extend. Polymorphism is open to new types but clos
 A \texttt{std::variant} is the reverse: a new operation is a single new visitor, but a new backing must be added to the variant and handled by every visitor.
 For operations over large arrays the cost of the call itself is negligible either way.
 
-The two backings require their own unique implementations for these functions because they don't share an interface. 
-If both LibTorch and Eigen shared an interface, then FieldData could simply be templated on the underlying type of Eigen 
-(\texttt{Eigen::MatrixXcd}) or LibTorch (\texttt{torch::Tensor}). However by doing so it would also restrict future backing types to those that also share an interface.
+The two backings require their own unique implementations for these functions because they do not share an interface. 
+If both LibTorch and Eigen shared an interface, then \texttt{FieldData} could simply be templated on the underlying type of Eigen 
+(\texttt{Eigen::MatrixXcd}) or LibTorch (\texttt{torch::Tensor}). However, doing so would also restrict future backing types to those that also share an interface.
 
-The nature of this FieldData also makes it easy to define new operations on the data. 
+This design of \texttt{FieldData} also makes it easy to define new operations on the data. 
 Simply declare the function in the interface class \texttt{FieldData}, define the backing-specific implementations, and then use the helper function
 \texttt{visit\_matched\_backings} as seen below in \Cref{fig:visit_matched_backings} to do the \texttt{std::visit} dispatch.
 
@@ -240,8 +237,8 @@ decltype(auto) visit_matched_backings(
 }
 
 \end{code}
-\caption{Common \texttt{std::visit} helper method}
-\label{fig:visit_matched_backings}
+  \caption{Common \texttt{std::visit} helper method.}
+  \label{fig:visit_matched_backings}
 \end{figure}
 
 Factoring computation into smaller backing-specific methods requires understanding the trade-off between reusable code and efficient computation.
@@ -249,15 +246,15 @@ The Eigen library for CPU computation uses expression templates to delay evaluat
 It does this by constructing a lightweight expression object whose type represents the computation at compile time, thus eliminating temporary copies and allocation.
 Because of this, although creating the \texttt{FieldData} interface as a set of simple, basic functions and operator overloads would reduce logic duplication in the code, it would prevent Eigen from using expression templates and regress CPU performance.
 This is because each function must return a \texttt{FieldData}, whose \texttt{std::variant} can only hold a fully evaluated \texttt{EigenFieldData}, so every call would evaluate its result into a temporary.
-Hence, the functions in the \texttt{FieldData} interface were kept coarse enough that each can be written as a single Eigen expression, such that Eigen operations don't lose their performance.
-GPU operations through LibTorch don't have the same requirements for their code, as LibTorch evaluates each operation eagerly, launching a GPU kernel per operation regardless of how the code is factored.
+Hence, the functions in the \texttt{FieldData} interface were kept coarse enough that each can be written as a single Eigen expression, so that Eigen operations keep their performance.
+GPU operations through LibTorch do not have the same requirements for their code, as LibTorch evaluates each operation eagerly, launching a GPU kernel per operation regardless of how the code is factored.
 
 
 When a simulation is run with LibTorch as the selected \texttt{compute\_backing}, the setup stage determines what hardware to store LibTorch tensors on.
-This requires determining the type of hardware, as well as specific vendor if GPU.
-Below \Cref{fig:hardware-detection} shows how this flow works. 
+This requires determining the type of hardware, and, for a GPU, the specific vendor.
+\Cref{fig:hardware-detection} below shows how this flow works. 
 First, the CUDA API checks whether a GPU is available, then the XPU API checks for an Intel GPU; otherwise, the program defaults to the CPU.
-\texttt{resolve\_torch\_device} uses a lazy initialised static variable constructed from an immediately invoked lambda.
+\texttt{resolve\_torch\_device} uses a lazily initialised static variable constructed from an immediately invoked lambda.
 This means that the lambda is only called the first time the function runs; subsequent calls return the cached device type.
 
 \begin{figure}
@@ -267,7 +264,7 @@ torch::DeviceType resolve_torch_device() {
         DeviceType d;
         if (cuda::is_available()) { // NVIDIA GPU
             d = kCUDA;
-        } else if (xpu::is_available()) { // intel GPU
+        } else if (xpu::is_available()) { // Intel GPU
             d = kXPU;
         } else {
             d = kCPU; // CPU
@@ -278,15 +275,15 @@ torch::DeviceType resolve_torch_device() {
     return device;
 }
 \end{code}
-\caption{\texttt{resolve\_torch\_device} simplified function for choosing the most powerful owned device for LibTorch}
-\label{fig:hardware-detection}
+  \caption{Simplified \texttt{resolve\_torch\_device} function, which chooses the most capable available device for LibTorch.}
+  \label{fig:hardware-detection}
 \end{figure}
 
 AMD GPUs are not currently supported by this implementation. 
 LibTorch can use AMD GPUs through ROCm, but ROCm support depends on a compatible Linux
 environment, an AMD GPU and driver supported by the selected ROCm release, and a matching
 ROCm-enabled LibTorch build. In theory, PyTorch can expose ROCm devices through its
-CUDA-compatible API, which would be detected in the existing function. However, this hasn't
+CUDA-compatible API, which would be detected in the existing function. However, this has not
 been tested thoroughly.
 
 
@@ -298,16 +295,16 @@ and this overhead grows with both the frequency of analysis output and the size 
 
 To add a new \texttt{compute\_backing} type, such as a \texttt{SyclFieldData} or a \texttt{CudaFieldData},
 each function of the public \texttt{FieldData} interface would remain unchanged as it already dispatches to the underlying type.
-Once the new \texttt{FieldData} is added to the \texttt{std::variant} type of \texttt{impl\_}, any undefined interface functions of the new type will throw compile time errors.
+Once the new \texttt{FieldData} is added to the \texttt{std::variant} type of \texttt{impl\_}, any undefined interface functions of the new type will produce compile-time errors.
 Once all functions are defined, the code will dispatch to the new \texttt{compute\_backing}.
-This code makes the simulation codebase very easy to further experiment with different libraries and hardware.
+This makes it easy to experiment further with different libraries and hardware.
 
-Building of the binary was also designed for cross platform ease of use.
-Users can enable/disable LibTorch builds via a flag so that users intending of running on CPU only don't require any GPU libraries.
+Building of the binary was also designed for cross-platform ease of use.
+Users can enable or disable LibTorch builds via a flag, so that users intending to run on the CPU only do not need any GPU libraries.
 This way people without a GPU can still build the program and run simulations without needing to download the GPU libraries.
+The simulation was built and run on Windows, Linux and macOS, although Linux was the only operating system tested with a GPU.
 
 
-% Plan: ~1 page.
 \section{Benchmarking Suite}
 
 To compare performance across compute backings and simulation configurations, I developed a
@@ -317,7 +314,7 @@ propagation method, or the number of optical channels. For each configuration, t
 simulation and records its runtime in a CSV file. It captures total simulation time, as well as the time
 spent in linear and nonlinear parts of each step. A plotting script then interprets the CSV and visualises the results.
 \Cref{fig:benchmark-output} shows the terminal output of a short sweep over three grid sizes with two repeats each.
-The results generated from this benchmarking suite will be shown in the following chapter on results.
+The results generated from this benchmarking suite are presented in the following chapter.
 
 \begin{figure}
 \begin{code}[minted options={fontsize=\scriptsize,breaklines,autogobble}]{text}
@@ -352,6 +349,6 @@ Building cmake-build-release (Release) ...
 wrote 24 rows to testing/benchmarks/results/results.csv
 plot with: python testing/benchmarks/plot_benchmarks.py --csv testing/benchmarks/results/results.csv
 \end{code}
-\caption{Terminal output of the benchmarking suite sweeping grid size and compute backing for the linear-only and Kerr control files}
-\label{fig:benchmark-output}
+  \caption{Terminal output of the benchmarking suite sweeping grid size and compute backing for the linear-only and Kerr control files.}
+  \label{fig:benchmark-output}
 \end{figure}

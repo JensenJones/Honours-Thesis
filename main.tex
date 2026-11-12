@@ -99,7 +99,25 @@
 \pagenumbering{roman}
 \chapter*{Abstract}
 \addcontentsline{toc}{chapter}{Abstract}
-\todo{Abstract}
+
+Stimulated Brillouin Scattering (SBS) is an interesting effect in nonlinear optics with applications in lasers, sensing, and signal processing.
+Modelling SBS requires solving a set of coupled nonlinear partial differential equations, and analytic solutions
+exist only for the most trivial of cases. To accurately model SBS for non-trivial research questions, numerical simulation is required.
+This research extends an existing C++ codebase for SBS simulation, started by Professor Michael Steel in November 2025,
+to test how the simulation can be improved in performance, through GPU acceleration, and in usability for physicists.
+
+Work began by adding the ability for custom functions to be defined in a simple arithmetic language, in one central
+location, which can then be altered by physicists for their research needs. This means custom functions for pulse shapes or spatially
+dependent coupling fields can be added without making any code changes. From there, the class \texttt{FieldData} was introduced
+as an abstraction around the hardware location and library used for the underlying data storage, allowing the GPU
+to be utilised for computation in a backwards-compatible manner without regressing the existing CPU performance.
+Benchmarking then showed that for sufficiently large workloads, by utilising a GPU for computation, the simulation can run
+roughly $19\times$ faster, a substantial, realised performance improvement that can greatly reduce experimentation
+turnaround time for physicists.
+
+The resulting simulation can now run an order of magnitude faster for large workloads,
+while also being more accessible to physicists through custom-defined functions, with GPU computation able to be
+opted into or ignored simply from one control file.
 
 \tableofcontents
 % \listoffigures
