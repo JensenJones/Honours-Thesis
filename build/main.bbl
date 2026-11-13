@@ -47,7 +47,7 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{edition}{6}
-      \field{title}{Nonlinear {{Fiber Optics}}}
+      \field{title}{Nonlinear fiber optics}
       \field{year}{2019}
       \field{dateera}{ce}
     \endentry
@@ -307,7 +307,7 @@
       \field{labelnamesource}{editor}
       \field{labeltitlesource}{title}
       \field{series}{Semiconductors and {{Semimetals}}}
-      \field{title}{Brillouin {{Scattering Part}} 1}
+      \field{title}{{Brillouin} scattering part 1}
       \field{volume}{109}
       \field{year}{2022}
       \field{dateera}{ce}
@@ -321,11 +321,23 @@
            giveni={C\bibinitperiod},
            givenun=0}}%
       }
+      \name{editor}{2}{}{%
+        {{hash=b514d893ce35c89f76bb73584d954590}{%
+           family={Akhmediev},
+           familyi={A\bibinitperiod},
+           given={Nail},
+           giveni={N\bibinitperiod}}}%
+        {{hash=a7ac35b20f616330ed3d568a8aa19530}{%
+           family={Ankiewicz},
+           familyi={A\bibinitperiod},
+           given={Adrian},
+           giveni={A\bibinitperiod}}}%
+      }
       \list{location}{1}{%
         {Berlin, Heidelberg}%
       }
       \list{publisher}{1}{%
-        {Springer Berlin Heidelberg}%
+        {Springer}%
       }
       \strng{namehash}{e721300c8bbf26f02d96924b0ace3d00}
       \strng{fullhash}{e721300c8bbf26f02d96924b0ace3d00}
@@ -335,6 +347,10 @@
       \strng{authornamehash}{e721300c8bbf26f02d96924b0ace3d00}
       \strng{authorfullhash}{e721300c8bbf26f02d96924b0ace3d00}
       \strng{authorfullhashraw}{e721300c8bbf26f02d96924b0ace3d00}
+      \strng{editorbibnamehash}{c8f8ed971cfcc0dd6388d1787f06d48a}
+      \strng{editornamehash}{c8f8ed971cfcc0dd6388d1787f06d48a}
+      \strng{editorfullhash}{c8f8ed971cfcc0dd6388d1787f06d48a}
+      \strng{editorfullhashraw}{c8f8ed971cfcc0dd6388d1787f06d48a}
       \field{sortinit}{M}
       \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
       \field{extradatescope}{labelyear}
@@ -342,18 +358,17 @@
       \true{uniqueprimaryauthor}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{booktitle}{Dissipative {{Solitons}}: {{From Optics}} to {{Biology}} and {{Medicine}}}
+      \field{booktitle}{Dissipative solitons: From optics to biology and medicine}
       \field{isbn}{978-3-540-78216-2}
       \field{langid}{english}
-      \field{title}{Three-{{Wave Dissipative Brillouin Solitons}}}
+      \field{title}{Three-wave dissipative {Brillouin} solitons}
       \field{urlday}{9}
       \field{urlmonth}{5}
       \field{urlyear}{2026}
-      \field{volume}{751}
       \field{year}{2008}
       \field{dateera}{ce}
       \field{urldateera}{ce}
-      \field{pages}{1\bibrangedash 40}
+      \field{pages}{221\bibrangedash 260}
       \range{pages}{40}
       \verb{doi}
       \verb 10.1007/978-3-540-78217-9_9
@@ -403,7 +418,7 @@
       \field{journaltitle}{IEEE Micro}
       \field{month}{3}
       \field{number}{2}
-      \field{title}{The {{GPU Computing Era}}}
+      \field{title}{The {GPU} computing era}
       \field{urlday}{27}
       \field{urlmonth}{10}
       \field{urlyear}{2026}
@@ -460,7 +475,7 @@
       \field{abstract}{Inside the Machine explains how microprocessors operate - what they do, and how they do it. Written by the co-founder of the highly respected Ars Technica site, the book begins with the...}
       \field{isbn}{978-1-59327-104-6}
       \field{langid}{english}
-      \field{title}{Inside the {{Machine}}}
+      \field{title}{Inside the machine}
       \field{year}{2006}
       \field{dateera}{ce}
       \verb{file}
@@ -538,7 +553,7 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{edition}{6}
-      \field{title}{Nonlinear {{Fiber Optics}}}
+      \field{title}{Nonlinear fiber optics}
       \field{year}{2019}
       \field{dateera}{ce}
     \endentry
@@ -798,7 +813,7 @@
       \field{labelnamesource}{editor}
       \field{labeltitlesource}{title}
       \field{series}{Semiconductors and {{Semimetals}}}
-      \field{title}{Brillouin {{Scattering Part}} 1}
+      \field{title}{{Brillouin} scattering part 1}
       \field{volume}{109}
       \field{year}{2022}
       \field{dateera}{ce}
@@ -812,11 +827,23 @@
            giveni={C\bibinitperiod},
            givenun=0}}%
       }
+      \name{editor}{2}{}{%
+        {{hash=b514d893ce35c89f76bb73584d954590}{%
+           family={Akhmediev},
+           familyi={A\bibinitperiod},
+           given={Nail},
+           giveni={N\bibinitperiod}}}%
+        {{hash=a7ac35b20f616330ed3d568a8aa19530}{%
+           family={Ankiewicz},
+           familyi={A\bibinitperiod},
+           given={Adrian},
+           giveni={A\bibinitperiod}}}%
+      }
       \list{location}{1}{%
         {Berlin, Heidelberg}%
       }
       \list{publisher}{1}{%
-        {Springer Berlin Heidelberg}%
+        {Springer}%
       }
       \strng{namehash}{e721300c8bbf26f02d96924b0ace3d00}
       \strng{fullhash}{e721300c8bbf26f02d96924b0ace3d00}
@@ -826,6 +853,10 @@
       \strng{authornamehash}{e721300c8bbf26f02d96924b0ace3d00}
       \strng{authorfullhash}{e721300c8bbf26f02d96924b0ace3d00}
       \strng{authorfullhashraw}{e721300c8bbf26f02d96924b0ace3d00}
+      \strng{editorbibnamehash}{c8f8ed971cfcc0dd6388d1787f06d48a}
+      \strng{editornamehash}{c8f8ed971cfcc0dd6388d1787f06d48a}
+      \strng{editorfullhash}{c8f8ed971cfcc0dd6388d1787f06d48a}
+      \strng{editorfullhashraw}{c8f8ed971cfcc0dd6388d1787f06d48a}
       \field{sortinit}{M}
       \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
       \field{extradatescope}{labelyear}
@@ -833,18 +864,17 @@
       \true{uniqueprimaryauthor}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{booktitle}{Dissipative {{Solitons}}: {{From Optics}} to {{Biology}} and {{Medicine}}}
+      \field{booktitle}{Dissipative solitons: From optics to biology and medicine}
       \field{isbn}{978-3-540-78216-2}
       \field{langid}{english}
-      \field{title}{Three-{{Wave Dissipative Brillouin Solitons}}}
+      \field{title}{Three-wave dissipative {Brillouin} solitons}
       \field{urlday}{9}
       \field{urlmonth}{5}
       \field{urlyear}{2026}
-      \field{volume}{751}
       \field{year}{2008}
       \field{dateera}{ce}
       \field{urldateera}{ce}
-      \field{pages}{1\bibrangedash 40}
+      \field{pages}{221\bibrangedash 260}
       \range{pages}{40}
       \verb{doi}
       \verb 10.1007/978-3-540-78217-9_9
@@ -894,7 +924,7 @@
       \field{journaltitle}{IEEE Micro}
       \field{month}{3}
       \field{number}{2}
-      \field{title}{The {{GPU Computing Era}}}
+      \field{title}{The {GPU} computing era}
       \field{urlday}{27}
       \field{urlmonth}{10}
       \field{urlyear}{2026}
@@ -951,7 +981,7 @@
       \field{abstract}{Inside the Machine explains how microprocessors operate - what they do, and how they do it. Written by the co-founder of the highly respected Ars Technica site, the book begins with the...}
       \field{isbn}{978-1-59327-104-6}
       \field{langid}{english}
-      \field{title}{Inside the {{Machine}}}
+      \field{title}{Inside the machine}
       \field{year}{2006}
       \field{dateera}{ce}
       \verb{file}
