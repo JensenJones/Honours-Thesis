@@ -25,6 +25,6 @@
 \contentsline {chapter}{\numberline {4}Discussion}{33}{chapter.4}%
 \contentsline {chapter}{\numberline {5}Conclusion}{34}{chapter.5}%
 \contentsline {chapter}{Bibliography}{35}{chapter*.27}%
-\contentsline {chapter}{\numberline {A}Appendix}{36}{appendix.A}%
-\contentsline {section}{\numberline {A.1}Cash--Karp RK5 Stages}{36}{section.A.1}%
-\contentsline {section}{\numberline {A.2}Benchmark Hardware and Results}{37}{section.A.2}%
+\contentsline {chapter}{\numberline {A}Appendix}{37}{appendix.A}%
+\contentsline {section}{\numberline {A.1}Cash--Karp RK5 Stages}{37}{section.A.1}%
+\contentsline {section}{\numberline {A.2}Benchmark Hardware and Results}{38}{section.A.2}%

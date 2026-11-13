@@ -35,6 +35,12 @@
         "latexmk -pdf main.tex",
         "echo \"YO THIS BE MY CUSTOM ONE\""
       ]
+    },
+    {
+      "name": "Jensen",
+      "commands": [
+        "latexmk"
+      ]
     }
   ]
 }

@@ -38,13 +38,13 @@ SBS has many important applications in modern photonics and can act as both a us
 In optical signal processing, SBS can help create narrow-linewidth fibre lasers and amplifiers, which are essential for 
 high-precision sensing and signal processing in systems where narrow linewidths are important for signal coherence and 
 minimising noise \parencite{agrawalNonlinearFiberOptics2019}. Another important application is detecting changes in the 
-environment such as temperature and pressure. This capability makes SBS useful for distributed sensing, such as monitoring the 
-structural health of civil infrastructure. The main approach for such sensing is known as Brillouin Optical Time Domain Analysis.
+environment such as temperature and pressure \parencite{thevenazDistributedOpticalFiber2025}. This capability makes SBS useful for distributed sensing, such as monitoring the 
+structural health of civil infrastructure. The main approach for such sensing is known as Brillouin Optical Time Domain Analysis \parencite{peledFastBrillouinOptical2012}.
 
 Brillouin scattering can also have a negative effect on optical systems. 
 Backscattering can occur due to SBS in high-power fibre optic systems, limiting the peak power that can be transmitted without 
-distortion or noise. These effects increase with propagation distance, leading to further distortion. Furthermore, in high-power 
-fibre lasers and amplifiers SBS acts as the dominant effect that caps the output power. This happens once the pump exceeds the SBS 
+distortion or noise \parencite{internationaltelecommunicationunionApplicationRelatedAspects2011}. These effects increase with propagation distance, leading to further distortion. Furthermore, in high-power 
+fibre lasers and amplifiers SBS acts as the dominant effect that caps the output power \parencite{huangFiberbasedTechniquesSuppress2023}. This happens once the pump exceeds the SBS 
 threshold and energy is redirected into the backward-propagating Stokes wave rather than the intended output.
 
 Whether trying to suppress or use SBS, accurate simulation of its dynamics is important for understanding the effects 
@@ -73,7 +73,7 @@ Each equation shares the same structure, where the left-hand side contains a tim
 respective wave's velocity, and a linear damping term. The right-hand side captures the nonlinear coupling between the three waves through the coupling coefficient $\kappa$. Energy from the pump is drained by the Stokes 
 and acoustic waves, hence the right-hand side of \cref{eq:pump} carries a negative sign. These equations represent a simplified three-wave 
 model that neglects the optical Kerr effect and acoustic noise, to isolate the core dynamics of SBS 
-\parencite{montesThreeWaveDissipativeBrillouin2008}.
+\parencite{montesThreewaveDissipativeBrillouin2008}.
 
 \Cref{fig:PulseSimulated} illustrates the kind of result sought: given the envelopes at the start, the simulation evolves them 
 to give their values at later times.
@@ -91,6 +91,9 @@ how they change in time as they travel along the waveguide. The equations here u
 along the waveguide changes through time. This is the more natural choice for the short structures considered here, where light 
 enters and leaves through the ends, because the state of the whole waveguide can be described at one instant and stepped forward in 
 time (\cref{fig:PulseSimulated}).
+The ends of the computational domain also need boundary conditions. Ideally these would be physical conditions, where any
+outgoing wave leaves the domain without reflection. In practice, the boundaries can instead be placed far enough from the centre
+of the domain that they do not affect the result.
 
 \section{Why Simulation Is Required}
 
@@ -100,7 +103,7 @@ time \parencite{agrawalNonlinearFiberOptics2019}. Once the pump is pulsed or add
 are included, the nonlinear coupling terms in \cref{eq:pump,eq:stokes,eq:acoustic} prevent the equations from being decoupled, and no 
 general closed-form solution is known. These cases therefore require numerical simulation.
 
-Numerical simulation overcomes these limitations by providing access to the entire evolution of all three wave envelopes, 
+Numerical simulation provides access to the entire evolution of all three wave envelopes, 
 including quantities that are difficult or impossible to measure inside a physical waveguide. It also allows parameters to be varied 
 freely and cheaply, enabling researchers to explore system designs, test suppression strategies or sensing configurations, and compare 
 theory against experiment before committing to costly fabrication or measurement. The closed-form solutions that do exist for specific 
@@ -114,8 +117,9 @@ on which this research builds. This existing codebase builds and runs on Linux, 
 of the simulation, along with some Python scripts for testing and setup.
 The core currently consists of about 14,000 lines of C++ across 97 source files, excluding third-party code, and builds on Eigen for linear algebra, FFTW (MKL on Windows) for Fourier transforms, toml++ for reading the control file, and Catch2 for testing.
 It simulates how light pulses travel through an optical waveguide and accounts for SBS and Kerr-nonlinear effects.
-Plots of these pulses are output at user-defined intervals of the simulation for analysis, and it can simulate many waves, both forward-propagating
-and backward-propagating at the same time.
+Plots of these pulses are output at user-defined intervals of the simulation for analysis, and it can simulate multiple waves, both forward-propagating
+and backward-propagating at the same time. The number of optical waves is set in the control file and limited only by memory,
+while there can be at most one forward and one backward acoustic wave.
 
 \begin{figure}
   \centering
@@ -126,7 +130,7 @@ and backward-propagating at the same time.
 
 
 \Cref{fig:codebase-architecture} shows a very high-level overview of the codebase architecture.
-A TOML file configures the specifics of the situation. This file can be used to change a variety of aspects of the simulation, including which linear and nonlinear effects are active, the shape of each forward- and backward-propagating pulse (one of three preset shapes), and the analysis settings.
+A TOML (Tom's Obvious, Minimal Language) file configures the specifics of the situation. This file can be used to change a variety of aspects of the simulation, including which linear and nonlinear effects are active, the shape of each forward- and backward-propagating pulse (one of three preset shapes), and the analysis settings.
 This file is then parsed internally to set up the starting conditions for the simulation in the Parameters and Simulation Context stages.
 The simulation supports a user choice of propagation methods which define how the effects are applied to the pulses at each time step.
 The chosen solver (propagation method) is used in the Propagation stage for every step of the simulation, and defaults to symmetric split-step if omitted from the configuration file.
@@ -136,10 +140,10 @@ Most components in the Parameters and Simulation Context stages are default-cons
 \texttt{setup()} call once the parameters they depend on have been parsed.
 This two-phase initialisation departs from standard C++ practice, under which
 a constructor should leave an object fully initialised and usable
-\parencite{CoreGuidelines}. Here, an object is in an unusable state until
+\parencite{stroustrupCoreGuidelines}. Here, an object is in an unusable state until
 \texttt{setup()} has been called. The pattern is nonetheless common in
 scientific computing libraries such as PETSc, where objects are created,
-configured, and then explicitly set up in separate steps \parencite{UserGuidePETSc3261}.
+configured, and then explicitly set up in separate steps \parencite{balayPETScTAOUsers2025}.
 It allows components to be declared as plain members of the classes that own
 them and configured later, in the order their dependencies require.
 
@@ -154,7 +158,7 @@ The codebase supports both through the \texttt{solver.normalise\_quantities} opt
 The existing SBS simulation has three different propagation methods: symmetric split-step, interaction-picture fourth-order Runge--Kutta (RK4), 
 and interaction-picture Cash--Karp Runge--Kutta (RK5). All three methods solve the same coupled slowly varying envelope equations but differ 
 in how they apply the linear and nonlinear effects.
-Writing the linear and nonlinear operators as $\mathcal{D}$ and $\mathcal{N}$, advancing the field over a step $h$ is equivalent to
+Writing the linear and nonlinear operators as $\mathcal{D}$ and $\mathcal{N}$ respectively, advancing the field over a step $h$ is equivalent to
 applying $e^{h(\mathcal{D}+\mathcal{N})}$. The operators stay the same throughout the simulation, and only the field is updated at each step. On the numerical grid these operators become matrices that do not commute, so
 $e^{h\mathcal{D}}e^{h\mathcal{N}} \neq e^{h(\mathcal{D}+\mathcal{N})}$, but the two become very close when $h$ is small, which is why the
 methods take many short steps.
@@ -178,6 +182,9 @@ a factor of 16. In comparison, the second-order symmetric split-step method redu
 However, RK4 requires more function evaluations per step, meaning its higher convergence order does not necessarily translate to greater 
 computational efficiency.
 
+The fourth-order Runge--Kutta method evaluates the nonlinear derivatives at four intermediate stages,
+which are then combined using a weighted average and applied to the field, as shown in \cref{eq:rk4}.
+
 \begin{equation}
   \label{eq:rk4}
   \begin{aligned}
@@ -190,7 +197,15 @@ computational efficiency.
   \end{aligned}
 \end{equation}
 
-The fourth-order Runge--Kutta method evaluates the nonlinear derivatives at four intermediate stages, which are then combined using a weighted average and applied to the field, as shown in \cref{eq:rk4}. The linear part of the problem is easy: because $\mathcal{D}$ is diagonal in Fourier space, dispersion alone can be solved arbitrarily far ahead in a single step. The nonlinear part cannot be diagonalised and has no such solution except in special cases, so the whole problem cannot be solved in one step. The interaction picture takes advantage of this by instead moving the easy linear part onto the operators, the $U^{\mathcal{D}}_{h} = e^{h\mathcal{D}}$ terms in \cref{eq:rk4}, and leaving only the hard nonlinear part on the field for RK4 to integrate, which reduces the work done per step. Unlike the symmetric split-step method, the RK4 implementation incorporates the linear effects throughout, allowing the interaction between linear and nonlinear effects to be accounted for within each step. This requires four nonlinear derivative evaluations per step, increasing the computational cost per step compared to simpler integration schemes.
+The linear part of the problem is easy: because $\mathcal{D}$ is diagonal in Fourier space, dispersion 
+alone can be solved arbitrarily far ahead in a single step. The nonlinear part cannot be diagonalised and 
+has no such solution except in special cases, so the whole problem cannot be solved in one step. The interaction 
+picture takes advantage of this by instead moving the easy linear part onto the operators, the 
+$U^{\mathcal{D}}_{h} = e^{h\mathcal{D}}$ terms in \cref{eq:rk4}, and leaving only the hard nonlinear part on the field 
+for RK4 to integrate, which reduces the work done per step. Unlike the symmetric split-step method, the RK4 implementation 
+incorporates the linear effects throughout, allowing the interaction between linear and nonlinear effects to be accounted 
+for within each step. This requires four nonlinear derivative evaluations per step, increasing the computational cost per 
+step compared to simpler integration schemes.
 
 Similarly, the RK5 method of propagation is fifth-order accurate in time, so halving the time step reduces the temporal error by approximately a factor of 32. This comes at the cost of additional calculations at each step. \Cref{eq:rk5-stages} in \cref{app:rk5} gives all six stages of the RK5 method, and \cref{eq:rk5-solution} the fifth-order solution built from them. The Cash--Karp scheme also embeds a fourth-order solution built from the same six stages, and the difference between the two provides a local error estimate that can be used to adapt the step size \parencite{balacMathematicalAnalysisAdaptive2014}.
 
@@ -201,7 +216,14 @@ The focus of this research project is to improve the simulation software in term
 
 Current approaches to simulation software typically focus on creating instruments useful for either theoretical physicists or experimental physicists, rarely addressing the needs of both. Theoretical research focuses on working with idealised or unattainable conditions, whereas experimental research is constrained by real-world limitations. This research project will address the need to create software that meets the requirements of both sides without compromising on either.
 
-When well-developed libraries for simulation do not exist, the common practice in research is to write ad-hoc Python scripts tailored to a specific experimental configuration, use them once, and discard or abandon them for the next task. While Python allows for rapid prototyping, these scripts accumulate technical debt quickly and consequently are rarely used beyond their original purpose. Python's interpreted nature also restricts the performance of any simulations run. This means that each new research task effectively starts from scratch, with researchers reinventing core SBS simulation logic repeatedly rather than building on a stable foundation.
+When well-developed libraries for simulation do not exist, the common practice in research is to write ad-hoc Python 
+scripts tailored to a specific experimental configuration, use them once, and discard or abandon them for the next task. 
+While Python allows for rapid prototyping, these scripts accumulate technical debt quickly and consequently are rarely used 
+beyond their original purpose. Python's interpreted nature also restricts the performance of any simulations run. 
+This means that each new research task effectively starts from scratch, with researchers reinventing core SBS simulation 
+logic repeatedly rather than building on a stable foundation.
+A central aim of this project is to create a codebase that can be updated, adapted, and reused for different research requirements.
+
 
 \section{Research Significance and Physics Outcomes}
 

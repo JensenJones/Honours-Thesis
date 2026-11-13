@@ -1,8 +1,9 @@
 \chapter{Methodology}
 
 The work in this project fell into three parts, each covered by a section of this chapter. 
-The first, adding support for custom functions, was also how I became familiar with the codebase. 
-The second added GPU acceleration through LibTorch, and the third built a benchmarking suite to measure the result.
+The first, adding support for custom functions, was how I became familiar with the codebase. 
+The second part of the project involved adding GPU acceleration through LibTorch, 
+and in the third I built a benchmarking suite to measure the result.
 
 \section{Custom Function Support}
 
@@ -99,8 +100,8 @@ and overloads the arithmetic operators. The propagation code can therefore apply
 it is uniform or spatially varying, and a uniform coupling remains a single scalar at no extra cost.
 
 Custom functions are parsed by ExprTk once at initialisation and evaluated once per grid point to produce the 
-launch and profile arrays. From then on, the propagation uses ordinary arrays, so flexible user input costs 
-only a one-off setup step and nothing per time step, which is negligible compared with the propagation itself.
+launch and profile arrays. These arrays then represent the value of the function across grid points, and require
+no further runtime computation.
 
 \section{GPU Acceleration with LibTorch}
 

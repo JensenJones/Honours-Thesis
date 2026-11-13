@@ -47,7 +47,7 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{edition}{6}
-      \field{title}{Nonlinear fiber optics}
+      \field{title}{Nonlinear Fiber Optics}
       \field{year}{2019}
       \field{dateera}{ce}
     \endentry
@@ -220,28 +220,236 @@
       \endverb
       \keyw{Adaptive step-size control,Embedded Runge–Kutta methods,Interaction Picture method,Nonlinear Schrödinger equation,Symmetric Split-Step method}
     \endentry
-    \entry{UserGuidePETSc3261}{report}{}{}
-      \true{moreauthor}
-      \true{morelabelname}
-      \name{author}{1}{}{%
+    \entry{balayPETScTAOUsers2025}{report}{}{}
+      \name{author}{36}{}{%
         {{un=0,uniquepart=base,hash=0661bc042688479e939e81e7f9185f66}{%
            family={Balay},
            familyi={B\bibinitperiod},
            given={Satish},
            giveni={S\bibinitperiod},
            givenun=0}}%
+        {{un=0,uniquepart=base,hash=c2f21e31f748bc7b4a64b259db788eab}{%
+           family={Abhyankar},
+           familyi={A\bibinitperiod},
+           given={Shrirang},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=959ac040d7ba16c2dff27ceb9eac401a}{%
+           family={Adams},
+           familyi={A\bibinitperiod},
+           given={Mark\bibnamedelima F.},
+           giveni={M\bibinitperiod\bibinitdelim F\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=fef4129fbe0a2d22d709b949c991bd5d}{%
+           family={Benson},
+           familyi={B\bibinitperiod},
+           given={Steven},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=d0832f00d5cff405e609d25f1430b8a9}{%
+           family={Brown},
+           familyi={B\bibinitperiod},
+           given={Jed},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=8300e613a4da2304833266877fa26671}{%
+           family={Brune},
+           familyi={B\bibinitperiod},
+           given={Peter},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=0ae21ec60c05b5bb08bc6babeaa201be}{%
+           family={Buschelman},
+           familyi={B\bibinitperiod},
+           given={Kris},
+           giveni={K\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=582949948f9a938c966c5c8d0f6ced6c}{%
+           family={Constantinescu},
+           familyi={C\bibinitperiod},
+           given={Emil\bibnamedelima M.},
+           giveni={E\bibinitperiod\bibinitdelim M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=6600c3041cf5eea1f4cc4c7e4ffbd9b3}{%
+           family={Dalcin},
+           familyi={D\bibinitperiod},
+           given={Lisandro},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b32b95ca1dca518b3280bd4475e5a0e2}{%
+           family={Dener},
+           familyi={D\bibinitperiod},
+           given={Alp},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=8f5cf31bd93743a8ea5093c586cacf29}{%
+           family={Eijkhout},
+           familyi={E\bibinitperiod},
+           given={Victor},
+           giveni={V\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=75b6ce2f37fd1549e7e27582c27d09a6}{%
+           family={Faibussowitsch},
+           familyi={F\bibinitperiod},
+           given={Jacob},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=bd255efb59b040d722e81a5909d3904e}{%
+           family={Gropp},
+           familyi={G\bibinitperiod},
+           given={William\bibnamedelima D.},
+           giveni={W\bibinitperiod\bibinitdelim D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=ccf0df9ab87df36ef41518d205a4604e}{%
+           family={Hapla},
+           familyi={H\bibinitperiod},
+           given={Václav},
+           giveni={V\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=e4411247ea414fec2869c63bf492c4e7}{%
+           family={Isaac},
+           familyi={I\bibinitperiod},
+           given={Tobin},
+           giveni={T\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=8e03c2859e0bef48ba6ebdc1e4e7b8c0}{%
+           family={Jolivet},
+           familyi={J\bibinitperiod},
+           given={Pierre},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=369c04fb39d5d228a55ce1edb1bbc3e1}{%
+           family={Karpeev},
+           familyi={K\bibinitperiod},
+           given={Dmitry},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=5ccd554baf55c6d85a260dc5d7e44fb1}{%
+           family={Kaushik},
+           familyi={K\bibinitperiod},
+           given={Dinesh},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=9c6f3ced22bd7f4f0ef92d9b25467df8}{%
+           family={Knepley},
+           familyi={K\bibinitperiod},
+           given={Matthew\bibnamedelima G.},
+           giveni={M\bibinitperiod\bibinitdelim G\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=bf4d2a02e8b1cd7e4f6bd3e54d79f79c}{%
+           family={Kong},
+           familyi={K\bibinitperiod},
+           given={Fande},
+           giveni={F\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=374b0dd310a0f3561dadcf3c5f50f29b}{%
+           family={Kruger},
+           familyi={K\bibinitperiod},
+           given={Scott},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=0ebe7fcda5fd1670ec42548a2907345b}{%
+           family={May},
+           familyi={M\bibinitperiod},
+           given={Dave\bibnamedelima A.},
+           giveni={D\bibinitperiod\bibinitdelim A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=65f9dd1eb923bd39cbd7ae2d5bc637cd}{%
+           family={McInnes},
+           familyi={M\bibinitperiod},
+           given={Lois\bibnamedelima Curfman},
+           giveni={L\bibinitperiod\bibinitdelim C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=f163c0252aac8e7946cafd8e23ad2eb8}{%
+           family={Mills},
+           familyi={M\bibinitperiod},
+           given={Richard\bibnamedelima Tran},
+           giveni={R\bibinitperiod\bibinitdelim T\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=c3d2dd208320fbff028a717299314776}{%
+           family={Mitchell},
+           familyi={M\bibinitperiod},
+           given={Lawrence},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=c46b29e87e640530b5a9570457f27914}{%
+           family={Munson},
+           familyi={M\bibinitperiod},
+           given={Todd},
+           giveni={T\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=c565a90c3612c76ef58cacd05f6fac66}{%
+           family={Roman},
+           familyi={R\bibinitperiod},
+           given={Jose\bibnamedelima E.},
+           giveni={J\bibinitperiod\bibinitdelim E\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b324ba6bbe80060fa05a80690c4f588a}{%
+           family={Rupp},
+           familyi={R\bibinitperiod},
+           given={Karl},
+           giveni={K\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=0bfdbd2b1496ab57da946927ff242a3f}{%
+           family={Sanan},
+           familyi={S\bibinitperiod},
+           given={Patrick},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=9db49fdb58e00406730fc3db518c1336}{%
+           family={Sarich},
+           familyi={S\bibinitperiod},
+           given={Jason},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=db20e2f433b4eee5280b269cfbfcc84f}{%
+           family={Smith},
+           familyi={S\bibinitperiod},
+           given={Barry\bibnamedelima F.},
+           giveni={B\bibinitperiod\bibinitdelim F\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a18fe5e8843c33f8a2be9fa25d783eaf}{%
+           family={Suh},
+           familyi={S\bibinitperiod},
+           given={Hansol},
+           giveni={H\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=102a753d9421d7549a9a4af2337a58e3}{%
+           family={Zampini},
+           familyi={Z\bibinitperiod},
+           given={Stefano},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=5c197210ea3c3cd10b35ad3c6922e157}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Hong},
+           giveni={H\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=5c197210ea3c3cd10b35ad3c6922e157}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Hong},
+           giveni={H\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=86db8c22e64b1a0116ba22876f777b6f}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Junchao},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
       }
       \list{institution}{1}{%
         {Argonne National Laboratory}%
       }
       \strng{namehash}{456de0534e91c8a938d1b1a557f67342}
-      \strng{fullhash}{456de0534e91c8a938d1b1a557f67342}
-      \strng{fullhashraw}{456de0534e91c8a938d1b1a557f67342}
-      \strng{bibnamehash}{456de0534e91c8a938d1b1a557f67342}
-      \strng{authorbibnamehash}{456de0534e91c8a938d1b1a557f67342}
+      \strng{fullhash}{93e58645ac3be1f0d666428b60169810}
+      \strng{fullhashraw}{93e58645ac3be1f0d666428b60169810}
+      \strng{bibnamehash}{ff825e112409dd89050a1f4bba6a9c5e}
+      \strng{authorbibnamehash}{ff825e112409dd89050a1f4bba6a9c5e}
       \strng{authornamehash}{456de0534e91c8a938d1b1a557f67342}
-      \strng{authorfullhash}{456de0534e91c8a938d1b1a557f67342}
-      \strng{authorfullhashraw}{456de0534e91c8a938d1b1a557f67342}
+      \strng{authorfullhash}{93e58645ac3be1f0d666428b60169810}
+      \strng{authorfullhashraw}{93e58645ac3be1f0d666428b60169810}
       \field{sortinit}{B}
       \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
       \field{extradatescope}{labelyear}
@@ -250,6 +458,7 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{day}{29}
+      \field{eid}{ANL-21/39, Revision 3.26}
       \field{month}{9}
       \field{number}{ANL-21/39, Revision 3.26}
       \field{title}{{{PETSc}}/{{TAO}} Users Manual}
@@ -307,12 +516,131 @@
       \field{labelnamesource}{editor}
       \field{labeltitlesource}{title}
       \field{series}{Semiconductors and {{Semimetals}}}
-      \field{title}{{Brillouin} scattering part 1}
+      \field{title}{Brillouin Scattering Part 1}
       \field{volume}{109}
       \field{year}{2022}
       \field{dateera}{ce}
     \endentry
-    \entry{montesThreeWaveDissipativeBrillouin2008}{inbook}{}{}
+    \entry{huangFiberbasedTechniquesSuppress2023}{article}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=bc23574ea6a5bb04122e2163e19f8fb8}{%
+           family={Huang},
+           familyi={H\bibinitperiod},
+           given={Bin},
+           giveni={B\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=3344bbcf94977a4549edb7feaf02c615}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Jiaqi},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=42f53eeb00426e03e14bb53f572cb715}{%
+           family={Shao},
+           familyi={S\bibinitperiod},
+           given={Xiaopeng},
+           giveni={X\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Multidisciplinary Digital Publishing Institute}%
+      }
+      \strng{namehash}{c71d43ec545c449d32addc724ac4b71d}
+      \strng{fullhash}{bc102e137af76e0c5dcbe3d6271f2e7a}
+      \strng{fullhashraw}{bc102e137af76e0c5dcbe3d6271f2e7a}
+      \strng{bibnamehash}{bc102e137af76e0c5dcbe3d6271f2e7a}
+      \strng{authorbibnamehash}{bc102e137af76e0c5dcbe3d6271f2e7a}
+      \strng{authornamehash}{c71d43ec545c449d32addc724ac4b71d}
+      \strng{authorfullhash}{bc102e137af76e0c5dcbe3d6271f2e7a}
+      \strng{authorfullhashraw}{bc102e137af76e0c5dcbe3d6271f2e7a}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Stimulated Brillouin scattering (SBS) is the major factor that limits the maximum optical fiber output power in narrow linewidth applications, which include important fields such as passive optical networks (PONs), high-power fiber amplifiers, and lasers. Great efforts have been dedicated to suppressing the SBS effect and increasing the maximum optical fiber output power. This paper focuses on key fiber-based techniques to suppress SBS. These techniques take advantages of the properties of optical fibers. We present how these properties (electric modes, acoustic modes, and material properties) could be utilized to suppress SBS. The fiber-based techniques are divided into transverse optical fiber design, longitudinal variant fiber design, and external perturbations (strain and temperature) on optical fibers. Transverse optical fiber design focuses on the mechanism electro-acoustic interaction. Large effective area fiber design and acoustic tailoring techniques have been discussed. Longitudinal variant fiber design considers the nonlinear SBS interaction along propagation distance, and various techniques related have been presented. External perturbations (strain and temperature) on optical fibers emphasize on how external static perturbations could modify the SBS effect.}
+      \field{issn}{2304-6732}
+      \field{journaltitle}{Photonics}
+      \field{langid}{english}
+      \field{month}{3}
+      \field{number}{3}
+      \field{title}{Fiber-Based Techniques to Suppress Stimulated {{Brillouin}} Scattering}
+      \field{urlday}{13}
+      \field{urlmonth}{11}
+      \field{urlyear}{2026}
+      \field{volume}{10}
+      \field{year}{2023}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{282}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.3390/photonics10030282
+      \endverb
+      \verb{file}
+      \verb /Users/jensen/Zotero/storage/X9J6Y592/Huang et al. - 2023 - Fiber-based techniques to suppress stimulated Brillouin scattering.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://www.mdpi.com/2304-6732/10/3/282
+      \endverb
+      \verb{url}
+      \verb https://www.mdpi.com/2304-6732/10/3/282
+      \endverb
+      \keyw{fiber amplifiers,high-power fiber lasers,optical fiber,passive optical networks,stimulated Brillouin scattering}
+    \endentry
+    \entry{internationaltelecommunicationunionApplicationRelatedAspects2011}{standard}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=7ddfb261130d2af8916054bd686f0614}{%
+           family={{International Telecommunication Union}},
+           familyi={I\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Geneva, Switzerland}%
+      }
+      \strng{namehash}{7ddfb261130d2af8916054bd686f0614}
+      \strng{fullhash}{7ddfb261130d2af8916054bd686f0614}
+      \strng{fullhashraw}{7ddfb261130d2af8916054bd686f0614}
+      \strng{bibnamehash}{7ddfb261130d2af8916054bd686f0614}
+      \strng{authorbibnamehash}{7ddfb261130d2af8916054bd686f0614}
+      \strng{authornamehash}{7ddfb261130d2af8916054bd686f0614}
+      \strng{authorfullhash}{7ddfb261130d2af8916054bd686f0614}
+      \strng{authorfullhashraw}{7ddfb261130d2af8916054bd686f0614}
+      \field{sortinit}{I}
+      \field{sortinithash}{8d291c51ee89b6cd86bf5379f0b151d8}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{This Recommendation defines applications, device types, operational considerations and transmission limits for optical amplifiers (OAs) used in optical systems. It classifies OAs as booster (BA), pre-amplifier (PA), line amplifier (LA), optically amplified transmitter (OAT) and receiver (OAR), and notes relevant system interfaces and parameter references (notably the ITU‑T G.690-series and G.662/G.661). BAs raise transmitter power but increase non-linear penalties; PAs improve receiver sensitivity and benefit from narrow-band filtering; LAs extend spans and require supervisory channels; OATs/OARs integrate amplifiers with transceivers. Single- and multi-channel, point-to-point and point-to-multipoint uses are covered; many multi-channel parameters remain under study. Environmental and optical safety requirements and APR procedures are referenced.Transmission-related impairments from increased launch power and long unregenerated spans are detailed: fibre non-linearities (SPM, IXPM/XPM, FWM/IFWM, MI, SBS, SRS), polarization effects (PMD, PDL, polarization hole burning), chromatic dispersion, and OA-specific issues (noise accumulation, self‑filtering, optical surge, SOA saturation-induced non-linearity). These impairments depend on fibre type, effective area, channel spacing, bit rate, modulation format and amplifier cascade.Mitigation strategies include fibre selection and dispersion management, appropriate channel spacing or uneven spacing, reduced launch power, increased effective area, narrow-band ASE filtering or self‑filtering, polarization scrambling and dynamic PMD compensation, ASE-filtering and per-channel equalization, gain-clamping or operating SOAs in linear regime, and pump control/APR to prevent optical surge. Appendix I gives example BA/PA parameter values; OAM items and alarms for OAs are specified.}
+      \field{day}{13}
+      \field{hour}{0}
+      \field{langid}{english}
+      \field{minute}{0}
+      \field{month}{4}
+      \field{number}{G.663}
+      \field{second}{0}
+      \field{timezone}{+02\bibtzminsep 00}
+      \field{title}{Application Related Aspects of Optical Amplifier Devices and Sub-Systems ({{ITU-T Recommendation G}}.663)}
+      \field{urlday}{13}
+      \field{urlmonth}{11}
+      \field{urlyear}{2026}
+      \field{year}{2011}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb /Users/jensen/Zotero/storage/QE3LT8AV/itu-t-g-663-2011-04-application-related-aspects-of-optical-amplifier-devices-and-subsystems.html
+      \endverb
+      \verb{urlraw}
+      \verb https://www.itu.int/epublications/publication/itu-t-g-663-2011-04-application-related-aspects-of-optical-amplifier-devices-and-subsystems
+      \endverb
+      \verb{url}
+      \verb https://www.itu.int/epublications/publication/itu-t-g-663-2011-04-application-related-aspects-of-optical-amplifier-devices-and-subsystems
+      \endverb
+    \endentry
+    \entry{montesThreewaveDissipativeBrillouin2008}{inbook}{}{}
       \name{author}{1}{}{%
         {{un=0,uniquepart=base,hash=e721300c8bbf26f02d96924b0ace3d00}{%
            family={Montes},
@@ -334,7 +662,7 @@
            giveni={A\bibinitperiod}}}%
       }
       \list{location}{1}{%
-        {Berlin, Heidelberg}%
+        {Berlin}%
       }
       \list{publisher}{1}{%
         {Springer}%
@@ -358,10 +686,12 @@
       \true{uniqueprimaryauthor}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{booktitle}{Dissipative solitons: From optics to biology and medicine}
+      \field{booktitle}{Dissipative Solitons: {{From}} Optics to Biology and Medicine}
       \field{isbn}{978-3-540-78216-2}
       \field{langid}{english}
-      \field{title}{Three-wave dissipative {Brillouin} solitons}
+      \field{number}{751}
+      \field{series}{Lecture {{Notes}} in {{Physics}}}
+      \field{title}{Three-Wave Dissipative {{Brillouin}} Solitons}
       \field{urlday}{9}
       \field{urlmonth}{5}
       \field{urlyear}{2026}
@@ -374,7 +704,7 @@
       \verb 10.1007/978-3-540-78217-9_9
       \endverb
       \verb{file}
-      \verb /Users/jensen/Zotero/storage/QEBK9AMD/Montes - 2008 - Three-Wave Dissipative Brillouin Solitons.pdf
+      \verb /Users/jensen/Zotero/storage/QEBK9AMD/Montes - 2008 - Three-wave dissipative Brillouin solitons.pdf
       \endverb
       \verb{urlraw}
       \verb https://link.springer.com/10.1007/978-3-540-78217-9_9
@@ -418,7 +748,7 @@
       \field{journaltitle}{IEEE Micro}
       \field{month}{3}
       \field{number}{2}
-      \field{title}{The {GPU} computing era}
+      \field{title}{The {{GPU}} Computing Era}
       \field{urlday}{27}
       \field{urlmonth}{10}
       \field{urlyear}{2026}
@@ -432,7 +762,7 @@
       \verb 10.1109/MM.2010.41
       \endverb
       \verb{file}
-      \verb /Users/jensen/Zotero/storage/9BMTH6TN/Nickolls and Dally - 2010 - The GPU Computing Era.pdf
+      \verb /Users/jensen/Zotero/storage/9BMTH6TN/Nickolls and Dally - 2010 - The GPU computing era.pdf
       \endverb
       \verb{urlraw}
       \verb https://ieeexplore.ieee.org/document/5446251
@@ -441,6 +771,77 @@
       \verb https://ieeexplore.ieee.org/document/5446251
       \endverb
       \keyw{Acceleration,Computer applications,Computer architecture,Concurrent computing,CUDA,Fermi GPU architecture,GPU computing,GPU coprocessing,Graphics processing unit,heterogeneous CPU+,Layout,NVIDIA.,Parallel processing,Pervasive computing,Pipelines,scalable parallel computing,Tesla GPU architecture}
+    \endentry
+    \entry{peledFastBrillouinOptical2012}{article}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=9faf3814e2b85bac6a80da35ec52291c}{%
+           family={Peled},
+           familyi={P\bibinitperiod},
+           given={Yair},
+           giveni={Y\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=6289550514a43bffac49e80ab37dc1f7}{%
+           family={Motil},
+           familyi={M\bibinitperiod},
+           given={Avi},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=cd9e0028268e57226c5217867de242bf}{%
+           family={Tur},
+           familyi={T\bibinitperiod},
+           given={Moshe},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Optica Publishing Group}%
+      }
+      \strng{namehash}{0d6dcdc8d5de02c4a28e65b51fc97d19}
+      \strng{fullhash}{688c4a7924b71cee469da535218c1450}
+      \strng{fullhashraw}{688c4a7924b71cee469da535218c1450}
+      \strng{bibnamehash}{688c4a7924b71cee469da535218c1450}
+      \strng{authorbibnamehash}{688c4a7924b71cee469da535218c1450}
+      \strng{authornamehash}{0d6dcdc8d5de02c4a28e65b51fc97d19}
+      \strng{authorfullhash}{688c4a7924b71cee469da535218c1450}
+      \strng{authorfullhashraw}{688c4a7924b71cee469da535218c1450}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{A new technique for the fast implementation of Brillouin Optical Time Domain Analysis (BOTDA) is proposed and demonstrated, carrying the classical BOTDA method to the dynamic sensing domain. By using a digital signal generator which enables fast switching among 100 scanning frequencies, we demonstrate a truly distributed and dynamic measurement of a 100m long fiber with a sampling rate of \textasciitilde 10kHz, limited only by the fiber length and the frequency granularity. With 10 averages the standard deviation of the measured strain was \textasciitilde 5 µε.}
+      \field{day}{9}
+      \field{issn}{1094-4087}
+      \field{journaltitle}{Optics Express}
+      \field{langid}{english}
+      \field{month}{4}
+      \field{number}{8}
+      \field{shortjournal}{Opt. Express, OE}
+      \field{title}{Fast {{Brillouin}} Optical Time Domain Analysis for Dynamic Sensing}
+      \field{urlday}{13}
+      \field{urlmonth}{11}
+      \field{urlyear}{2026}
+      \field{volume}{20}
+      \field{year}{2012}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{8584\bibrangedash 8591}
+      \range{pages}{8}
+      \verb{doi}
+      \verb 10.1364/OE.20.008584
+      \endverb
+      \verb{file}
+      \verb /Users/jensen/Zotero/storage/7KF6GWJ2/Peled et al. - 2012 - Fast Brillouin optical time domain analysis for dynamic sensing.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://opg.optica.org/oe/abstract.cfm?uri=oe-20-8-8584
+      \endverb
+      \verb{url}
+      \verb https://opg.optica.org/oe/abstract.cfm?uri=oe-20-8-8584
+      \endverb
+      \keyw{Brillouin optical time domain analysis,Fiber optic sensors,Nonlinear optical fibers,Spatial resolution,Stimulated Brillouin scattering,Systems design}
     \endentry
     \entry{stokesMachine2006}{book}{}{}
       \name{author}{1}{}{%
@@ -475,14 +876,14 @@
       \field{abstract}{Inside the Machine explains how microprocessors operate - what they do, and how they do it. Written by the co-founder of the highly respected Ars Technica site, the book begins with the...}
       \field{isbn}{978-1-59327-104-6}
       \field{langid}{english}
-      \field{title}{Inside the machine}
+      \field{title}{Inside the Machine}
       \field{year}{2006}
       \field{dateera}{ce}
       \verb{file}
       \verb /Users/jensen/Zotero/storage/R4QJGNE9/9781593271046.html
       \endverb
     \endentry
-    \entry{CoreGuidelines}{online}{}{}
+    \entry{stroustrupCoreGuidelines}{online}{}{}
       \name{author}{2}{}{%
         {{un=0,uniquepart=base,hash=4975813514faee20fb6fcdb39a08af6f}{%
            family={Stroustrup},
@@ -522,6 +923,63 @@
       \verb{url}
       \verb https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#Rc-complete
       \endverb
+    \endentry
+    \entry{thevenazDistributedOpticalFiber2025}{article}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=0e1939cb143fc444850737fd9c389421}{%
+           family={Thévenaz},
+           familyi={T\bibinitperiod},
+           given={Luc},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Frontiers}%
+      }
+      \strng{namehash}{0e1939cb143fc444850737fd9c389421}
+      \strng{fullhash}{0e1939cb143fc444850737fd9c389421}
+      \strng{fullhashraw}{0e1939cb143fc444850737fd9c389421}
+      \strng{bibnamehash}{0e1939cb143fc444850737fd9c389421}
+      \strng{authorbibnamehash}{0e1939cb143fc444850737fd9c389421}
+      \strng{authornamehash}{0e1939cb143fc444850737fd9c389421}
+      \strng{authorfullhash}{0e1939cb143fc444850737fd9c389421}
+      \strng{authorfullhashraw}{0e1939cb143fc444850737fd9c389421}
+      \field{sortinit}{T}
+      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{This perspective article delves into the current performance limitations of distributed optical fiber sensors and proposes avenues for future advancements, as envisioned by the author, whose four-decade-long career has been dedicated to this transformative field. By upscaling the dimension of collected data, distributed sensors are essential in enabling large-scale data acquisition for “big data” systems, and optical fibers offer a unique, highly effective platform for distributed sensing. This article examines the ultimate performance achievable using state-of-the-art technologies across different sensor types. It further explores potential innovations, such as the adoption of advanced signal processing, novel fiber designs, and artificial intelligence, that could drive significant improvements in sensing performance and applications.}
+      \field{day}{9}
+      \field{issn}{2673-5067}
+      \field{journaltitle}{Frontiers in Sensors}
+      \field{langid}{english}
+      \field{month}{4}
+      \field{shortjournal}{Front. Sens.}
+      \field{shorttitle}{Distributed Optical Fiber Sensors}
+      \field{title}{Distributed Optical Fiber Sensors: {{What}} Is Known and What Is to Come}
+      \field{urlday}{13}
+      \field{urlmonth}{11}
+      \field{urlyear}{2026}
+      \field{volume}{6}
+      \field{year}{2025}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.3389/fsens.2025.1546392
+      \endverb
+      \verb{file}
+      \verb /Users/jensen/Zotero/storage/RH8DVKXC/Thévenaz - 2025 - Distributed optical fiber sensors what is known and what is to come.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://www.frontiersin.org/journals/sensors/articles/10.3389/fsens.2025.1546392/full
+      \endverb
+      \verb{url}
+      \verb https://www.frontiersin.org/journals/sensors/articles/10.3389/fsens.2025.1546392/full
+      \endverb
+      \keyw{Brillouin scattering,distributed fiber sensor,distributed temperature sensing,optical fiber sensor,Raman scattering,Rayleigh scattering}
     \endentry
   \enddatalist
   \datalist[entry]{apa/global//global/global/global}
@@ -553,7 +1011,7 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{edition}{6}
-      \field{title}{Nonlinear fiber optics}
+      \field{title}{Nonlinear Fiber Optics}
       \field{year}{2019}
       \field{dateera}{ce}
     \endentry
@@ -726,28 +1184,236 @@
       \endverb
       \keyw{Adaptive step-size control,Embedded Runge–Kutta methods,Interaction Picture method,Nonlinear Schrödinger equation,Symmetric Split-Step method}
     \endentry
-    \entry{UserGuidePETSc3261}{report}{}{}
-      \true{moreauthor}
-      \true{morelabelname}
-      \name{author}{1}{}{%
+    \entry{balayPETScTAOUsers2025}{report}{}{}
+      \name{author}{36}{}{%
         {{un=0,uniquepart=base,hash=0661bc042688479e939e81e7f9185f66}{%
            family={Balay},
            familyi={B\bibinitperiod},
            given={Satish},
            giveni={S\bibinitperiod},
            givenun=0}}%
+        {{un=0,uniquepart=base,hash=c2f21e31f748bc7b4a64b259db788eab}{%
+           family={Abhyankar},
+           familyi={A\bibinitperiod},
+           given={Shrirang},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=959ac040d7ba16c2dff27ceb9eac401a}{%
+           family={Adams},
+           familyi={A\bibinitperiod},
+           given={Mark\bibnamedelima F.},
+           giveni={M\bibinitperiod\bibinitdelim F\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=fef4129fbe0a2d22d709b949c991bd5d}{%
+           family={Benson},
+           familyi={B\bibinitperiod},
+           given={Steven},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=d0832f00d5cff405e609d25f1430b8a9}{%
+           family={Brown},
+           familyi={B\bibinitperiod},
+           given={Jed},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=8300e613a4da2304833266877fa26671}{%
+           family={Brune},
+           familyi={B\bibinitperiod},
+           given={Peter},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=0ae21ec60c05b5bb08bc6babeaa201be}{%
+           family={Buschelman},
+           familyi={B\bibinitperiod},
+           given={Kris},
+           giveni={K\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=582949948f9a938c966c5c8d0f6ced6c}{%
+           family={Constantinescu},
+           familyi={C\bibinitperiod},
+           given={Emil\bibnamedelima M.},
+           giveni={E\bibinitperiod\bibinitdelim M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=6600c3041cf5eea1f4cc4c7e4ffbd9b3}{%
+           family={Dalcin},
+           familyi={D\bibinitperiod},
+           given={Lisandro},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b32b95ca1dca518b3280bd4475e5a0e2}{%
+           family={Dener},
+           familyi={D\bibinitperiod},
+           given={Alp},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=8f5cf31bd93743a8ea5093c586cacf29}{%
+           family={Eijkhout},
+           familyi={E\bibinitperiod},
+           given={Victor},
+           giveni={V\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=75b6ce2f37fd1549e7e27582c27d09a6}{%
+           family={Faibussowitsch},
+           familyi={F\bibinitperiod},
+           given={Jacob},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=bd255efb59b040d722e81a5909d3904e}{%
+           family={Gropp},
+           familyi={G\bibinitperiod},
+           given={William\bibnamedelima D.},
+           giveni={W\bibinitperiod\bibinitdelim D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=ccf0df9ab87df36ef41518d205a4604e}{%
+           family={Hapla},
+           familyi={H\bibinitperiod},
+           given={Václav},
+           giveni={V\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=e4411247ea414fec2869c63bf492c4e7}{%
+           family={Isaac},
+           familyi={I\bibinitperiod},
+           given={Tobin},
+           giveni={T\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=8e03c2859e0bef48ba6ebdc1e4e7b8c0}{%
+           family={Jolivet},
+           familyi={J\bibinitperiod},
+           given={Pierre},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=369c04fb39d5d228a55ce1edb1bbc3e1}{%
+           family={Karpeev},
+           familyi={K\bibinitperiod},
+           given={Dmitry},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=5ccd554baf55c6d85a260dc5d7e44fb1}{%
+           family={Kaushik},
+           familyi={K\bibinitperiod},
+           given={Dinesh},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=9c6f3ced22bd7f4f0ef92d9b25467df8}{%
+           family={Knepley},
+           familyi={K\bibinitperiod},
+           given={Matthew\bibnamedelima G.},
+           giveni={M\bibinitperiod\bibinitdelim G\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=bf4d2a02e8b1cd7e4f6bd3e54d79f79c}{%
+           family={Kong},
+           familyi={K\bibinitperiod},
+           given={Fande},
+           giveni={F\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=374b0dd310a0f3561dadcf3c5f50f29b}{%
+           family={Kruger},
+           familyi={K\bibinitperiod},
+           given={Scott},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=0ebe7fcda5fd1670ec42548a2907345b}{%
+           family={May},
+           familyi={M\bibinitperiod},
+           given={Dave\bibnamedelima A.},
+           giveni={D\bibinitperiod\bibinitdelim A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=65f9dd1eb923bd39cbd7ae2d5bc637cd}{%
+           family={McInnes},
+           familyi={M\bibinitperiod},
+           given={Lois\bibnamedelima Curfman},
+           giveni={L\bibinitperiod\bibinitdelim C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=f163c0252aac8e7946cafd8e23ad2eb8}{%
+           family={Mills},
+           familyi={M\bibinitperiod},
+           given={Richard\bibnamedelima Tran},
+           giveni={R\bibinitperiod\bibinitdelim T\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=c3d2dd208320fbff028a717299314776}{%
+           family={Mitchell},
+           familyi={M\bibinitperiod},
+           given={Lawrence},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=c46b29e87e640530b5a9570457f27914}{%
+           family={Munson},
+           familyi={M\bibinitperiod},
+           given={Todd},
+           giveni={T\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=c565a90c3612c76ef58cacd05f6fac66}{%
+           family={Roman},
+           familyi={R\bibinitperiod},
+           given={Jose\bibnamedelima E.},
+           giveni={J\bibinitperiod\bibinitdelim E\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b324ba6bbe80060fa05a80690c4f588a}{%
+           family={Rupp},
+           familyi={R\bibinitperiod},
+           given={Karl},
+           giveni={K\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=0bfdbd2b1496ab57da946927ff242a3f}{%
+           family={Sanan},
+           familyi={S\bibinitperiod},
+           given={Patrick},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=9db49fdb58e00406730fc3db518c1336}{%
+           family={Sarich},
+           familyi={S\bibinitperiod},
+           given={Jason},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=db20e2f433b4eee5280b269cfbfcc84f}{%
+           family={Smith},
+           familyi={S\bibinitperiod},
+           given={Barry\bibnamedelima F.},
+           giveni={B\bibinitperiod\bibinitdelim F\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a18fe5e8843c33f8a2be9fa25d783eaf}{%
+           family={Suh},
+           familyi={S\bibinitperiod},
+           given={Hansol},
+           giveni={H\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=102a753d9421d7549a9a4af2337a58e3}{%
+           family={Zampini},
+           familyi={Z\bibinitperiod},
+           given={Stefano},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=5c197210ea3c3cd10b35ad3c6922e157}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Hong},
+           giveni={H\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=5c197210ea3c3cd10b35ad3c6922e157}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Hong},
+           giveni={H\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=86db8c22e64b1a0116ba22876f777b6f}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Junchao},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
       }
       \list{institution}{1}{%
         {Argonne National Laboratory}%
       }
       \strng{namehash}{456de0534e91c8a938d1b1a557f67342}
-      \strng{fullhash}{456de0534e91c8a938d1b1a557f67342}
-      \strng{fullhashraw}{456de0534e91c8a938d1b1a557f67342}
-      \strng{bibnamehash}{456de0534e91c8a938d1b1a557f67342}
-      \strng{authorbibnamehash}{456de0534e91c8a938d1b1a557f67342}
+      \strng{fullhash}{93e58645ac3be1f0d666428b60169810}
+      \strng{fullhashraw}{93e58645ac3be1f0d666428b60169810}
+      \strng{bibnamehash}{ff825e112409dd89050a1f4bba6a9c5e}
+      \strng{authorbibnamehash}{ff825e112409dd89050a1f4bba6a9c5e}
       \strng{authornamehash}{456de0534e91c8a938d1b1a557f67342}
-      \strng{authorfullhash}{456de0534e91c8a938d1b1a557f67342}
-      \strng{authorfullhashraw}{456de0534e91c8a938d1b1a557f67342}
+      \strng{authorfullhash}{93e58645ac3be1f0d666428b60169810}
+      \strng{authorfullhashraw}{93e58645ac3be1f0d666428b60169810}
       \field{sortinit}{B}
       \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
       \field{extradatescope}{labelyear}
@@ -756,6 +1422,7 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{day}{29}
+      \field{eid}{ANL-21/39, Revision 3.26}
       \field{month}{9}
       \field{number}{ANL-21/39, Revision 3.26}
       \field{title}{{{PETSc}}/{{TAO}} Users Manual}
@@ -813,12 +1480,131 @@
       \field{labelnamesource}{editor}
       \field{labeltitlesource}{title}
       \field{series}{Semiconductors and {{Semimetals}}}
-      \field{title}{{Brillouin} scattering part 1}
+      \field{title}{Brillouin Scattering Part 1}
       \field{volume}{109}
       \field{year}{2022}
       \field{dateera}{ce}
     \endentry
-    \entry{montesThreeWaveDissipativeBrillouin2008}{inbook}{}{}
+    \entry{huangFiberbasedTechniquesSuppress2023}{article}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=bc23574ea6a5bb04122e2163e19f8fb8}{%
+           family={Huang},
+           familyi={H\bibinitperiod},
+           given={Bin},
+           giveni={B\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=3344bbcf94977a4549edb7feaf02c615}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Jiaqi},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=42f53eeb00426e03e14bb53f572cb715}{%
+           family={Shao},
+           familyi={S\bibinitperiod},
+           given={Xiaopeng},
+           giveni={X\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Multidisciplinary Digital Publishing Institute}%
+      }
+      \strng{namehash}{c71d43ec545c449d32addc724ac4b71d}
+      \strng{fullhash}{bc102e137af76e0c5dcbe3d6271f2e7a}
+      \strng{fullhashraw}{bc102e137af76e0c5dcbe3d6271f2e7a}
+      \strng{bibnamehash}{bc102e137af76e0c5dcbe3d6271f2e7a}
+      \strng{authorbibnamehash}{bc102e137af76e0c5dcbe3d6271f2e7a}
+      \strng{authornamehash}{c71d43ec545c449d32addc724ac4b71d}
+      \strng{authorfullhash}{bc102e137af76e0c5dcbe3d6271f2e7a}
+      \strng{authorfullhashraw}{bc102e137af76e0c5dcbe3d6271f2e7a}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Stimulated Brillouin scattering (SBS) is the major factor that limits the maximum optical fiber output power in narrow linewidth applications, which include important fields such as passive optical networks (PONs), high-power fiber amplifiers, and lasers. Great efforts have been dedicated to suppressing the SBS effect and increasing the maximum optical fiber output power. This paper focuses on key fiber-based techniques to suppress SBS. These techniques take advantages of the properties of optical fibers. We present how these properties (electric modes, acoustic modes, and material properties) could be utilized to suppress SBS. The fiber-based techniques are divided into transverse optical fiber design, longitudinal variant fiber design, and external perturbations (strain and temperature) on optical fibers. Transverse optical fiber design focuses on the mechanism electro-acoustic interaction. Large effective area fiber design and acoustic tailoring techniques have been discussed. Longitudinal variant fiber design considers the nonlinear SBS interaction along propagation distance, and various techniques related have been presented. External perturbations (strain and temperature) on optical fibers emphasize on how external static perturbations could modify the SBS effect.}
+      \field{issn}{2304-6732}
+      \field{journaltitle}{Photonics}
+      \field{langid}{english}
+      \field{month}{3}
+      \field{number}{3}
+      \field{title}{Fiber-Based Techniques to Suppress Stimulated {{Brillouin}} Scattering}
+      \field{urlday}{13}
+      \field{urlmonth}{11}
+      \field{urlyear}{2026}
+      \field{volume}{10}
+      \field{year}{2023}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{282}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.3390/photonics10030282
+      \endverb
+      \verb{file}
+      \verb /Users/jensen/Zotero/storage/X9J6Y592/Huang et al. - 2023 - Fiber-based techniques to suppress stimulated Brillouin scattering.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://www.mdpi.com/2304-6732/10/3/282
+      \endverb
+      \verb{url}
+      \verb https://www.mdpi.com/2304-6732/10/3/282
+      \endverb
+      \keyw{fiber amplifiers,high-power fiber lasers,optical fiber,passive optical networks,stimulated Brillouin scattering}
+    \endentry
+    \entry{internationaltelecommunicationunionApplicationRelatedAspects2011}{standard}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=7ddfb261130d2af8916054bd686f0614}{%
+           family={{International Telecommunication Union}},
+           familyi={I\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Geneva, Switzerland}%
+      }
+      \strng{namehash}{7ddfb261130d2af8916054bd686f0614}
+      \strng{fullhash}{7ddfb261130d2af8916054bd686f0614}
+      \strng{fullhashraw}{7ddfb261130d2af8916054bd686f0614}
+      \strng{bibnamehash}{7ddfb261130d2af8916054bd686f0614}
+      \strng{authorbibnamehash}{7ddfb261130d2af8916054bd686f0614}
+      \strng{authornamehash}{7ddfb261130d2af8916054bd686f0614}
+      \strng{authorfullhash}{7ddfb261130d2af8916054bd686f0614}
+      \strng{authorfullhashraw}{7ddfb261130d2af8916054bd686f0614}
+      \field{sortinit}{I}
+      \field{sortinithash}{8d291c51ee89b6cd86bf5379f0b151d8}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{This Recommendation defines applications, device types, operational considerations and transmission limits for optical amplifiers (OAs) used in optical systems. It classifies OAs as booster (BA), pre-amplifier (PA), line amplifier (LA), optically amplified transmitter (OAT) and receiver (OAR), and notes relevant system interfaces and parameter references (notably the ITU‑T G.690-series and G.662/G.661). BAs raise transmitter power but increase non-linear penalties; PAs improve receiver sensitivity and benefit from narrow-band filtering; LAs extend spans and require supervisory channels; OATs/OARs integrate amplifiers with transceivers. Single- and multi-channel, point-to-point and point-to-multipoint uses are covered; many multi-channel parameters remain under study. Environmental and optical safety requirements and APR procedures are referenced.Transmission-related impairments from increased launch power and long unregenerated spans are detailed: fibre non-linearities (SPM, IXPM/XPM, FWM/IFWM, MI, SBS, SRS), polarization effects (PMD, PDL, polarization hole burning), chromatic dispersion, and OA-specific issues (noise accumulation, self‑filtering, optical surge, SOA saturation-induced non-linearity). These impairments depend on fibre type, effective area, channel spacing, bit rate, modulation format and amplifier cascade.Mitigation strategies include fibre selection and dispersion management, appropriate channel spacing or uneven spacing, reduced launch power, increased effective area, narrow-band ASE filtering or self‑filtering, polarization scrambling and dynamic PMD compensation, ASE-filtering and per-channel equalization, gain-clamping or operating SOAs in linear regime, and pump control/APR to prevent optical surge. Appendix I gives example BA/PA parameter values; OAM items and alarms for OAs are specified.}
+      \field{day}{13}
+      \field{hour}{0}
+      \field{langid}{english}
+      \field{minute}{0}
+      \field{month}{4}
+      \field{number}{G.663}
+      \field{second}{0}
+      \field{timezone}{+02\bibtzminsep 00}
+      \field{title}{Application Related Aspects of Optical Amplifier Devices and Sub-Systems ({{ITU-T Recommendation G}}.663)}
+      \field{urlday}{13}
+      \field{urlmonth}{11}
+      \field{urlyear}{2026}
+      \field{year}{2011}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb /Users/jensen/Zotero/storage/QE3LT8AV/itu-t-g-663-2011-04-application-related-aspects-of-optical-amplifier-devices-and-subsystems.html
+      \endverb
+      \verb{urlraw}
+      \verb https://www.itu.int/epublications/publication/itu-t-g-663-2011-04-application-related-aspects-of-optical-amplifier-devices-and-subsystems
+      \endverb
+      \verb{url}
+      \verb https://www.itu.int/epublications/publication/itu-t-g-663-2011-04-application-related-aspects-of-optical-amplifier-devices-and-subsystems
+      \endverb
+    \endentry
+    \entry{montesThreewaveDissipativeBrillouin2008}{inbook}{}{}
       \name{author}{1}{}{%
         {{un=0,uniquepart=base,hash=e721300c8bbf26f02d96924b0ace3d00}{%
            family={Montes},
@@ -840,7 +1626,7 @@
            giveni={A\bibinitperiod}}}%
       }
       \list{location}{1}{%
-        {Berlin, Heidelberg}%
+        {Berlin}%
       }
       \list{publisher}{1}{%
         {Springer}%
@@ -864,10 +1650,12 @@
       \true{uniqueprimaryauthor}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{booktitle}{Dissipative solitons: From optics to biology and medicine}
+      \field{booktitle}{Dissipative Solitons: {{From}} Optics to Biology and Medicine}
       \field{isbn}{978-3-540-78216-2}
       \field{langid}{english}
-      \field{title}{Three-wave dissipative {Brillouin} solitons}
+      \field{number}{751}
+      \field{series}{Lecture {{Notes}} in {{Physics}}}
+      \field{title}{Three-Wave Dissipative {{Brillouin}} Solitons}
       \field{urlday}{9}
       \field{urlmonth}{5}
       \field{urlyear}{2026}
@@ -880,7 +1668,7 @@
       \verb 10.1007/978-3-540-78217-9_9
       \endverb
       \verb{file}
-      \verb /Users/jensen/Zotero/storage/QEBK9AMD/Montes - 2008 - Three-Wave Dissipative Brillouin Solitons.pdf
+      \verb /Users/jensen/Zotero/storage/QEBK9AMD/Montes - 2008 - Three-wave dissipative Brillouin solitons.pdf
       \endverb
       \verb{urlraw}
       \verb https://link.springer.com/10.1007/978-3-540-78217-9_9
@@ -924,7 +1712,7 @@
       \field{journaltitle}{IEEE Micro}
       \field{month}{3}
       \field{number}{2}
-      \field{title}{The {GPU} computing era}
+      \field{title}{The {{GPU}} Computing Era}
       \field{urlday}{27}
       \field{urlmonth}{10}
       \field{urlyear}{2026}
@@ -938,7 +1726,7 @@
       \verb 10.1109/MM.2010.41
       \endverb
       \verb{file}
-      \verb /Users/jensen/Zotero/storage/9BMTH6TN/Nickolls and Dally - 2010 - The GPU Computing Era.pdf
+      \verb /Users/jensen/Zotero/storage/9BMTH6TN/Nickolls and Dally - 2010 - The GPU computing era.pdf
       \endverb
       \verb{urlraw}
       \verb https://ieeexplore.ieee.org/document/5446251
@@ -947,6 +1735,77 @@
       \verb https://ieeexplore.ieee.org/document/5446251
       \endverb
       \keyw{Acceleration,Computer applications,Computer architecture,Concurrent computing,CUDA,Fermi GPU architecture,GPU computing,GPU coprocessing,Graphics processing unit,heterogeneous CPU+,Layout,NVIDIA.,Parallel processing,Pervasive computing,Pipelines,scalable parallel computing,Tesla GPU architecture}
+    \endentry
+    \entry{peledFastBrillouinOptical2012}{article}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=9faf3814e2b85bac6a80da35ec52291c}{%
+           family={Peled},
+           familyi={P\bibinitperiod},
+           given={Yair},
+           giveni={Y\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=6289550514a43bffac49e80ab37dc1f7}{%
+           family={Motil},
+           familyi={M\bibinitperiod},
+           given={Avi},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=cd9e0028268e57226c5217867de242bf}{%
+           family={Tur},
+           familyi={T\bibinitperiod},
+           given={Moshe},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Optica Publishing Group}%
+      }
+      \strng{namehash}{0d6dcdc8d5de02c4a28e65b51fc97d19}
+      \strng{fullhash}{688c4a7924b71cee469da535218c1450}
+      \strng{fullhashraw}{688c4a7924b71cee469da535218c1450}
+      \strng{bibnamehash}{688c4a7924b71cee469da535218c1450}
+      \strng{authorbibnamehash}{688c4a7924b71cee469da535218c1450}
+      \strng{authornamehash}{0d6dcdc8d5de02c4a28e65b51fc97d19}
+      \strng{authorfullhash}{688c4a7924b71cee469da535218c1450}
+      \strng{authorfullhashraw}{688c4a7924b71cee469da535218c1450}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{A new technique for the fast implementation of Brillouin Optical Time Domain Analysis (BOTDA) is proposed and demonstrated, carrying the classical BOTDA method to the dynamic sensing domain. By using a digital signal generator which enables fast switching among 100 scanning frequencies, we demonstrate a truly distributed and dynamic measurement of a 100m long fiber with a sampling rate of \textasciitilde 10kHz, limited only by the fiber length and the frequency granularity. With 10 averages the standard deviation of the measured strain was \textasciitilde 5 µε.}
+      \field{day}{9}
+      \field{issn}{1094-4087}
+      \field{journaltitle}{Optics Express}
+      \field{langid}{english}
+      \field{month}{4}
+      \field{number}{8}
+      \field{shortjournal}{Opt. Express, OE}
+      \field{title}{Fast {{Brillouin}} Optical Time Domain Analysis for Dynamic Sensing}
+      \field{urlday}{13}
+      \field{urlmonth}{11}
+      \field{urlyear}{2026}
+      \field{volume}{20}
+      \field{year}{2012}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{8584\bibrangedash 8591}
+      \range{pages}{8}
+      \verb{doi}
+      \verb 10.1364/OE.20.008584
+      \endverb
+      \verb{file}
+      \verb /Users/jensen/Zotero/storage/7KF6GWJ2/Peled et al. - 2012 - Fast Brillouin optical time domain analysis for dynamic sensing.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://opg.optica.org/oe/abstract.cfm?uri=oe-20-8-8584
+      \endverb
+      \verb{url}
+      \verb https://opg.optica.org/oe/abstract.cfm?uri=oe-20-8-8584
+      \endverb
+      \keyw{Brillouin optical time domain analysis,Fiber optic sensors,Nonlinear optical fibers,Spatial resolution,Stimulated Brillouin scattering,Systems design}
     \endentry
     \entry{stokesMachine2006}{book}{}{}
       \name{author}{1}{}{%
@@ -981,14 +1840,14 @@
       \field{abstract}{Inside the Machine explains how microprocessors operate - what they do, and how they do it. Written by the co-founder of the highly respected Ars Technica site, the book begins with the...}
       \field{isbn}{978-1-59327-104-6}
       \field{langid}{english}
-      \field{title}{Inside the machine}
+      \field{title}{Inside the Machine}
       \field{year}{2006}
       \field{dateera}{ce}
       \verb{file}
       \verb /Users/jensen/Zotero/storage/R4QJGNE9/9781593271046.html
       \endverb
     \endentry
-    \entry{CoreGuidelines}{online}{}{}
+    \entry{stroustrupCoreGuidelines}{online}{}{}
       \name{author}{2}{}{%
         {{un=0,uniquepart=base,hash=4975813514faee20fb6fcdb39a08af6f}{%
            family={Stroustrup},
@@ -1028,6 +1887,63 @@
       \verb{url}
       \verb https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#Rc-complete
       \endverb
+    \endentry
+    \entry{thevenazDistributedOpticalFiber2025}{article}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=0e1939cb143fc444850737fd9c389421}{%
+           family={Thévenaz},
+           familyi={T\bibinitperiod},
+           given={Luc},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Frontiers}%
+      }
+      \strng{namehash}{0e1939cb143fc444850737fd9c389421}
+      \strng{fullhash}{0e1939cb143fc444850737fd9c389421}
+      \strng{fullhashraw}{0e1939cb143fc444850737fd9c389421}
+      \strng{bibnamehash}{0e1939cb143fc444850737fd9c389421}
+      \strng{authorbibnamehash}{0e1939cb143fc444850737fd9c389421}
+      \strng{authornamehash}{0e1939cb143fc444850737fd9c389421}
+      \strng{authorfullhash}{0e1939cb143fc444850737fd9c389421}
+      \strng{authorfullhashraw}{0e1939cb143fc444850737fd9c389421}
+      \field{sortinit}{T}
+      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{This perspective article delves into the current performance limitations of distributed optical fiber sensors and proposes avenues for future advancements, as envisioned by the author, whose four-decade-long career has been dedicated to this transformative field. By upscaling the dimension of collected data, distributed sensors are essential in enabling large-scale data acquisition for “big data” systems, and optical fibers offer a unique, highly effective platform for distributed sensing. This article examines the ultimate performance achievable using state-of-the-art technologies across different sensor types. It further explores potential innovations, such as the adoption of advanced signal processing, novel fiber designs, and artificial intelligence, that could drive significant improvements in sensing performance and applications.}
+      \field{day}{9}
+      \field{issn}{2673-5067}
+      \field{journaltitle}{Frontiers in Sensors}
+      \field{langid}{english}
+      \field{month}{4}
+      \field{shortjournal}{Front. Sens.}
+      \field{shorttitle}{Distributed Optical Fiber Sensors}
+      \field{title}{Distributed Optical Fiber Sensors: {{What}} Is Known and What Is to Come}
+      \field{urlday}{13}
+      \field{urlmonth}{11}
+      \field{urlyear}{2026}
+      \field{volume}{6}
+      \field{year}{2025}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.3389/fsens.2025.1546392
+      \endverb
+      \verb{file}
+      \verb /Users/jensen/Zotero/storage/RH8DVKXC/Thévenaz - 2025 - Distributed optical fiber sensors what is known and what is to come.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://www.frontiersin.org/journals/sensors/articles/10.3389/fsens.2025.1546392/full
+      \endverb
+      \verb{url}
+      \verb https://www.frontiersin.org/journals/sensors/articles/10.3389/fsens.2025.1546392/full
+      \endverb
+      \keyw{Brillouin scattering,distributed fiber sensor,distributed temperature sensing,optical fiber sensor,Raman scattering,Rayleigh scattering}
     \endentry
   \enddatalist
 \endrefsection

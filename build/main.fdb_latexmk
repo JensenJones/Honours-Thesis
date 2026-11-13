@@ -1,12 +1,12 @@
 # Fdb version 4
-["biber build/main"] 1794480135.76973 "build/main.bcf" "build/main.bbl" "build/main" 1794480146.11347 0
-  "build/main.bcf" 1794480145.94426 135010 e130f1fb0a949b23acdd21626394b537 "pdflatex"
-  "references.bib" 1794480135.55805 10471 57b0cec03b5924e8e3cbbb27b66276d5 ""
+["biber build/main"] 1794541406.43064 "build/main.bcf" "build/main.bbl" "build/main" 1794541419.73566 0
+  "build/main.bcf" 1794541419.57692 135413 102d39a12b1cb603319bd87224d37e7b "pdflatex"
+  "references.bib" 1794541350.23704 19019 93b7384c747190598455fc3c9a3dd928 ""
   (generated)
   "build/main.bbl"
   "build/main.blg"
   (rewritten before read)
-["pdflatex"] 1794480142.02949 "main.tex" "build/main.pdf" "main" 1794480146.11386 0
+["pdflatex"] 1794541415.87038 "main.tex" "build/main.pdf" "main" 1794541419.73597 0
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc" 1254269338 2375 baa924870cfb487815765f9094cf3728 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc" 1202520719 3486 c7eadf5dcc57b3b2d11736679f6636ba ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc" 1202520719 2405 5dcf2c1b967ee25cc46c58cd52244aed ""
@@ -296,19 +296,19 @@
   "build/_minted/D68A46060B113FA6648983F53201B793.highlight.minted" 1793596890.07959 1880 60fa741498bd4ab5a17d32942c35b0eb ""
   "build/_minted/_FAD58DE7366495DB4650CFEFAC2FCD61.index.minted" 1794446371.60348 833 d5b44446e2804bcca7c013973a215cc3 ""
   "build/_minted/friendly.style.minted" 1793596890.06119 6511 10ee1c54a45212a1fd1d9825a4cd8b6a ""
-  "build/main.aux" 1794480145.93864 26168 238b0f1704f8c84144dcbd264c9c3f94 "pdflatex"
-  "build/main.bbl" 1794480137.68576 47544 eb41db24477a69291263b80fe171f272 "biber build/main"
-  "build/main.listing" 1794480145.15763 2604 fb9863282dcfb569ea2a0b75fdfee794 "pdflatex"
-  "build/main.out" 1794480145.94284 4627 5da659b2d0c09926d6082ea0654cbec7 "pdflatex"
-  "build/main.run.xml" 1794480145.94515 2493 18dd6adf559d62ac41bc607e0ad6ec06 "pdflatex"
-  "build/main.toc" 1794480145.94522 2377 923a0746fbccf3241aff87fce138d750 "pdflatex"
-  "chapters/appendix.tex" 1794451731.07649 4204 0cdd42bedbc2954b0f94af93db63c9e7 ""
-  "chapters/conclusion.tex" 1794447552.20249 2182 b545530c0c925362d8633dcf426e458e ""
-  "chapters/discussion.tex" 1794447552.20276 1743 b8ab30d813bbc24ae2bd6ddc99f96832 ""
-  "chapters/introduction.tex" 1794447563.76901 23856 94e054dfe9d1f0a165ae24e073c7abd4 ""
-  "chapters/methodology.tex" 1794447563.7694 21155 d2bc6c57e84e121a6caa72820ecca074 ""
-  "chapters/results.tex" 1794451731.07615 12204 89702167ef211d1e74e208ce46139323 ""
-  "chapters/titlepage.tex" 1794447552.20456 746 a4a486b30a787f31ab3d02d211c3d7bd ""
+  "build/main.aux" 1794541419.57205 27541 1727c87fafc169a27ef323dc6ce8ee36 "pdflatex"
+  "build/main.bbl" 1794541408.07305 93566 14ff4fad4eb1a8013010343adb43b400 "biber build/main"
+  "build/main.listing" 1794541418.77164 2604 fb9863282dcfb569ea2a0b75fdfee794 "pdflatex"
+  "build/main.out" 1794541419.5758 4627 5da659b2d0c09926d6082ea0654cbec7 "pdflatex"
+  "build/main.run.xml" 1794541419.5776 2493 18dd6adf559d62ac41bc607e0ad6ec06 "pdflatex"
+  "build/main.toc" 1794541419.57767 2377 77cb89e177fb58a5d33d8af066160150 "pdflatex"
+  "chapters/appendix.tex" 1794541402.34119 4204 0cdd42bedbc2954b0f94af93db63c9e7 ""
+  "chapters/conclusion.tex" 1794541402.34176 2182 b545530c0c925362d8633dcf426e458e ""
+  "chapters/discussion.tex" 1794541402.3424 1743 b8ab30d813bbc24ae2bd6ddc99f96832 ""
+  "chapters/introduction.tex" 1794541402.34365 24708 83ae4602cc6b0d7cdb3da190eaa15e12 ""
+  "chapters/methodology.tex" 1794541402.34469 21111 f061d9519ebab3a8709d091682e35648 ""
+  "chapters/results.tex" 1794541402.3456 12250 ce89c08530f0061ca0d6c23bd76f81e7 ""
+  "chapters/titlepage.tex" 1794541402.34598 746 a4a486b30a787f31ab3d02d211c3d7bd ""
   "figures/Figure linear only - Sweeping grid points.png" 1793768425.86656 108256 d6a9f15a3a8e77a23c026b1c2313cc58 ""
   "figures/Figure linear only - sweeping optical channels.png" 1793768459.25786 112364 cc8986b113f0e4b87f621c33aa179382 ""
   "figures/SBS-picture-with-the-levels.jpg" 1794102305.33233 28497 bcbf06eaaf799049b0f20686a940ae91 ""
@@ -322,7 +322,7 @@
   "figures/split_kerr_symsplit.png" 1790324249.74335 45689 229114d8c404c9ffc9ea4370052ad5c3 ""
   "figures/symmetric-split-step.png" 1793594220.16637 66261 ea4f6cf62da93cd55369ee1b504e360a ""
   "keepsections.sty" 1794447510.51317 2303 0a70b121a77402d4e268afcb784dc79a ""
-  "main.tex" 1794464632.64674 5721 66466387780e3614d67b9bf0a1136704 ""
+  "main.tex" 1794541402.3468 5487 f00e55f3b0d7c997fb7713ec35a78260 ""
   (generated)
   "build/main.aux"
   "build/main.bcf"

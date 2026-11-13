@@ -3076,15 +3076,19 @@
     <bcf:citekey order="4" intorder="1">agrawalNonlinearFiberOptics2019</bcf:citekey>
     <bcf:citekey order="5" intorder="1">baiStimulatedBrillouinScattering2018</bcf:citekey>
     <bcf:citekey order="6" intorder="1">agrawalNonlinearFiberOptics2019</bcf:citekey>
-    <bcf:citekey order="7" intorder="1">montesThreeWaveDissipativeBrillouin2008</bcf:citekey>
-    <bcf:citekey order="8" intorder="1">agrawalNonlinearFiberOptics2019</bcf:citekey>
-    <bcf:citekey order="9" intorder="1">CoreGuidelines</bcf:citekey>
-    <bcf:citekey order="10" intorder="1">UserGuidePETSc3261</bcf:citekey>
-    <bcf:citekey order="11" intorder="1">balacMathematicalAnalysisAdaptive2014</bcf:citekey>
-    <bcf:citekey order="12" intorder="1">balacMathematicalAnalysisAdaptive2014</bcf:citekey>
-    <bcf:citekey order="13" intorder="1">balacMathematicalAnalysisAdaptive2014</bcf:citekey>
-    <bcf:citekey order="14" intorder="1">stokesMachine2006</bcf:citekey>
-    <bcf:citekey order="15" intorder="1">nickollsGPUComputingEra2010</bcf:citekey>
+    <bcf:citekey order="7" intorder="1">thevenazDistributedOpticalFiber2025</bcf:citekey>
+    <bcf:citekey order="8" intorder="1">peledFastBrillouinOptical2012</bcf:citekey>
+    <bcf:citekey order="9" intorder="1">internationaltelecommunicationunionApplicationRelatedAspects2011</bcf:citekey>
+    <bcf:citekey order="10" intorder="1">huangFiberbasedTechniquesSuppress2023</bcf:citekey>
+    <bcf:citekey order="11" intorder="1">montesThreewaveDissipativeBrillouin2008</bcf:citekey>
+    <bcf:citekey order="12" intorder="1">agrawalNonlinearFiberOptics2019</bcf:citekey>
+    <bcf:citekey order="13" intorder="1">stroustrupCoreGuidelines</bcf:citekey>
+    <bcf:citekey order="14" intorder="1">balayPETScTAOUsers2025</bcf:citekey>
+    <bcf:citekey order="15" intorder="1">balacMathematicalAnalysisAdaptive2014</bcf:citekey>
+    <bcf:citekey order="16" intorder="1">balacMathematicalAnalysisAdaptive2014</bcf:citekey>
+    <bcf:citekey order="17" intorder="1">balacMathematicalAnalysisAdaptive2014</bcf:citekey>
+    <bcf:citekey order="18" intorder="1">stokesMachine2006</bcf:citekey>
+    <bcf:citekey order="19" intorder="1">nickollsGPUComputingEra2010</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="apa">

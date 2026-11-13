@@ -131,8 +131,7 @@ Since double-precision arithmetic can be substantially more expensive on some GP
 a further experiment compares LibTorch performance using 64-bit and 32-bit floating-point
 values. The measured runtimes are shown in \Cref{tab:precision-speedup}. Across the tested
 grid sizes, single precision was approximately 2.4--2.5 times faster than double precision.
-This result is specific to the hardware used, 
-a Tesla T4 GPU with an FP64 ratio of 1:32.
+All benchmarks in this project used a Tesla T4 GPU with an FP64 ratio of 1:32.
 
 \begin{table}[H]
   \centering
@@ -181,7 +180,7 @@ round trips to a field of size $2^{20}$ produced a similar change ($-4.25\times1
 whereas complex128 changed the energy by approximately $4\times10^{-13}$. This indicates
 that the observed loss is associated with single-precision FFT round-off in cuFFT rather
 than the propagation phase itself. Repeated small downward changes can accumulate over many
-steps.
+steps, leading to large error growth in the simulation results.
 
 The separate error-growth test at 8,192 points shows that the maximum field error
 grows approximately linearly with step count when Kerr is disabled, and approximately
